@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger,} from "./ui/sheet.tsx"
+import {Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger} from "./ui/sheet.tsx"
 import {Button} from "./ui/button.tsx";
 import {Menu} from "lucide-react";
 

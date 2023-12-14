@@ -21,7 +21,7 @@ function createWindow() {
             nodeIntegration: true
         },
         // Use this in development mode.
-        icon: isDev() ? path.join(process.cwd(), 'public/logo512.png') : path.join(__dirname, 'build/logo512.png'),
+        icon: isDev() ? path.join(process.cwd(), 'public/logo.png') : path.join(__dirname, 'build/logo.png'),
         // Use this in production mode.
         // icon: path.join(__dirname, 'build/logo512.png'),
         show: false
@@ -55,8 +55,14 @@ function createWindow() {
     mainWindow.once('ready-to-show', () => {
         mainWindow.show()
     });
+    mainWindow.setMenu(null);
 }
 
+app.on('browser-window-created', (event, win) => {
+    win.webContents.on('devtools-opened', () => {
+        win.webContents.closeDevTools();
+    });
+});
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
