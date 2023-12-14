@@ -39,7 +39,7 @@
   },
   "build": {
     "icon": "public/logo.png",
-    "productName": "React and Electron App",
+    "productName": "Digibridge",
     "files": [
       "build/**/*",
       "main.js"
