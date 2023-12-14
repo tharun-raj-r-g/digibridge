@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './SideNav.css';
 
 const SideNav = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(true);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
