@@ -4,6 +4,7 @@
   "description": "Digibridge E-learning Platform",
   "private": true,
   "main": "main.js",
+  "author": "Vishal <vishal.pvn.edu@gmail.com>",
   "devDependencies": {
     "concurrently": "8.2.2",
     "electron-builder": "^22.8.0",
