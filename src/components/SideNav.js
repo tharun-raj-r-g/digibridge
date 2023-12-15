@@ -27,7 +27,7 @@ const SideNav = () => {
             </SheetTrigger>
             <SheetContent side={"left"} className={"w-fit"}>
                 <SheetHeader className={"justify-center items-center"}>
-                    <img src={logo} alt={"Logo"} className={"m-3 p-2  w-1/2"}/>
+                    <img src={logo} alt={"Logo"} className={"mt-3 w-3/4"}/>
                 </SheetHeader>
                 <div className={"h-[80%] flex flex-col align-middle justify-center items-center"}>
                     {locations.map((item) => (
