@@ -14,7 +14,7 @@ function App() {
                 <div className={"absolute top-2"}>
                     <SideNav/>
                 </div>
-                <div className={"p-2 justify-center items-center "}>
+                <div className={"p-2 justify-center items-center ml-20 p-10"}>
                     <Routes>
                         <Route path={"/"} element={<Home/>}></Route>
                         <Route path={"/report"} element={<Report/>}></Route>

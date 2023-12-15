@@ -33,7 +33,7 @@ const SideNav = () => {
                     {locations.map((item) => (
                         <Link to={item.url} onClick={() => setIsOpen(!isOpen)}>
                             <div
-                                className={cn("lg:m-3 text-2xl p-2 pr-4 pl-4 rounded-2xl ", location === item.url ? "bg-amber-100" : "hover:bg-blue-100")}>
+                                className={cn("lg:m-3 text-2xl p-2 pr-4 pl-4 rounded-2xl ", location === item.url ? "bg-[#93e3d8]" : "hover:bg-blue-100")}>
                                 {item.name}
                             </div>
                         </Link>
