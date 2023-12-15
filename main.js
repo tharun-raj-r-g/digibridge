@@ -56,7 +56,7 @@ function createWindow() {
     mainWindow.setMenu(null);
     mainWindow.maximize();
     const size = mainWindow.getSize();
-    mainWindow.setMinimumSize(size.at(0), size.at(1));
+    mainWindow.setMinimumSize(size.at(0) - 20, size.at(1) - 20);
 }
 
 app.on('browser-window-created', (event, win) => {
