@@ -10,11 +10,11 @@ import Events from "./pages/Events";
 function App() {
     return (
         <BrowserRouter>
-            <div className="bg-[#eeeeee] h-screen">
+            <div className="bg-[#eeeeee]">
                 <div className={"absolute top-2"}>
                     <SideNav/>
                 </div>
-                <div className={"p-2 ml-20 pt-10"}>
+                <div className={"p-2 ml-10 pt-10"}>
                     <Routes>
                         <Route path={"/"} element={<Home/>}></Route>
                         <Route path={"/report"} element={<Report/>}></Route>
