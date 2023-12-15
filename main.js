@@ -54,6 +54,7 @@ function createWindow() {
         mainWindow.show()
     });
     mainWindow.setMenu(null);
+    mainWindow.maximize();
 }
 
 app.on('browser-window-created', (event, win) => {

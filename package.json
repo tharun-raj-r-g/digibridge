@@ -6,6 +6,7 @@
   "main": "main.js",
   "author": "Vishal <vishal.pvn.edu@gmail.com>",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -34,11 +35,12 @@
     "class-variance-authority": "^0.7.0",
     "electron-serve": "1.2.0",
     "lucide-react": "^0.295.0",
+    "react-router-dom": "^6.21.0",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "build": {
-    "icon": "public/logo.png",
+    "icon": "src/public/logo.png",
     "productName": "Digibridge",
     "files": [
       "build/**/*",
