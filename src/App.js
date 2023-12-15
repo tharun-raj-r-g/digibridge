@@ -6,7 +6,7 @@ import Report from "./pages/Report";
 import Mentor from "./pages/Mentor";
 import Notes from "./pages/Notes";
 import Events from "./pages/Events";
-
+import Subject from "./pages/Subject";
 function App() {
     return (
         <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
                         <Route path={"/notes"} element={<Notes/>}></Route>
                         <Route path={"/events"} element={<Events/>}></Route>
                         <Route path={"/settings"} element={<Settings/>}></Route>
+                        <Route path={"/subject"} element={<Subject/>}></Route>
                     </Routes>
                 </div>
             </div>

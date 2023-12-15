@@ -8,7 +8,7 @@ import gift from "../images/gift.png";
 import { MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "../components/ui/button.tsx";
 import { Link } from "react-router-dom";
-const Home = () => {
+const Subject = () => {
   const handlePhyicsClick = () => {
     console.log("Button clicked!");
   };
@@ -26,9 +26,9 @@ const Home = () => {
     <div className="h-screen">
       <div className="h-1/5 bg-inherit flex-row flex mb-7">
         <div className="h-inherit w-[50%] flex-col flex text-left justify-around">
-          <h1 className="font-poppins font-bold text-[25px]">Dashboard</h1>
+          <h1 className="font-poppins font-bold text-[25px]">Physics</h1>
           <h1 className="font-poppins font-bold text-[45px]">
-            Welcome, John Doe
+            Welcome, John
           </h1>
         </div>
         <div className="h-inherit w-[50%] flex-row flex justify-end items-center pr-20">
@@ -68,7 +68,7 @@ const Home = () => {
       </div>
       <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
         <Link
-          to="/subject"
+          to="/report"
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
           onClick={handlePhyicsClick}
         >
@@ -127,4 +127,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Subject;
