@@ -11,8 +11,8 @@ const SideNav = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation().pathname;
     const locations = [
-        {name: "Home", url: "/"},
-        {name: "Report", url: "/report"},
+        {name: "Dashboard", url: "/"},
+        {name: "My Report", url: "/report"},
         {name: "Mentor", url: "/mentor"},
         {name: "Events", url: "/events"},
         {name: "Notes", url: "/notes"},
@@ -43,8 +43,8 @@ const SideNav = () => {
                 </div>
                 <SheetFooter className={"justify-center items-center text-center"}>
                     <Link to={"/"} onClick={() => setIsOpen(!isOpen)}>
-                        <div className={"flex flex-row justify-center items-center text-center"}>
-                            <LogOut/>
+                        <div className={"flex flex-row items-center text-center"}>
+                            <LogOut className={"mr-4"}/>
                             Log Out
                         </div>
                     </Link>
