@@ -1,10 +1,9 @@
-import report from "../images/report.png"
 
 const Report = () => {
 
     return (
-        <div className={"flex justify-center align-middle"}>
-            <img src={report} alt={"Report"}/>
+        <div className={"flex align-middle"}>
+            <span className={"text-3xl"}>My Report</span>
         </div>
     )
 }
