@@ -58,31 +58,63 @@ const Home = () => {
                     <span className={"text-4xl font-bold"}>40</span>
                 </div>
             </div>
-            <div className="rounded-3xl mb-5 flex justify-center">
-                <div className={"w-2/3 gap-10 grid grid-cols-2  justify-items-center"}>
-                    <div className="w-[70%] rounded-3xl relative  cursor-pointer"
-                         onClick={handlePhyicsClick}>
-                        <img src={physics} className="h-[150px] rounded-3xl brightness-50 object-cover w-[100%]"/>
-                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">Physics</p>
-                    </div>
+            <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
+        <Link
+          to="/subject"
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+          onClick={handlePhyicsClick}
+        >
+          <img
+            src={physics}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Physics
+          </p>
+        </Link>
 
-                    <div className=" w-[70%] rounded-3xl relative cursor-pointer"
-                         onClick={handleChemistryClick}>
-                        <img src={chemistry} className="h-[150px] rounded-3xl brightness-50 object-cover w-[100%]"/>
-                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">Chemistry</p>
-                    </div>
-                    <div className=" w-[70%] rounded-3xl relative  cursor-pointer"
-                         onClick={handleMathsClick}>
-                        <img src={maths} className="h-[150px] rounded-3xl brightness-50 object-cover w-[100%]"/>
-                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">Maths</p>
-                    </div>
-                    <div className=" w-[70%] rounded-3xl relative cursor-pointer"
-                         onClick={handleBiologyClick}>
-                        <img src={biology} className="h-[150px] rounded-3xl brightness-50 object-cover w-[100%]"/>
-                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">Biology</p>
-                    </div>
-                </div>
-            </div>
+        <Link
+          to="/settings"
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
+          onClick={handleChemistryClick}
+        >
+          <img
+            src={chemistry}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Chemistry
+          </p>
+        </Link>
+      </div>
+      <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
+        <Link
+          to="/mentor"
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+          onClick={handleMathsClick}
+        >
+          <img
+            src={maths}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Maths
+          </p>
+        </Link>
+        <Link
+          to="/notes"
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
+          onClick={handleBiologyClick}
+        >
+          <img
+            src={biology}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Biology
+          </p>
+        </Link>
+      </div>
         </div>
     );
 };

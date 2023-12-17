@@ -1,0 +1,81 @@
+import React, { useState } from "react";
+import { Link } from "lucide-react";
+import threeDdModel from "../images/3d-model.png";
+import gamifiedlearning from "../images/gamified-learning.jpeg"
+import quizzes from "../images/quizzes.jpeg"
+const SelectContentModal = ({
+  isOpen,
+  onOpen,
+  onClose,
+  modalTitle,
+  modalContent,
+}) => {
+  const openModal = () => {
+    onOpen();
+  };
+
+  const closeModal = () => {
+    onClose();
+  };
+
+  return (
+    <div>
+      {/* Button to open the modal */}
+
+      {/* Modal */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-around bg-black bg-opacity-50"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white p-8 rounded-3xl flex flex-col items-center justify-around"
+            onClick={(e) => e.stopPropagation()} // Prevents modal from closing when clicked inside
+          >
+            {/* Modal Content */}
+            <p className="text-3xl font-semibold mt-5 mb-10">{modalTitle}</p>
+            <div className="flex flex-row w-[900px] justify-around">
+              <div className="relative cursor-pointer">
+                <img
+                  src={threeDdModel}
+                  className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
+                />
+                <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+                  3D Model
+                </p>
+              </div>
+
+              <div className="relative cursor-pointer">
+                <img
+                  src={gamifiedlearning}
+                  className="rounded-3xl brightness-50 object-cover  w-[250px] h-[230px]"
+                />
+                <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+                  Gamified Learning
+                </p>
+              </div>
+              <div className="relative cursor-pointer">
+                <img
+                  src={quizzes}
+                  className="rounded-3xl brightness-50 object-cover  w-[250px] h-[230px]"
+                />
+                <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+                  Interactive Quizzes
+                </p>
+              </div>
+            </div>
+            {/* Close Button */}
+            <button
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-7"
+              onClick={closeModal}
+            >
+              Back
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SelectContentModal;
