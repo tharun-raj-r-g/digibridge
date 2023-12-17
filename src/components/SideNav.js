@@ -2,14 +2,17 @@ import React, {useState} from 'react';
 import {Sheet, SheetContent, SheetFooter, SheetHeader, SheetTrigger} from "./ui/sheet.tsx"
 import {Button} from "./ui/button.tsx";
 import {LogOut, Menu} from "lucide-react";
-import {Link, useLocation} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 import logo from "../images/logo-full.png"
 import {cn} from "../lib/utils.ts";
+import {useClerk} from "@clerk/clerk-react";
 
 const SideNav = () => {
+    const {signOut} = useClerk();
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
-    const location = useLocation().pathname;
+    const location = "/";
     const locations = [
         {name: "Dashboard", url: "/"},
         {name: "My Report", url: "/report"},
@@ -45,7 +48,7 @@ const SideNav = () => {
                     <Link to={"/"} onClick={() => setIsOpen(!isOpen)}>
                         <div className={"flex flex-row items-center text-center"}>
                             <LogOut className={"mr-4"}/>
-                            Log Out
+                            <Button onClick={() => signOut(() => navigate("/"))}> Log Out</Button>
                         </div>
                     </Link>
                 </SheetFooter>

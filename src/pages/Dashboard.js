@@ -4,25 +4,25 @@ import chemistry from "../images/chemistry.jpg";
 import maths from "../images/maths.jpg";
 import biology from "../images/biology.png";
 import gift from "../images/gift.png";
-import { MessageSquare, MessageCircleMore } from "lucide-react";
-import { Button } from "../components/ui/button.tsx";
-import { Link } from "react-router-dom";
-const Home = () => {
-  const handlePhyicsClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleChemistryClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleMathsClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleBiologyClick = () => {
+import {MessageCircleMore} from "lucide-react";
+import {Link} from "react-router-dom";
+
+const Dashboard = () => {
+    const handlePhyicsClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleChemistryClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleMathsClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleBiologyClick = () => {
     console.log("Button clicked!");
   };
 
     return (
-        <div className={"h-[93vh] flex flex-col justify-between"}>
+        <div className={"h-full flex flex-col justify-between"}>
             <div className="h-1/5 bg-inherit flex-row flex justify-between">
                 <div className="h-inherit w-[50%] flex-col flex text-left justify-around">
                     <h1 className="font-poppins font-bold text-[25px]">Dashboard</h1>
@@ -119,4 +119,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Dashboard;
