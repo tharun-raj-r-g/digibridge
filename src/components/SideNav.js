@@ -14,7 +14,7 @@ const SideNav = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = "/";
     const locations = [
-        {name: "Dashboard", url: "/"},
+        {name: "Dashboard", url: "/dashboard"},
         {name: "My Report", url: "/report"},
         {name: "Mentor", url: "/mentor"},
         {name: "Events", url: "/events"},
@@ -24,7 +24,7 @@ const SideNav = () => {
     return (
         <Sheet open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
             <SheetTrigger>
-                <Button>
+                <Button variant={"ghost"}>
                     <Menu/>
                 </Button>
             </SheetTrigger>
@@ -45,12 +45,12 @@ const SideNav = () => {
 
                 </div>
                 <SheetFooter className={"justify-center items-center text-center"}>
-                    <Link to={"/"} onClick={() => setIsOpen(!isOpen)}>
+                    <Button variant={"ghost"} onClick={() => signOut(() => navigate("/"))}>
                         <div className={"flex flex-row items-center text-center"}>
                             <LogOut className={"mr-4"}/>
-                            <Button onClick={() => signOut(() => navigate("/"))}> Log Out</Button>
+                            <span> Log Out</span>
                         </div>
-                    </Link>
+                    </Button>
                 </SheetFooter>
             </SheetContent>
         </Sheet>

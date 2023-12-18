@@ -22,7 +22,7 @@ const Dashboard = () => {
   };
 
     return (
-        <div className={"h-full flex flex-col justify-between"}>
+        <div className={"h-screen flex flex-col justify-between"}>
             <div className="h-1/5 bg-inherit flex-row flex justify-between">
                 <div className="h-inherit w-[50%] flex-col flex text-left justify-around">
                     <h1 className="font-poppins font-bold text-[25px]">Dashboard</h1>
