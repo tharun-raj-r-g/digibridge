@@ -57,10 +57,11 @@ function createWindow() {
     mainWindow.maximize();
     const size = mainWindow.getSize();
     mainWindow.setMinimumSize(size.at(0) - 20, size.at(1) - 20);
-    mainWindow.setFullScreen(true)
+    mainWindow.setFullScreen(!isDev())
 }
 
 app.on('browser-window-created', (event, win) => {
+    win.webContents.session.clearStorageData().then().catch((e) => console.error(e));
     win.webContents.on('devtools-opened', () => {
         win.webContents.closeDevTools();
     });
@@ -72,6 +73,7 @@ app.on('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
+    mainWindow.webContents.session.clearStorageData().then().catch((e) => console.error(e))
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== 'darwin') app.quit()

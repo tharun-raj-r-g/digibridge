@@ -1,7 +1,7 @@
 import SideNav from './components/SideNav';
-import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import {ClerkProvider, RedirectToSignIn, SignedIn, SignedOut, SignIn, SignUp} from "@clerk/clerk-react";
+import {ClerkProvider, RedirectToSignIn, SignedIn, SignedOut} from "@clerk/clerk-react";
 import Landing from "./pages/landing";
 import Report from "./pages/Report";
 import Subject from "./pages/Subject";
@@ -9,6 +9,8 @@ import Settings from "./pages/Settings";
 import Events from "./pages/Events";
 import Notes from "./pages/Notes";
 import Mentor from "./pages/Mentor";
+import StudentSignUp from "./pages/StudentSignUp";
+import StudentSignIn from "./pages/StudentSignIn";
 import ThreeDModel from './pages/ThreeDModel';
 import StoryGame from './pages/StoryGame';
 import InteractiveQuiz from './pages/InteractiveQuiz';
@@ -16,30 +18,28 @@ import Chapter1 from './pages/Chapter1';
 const clerkPubKey = "pk_test_YWRhcHRpbmctbW9uc3Rlci03MS5jbGVyay5hY2NvdW50cy5kZXYk";
 
 function ClerkProviderWithRoutes() {
-    const navigate = useNavigate();
     return (
         <ClerkProvider
             publishableKey={clerkPubKey}
-            navigate={(to) => navigate(to)}
         >
 
             <div className="bg-[#eeeeee] h-[98%]">
                 <Routes>
                     <Route path="/" element={<Landing/>}/>
                     <Route
-                        path="/sign-in/*"
-                        element={<SignIn routing="path" path="/sign-in" afterSignInUrl={"/dashboard"}/>}
+                        path="/signin/*"
+                        element={<StudentSignIn/>}
                     />
                     <Route
-                        path="/sign-up/*"
-                        element={<SignUp routing="path" path="/sign-up" afterSignUpUrl={"/dashboard"}/>}
+                        path="/signup/*"
+                        element={<StudentSignUp/>}
                     />
                     <Route
                         path="/dashboard"
                         element={
                             <>
                                 <SignedIn>
-                                    <div className={"absolute top-2"}>
+                                    <div className={"absolute top-4 left-2"}>
                                         <SideNav/>
                                     </div>
                                     <div className={"p-2 ml-20 mr-20"}>
@@ -48,7 +48,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -67,7 +67,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -86,7 +86,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -105,7 +105,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -124,7 +124,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -143,7 +143,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -238,22 +238,93 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
+                                    <RedirectToSignIn/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
+                     <Route
+                        path="/threedmodel"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <ThreeDModel/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
                                     <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
                                 </SignedOut>
                             </>
                         }
                     />
+                     <Route
+                        path="/storygame"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <StoryGame/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
+                     <Route
+                        path="/interactivequiz"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <InteractiveQuiz/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn />
+                                </SignedOut>
+                            </>
+                        }
+                    />
+                     <Route
+                        path="/chapter1"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <Chapter1/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
+
                 </Routes>
             </div>
-            {/*<Route path={"/"} element={<Login/>}></Route>*/}
-            {/*<Route path={"dashboard"} element={<Dashboard/>}></Route>*/}
-            {/*<Route path={"report"} element={<Report/>}></Route>*/}
-            {/*<Route path={"mentor"} element={<Mentor/>}></Route>*/}
-            {/*<Route path={"notes"} element={<Notes/>}></Route>*/}
-            {/*<Route path={"events"} element={<Events/>}></Route>*/}
-            {/*<Route path={"settings"} element={<Settings/>}></Route>*/}
-            {/*<Route path={"subject"} element={<Subject/>}></Route>*/}
+
         </ClerkProvider>
+
     );
 }
 
@@ -262,7 +333,6 @@ function App() {
         <BrowserRouter>
             <ClerkProviderWithRoutes/>
         </BrowserRouter>
-
     );
 }
 
