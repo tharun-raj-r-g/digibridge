@@ -1,24 +1,10 @@
 import logo from "../images/logo-full.png";
 import {Button} from "../components/ui/button.tsx";
 import {useNavigate} from "react-router-dom";
-import {SignedIn, SignedOut} from "@clerk/clerk-react";
-import {useEffect, useState} from "react";
 
 const Landing = () => {
-    const [isOnline, setIsOnline] = useState(navigator.onLine);
 
-    useEffect(() => {
-        const handleOnlineStatus = () => setIsOnline(true);
-        const handleOfflineStatus = () => setIsOnline(false);
 
-        window.addEventListener('online', handleOnlineStatus);
-        window.addEventListener('offline', handleOfflineStatus);
-
-        return () => {
-            window.removeEventListener('online', handleOnlineStatus);
-            window.removeEventListener('offline', handleOfflineStatus);
-        };
-    }, []);
     const navigate = useNavigate();
     return (
         <div className={"h-screen flex flex-col justify-center items-center"}>
