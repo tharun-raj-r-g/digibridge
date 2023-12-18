@@ -13,8 +13,9 @@ import { MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "../components/ui/button.tsx";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import SelectContentModal from "../components/SelectContentModal.js";
-const Subject = () => {
+const Subject = (props) => {
   const handlePhyicsClick = () => {
     console.log("Button clicked!");
   };
@@ -73,11 +74,10 @@ const Subject = () => {
           </div>
         </div>
       </div>
-
       <div className="h-[80px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
         <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
           <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl">Electricity</h1>
+            <h1 className="font-semibold text-3xl">Electriciy</h1>
             <div className="h-[50px] bg-white w-[150px] rounded-2xl justify-center items-center flex cursor-pointer" onClick={openModal}>
               <h1 className="text-center text-[#b47ede] font-semibold">Continue</h1>
             </div>

@@ -27,9 +27,46 @@ import tigerscary from "../images/tigerscary.png";
 import snake from "../images/snakeimage.jpg";
 import treeBoard from "../images/treeboard.png";
 import questiontree from "../images/questiontree.png";
+import GameOverModal from "../components/GameOverModal.js";
+import happytiger from "../images/happytiger.jpg";
+import boyrunning from "../images/boyrunning.jpg";
+import walkingtiger from "../images/walkingtiger.png"
+import trashpaper from "../images/trashpaper.jpg"
 const Chapter1 = () => {
+  const questions = [
+    {
+      question:
+        "What happens to the magnetic field strength when the current through an inductor increases?",
+      options: ["Decreases", "Increases", "Same", "Zero"],
+      answer: "Increases",
+    },
+    {
+      question:
+        "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
+      options: ["Decreases", "Increases", "Same", "Zero"],
+      answer: "Zero",
+    },
+    {
+      question:
+        "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
+      options: ["Ferrite", "Aluminium", "Copper", "Gold"],
+      answer: "Ferrite",
+    },
+    {
+      question:
+        "What is the energy stored in an inductor with inductance L and current I?",
+      options: ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+      answer: "LI²",
+    },
+    {
+      question:
+        "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
+      options: ["Decreases", "Increases", "Same", "Zero"],
+      answer: "Increases",
+    },
+  ];
   const [iscontentstate, setcontentstate] = useState(0);
-  const [isanswer, setanswer] = useState("");
+  const [isanswer, setanswer] = useState("-1");
   const [ispaperopen, setpaperopen] = useState(false);
   const [isScore, setScore] = useState(0);
   const contentchange = () => {
@@ -37,12 +74,24 @@ const Chapter1 = () => {
       setcontentstate(iscontentstate + 1);
     }, 2000); // 2000 milliseconds (2 seconds)
   };
-  const setcontent = () => {
-    if (isanswer == "Python") {
+  const CheckAnswer = (number) => {
+    if (isanswer == questions[number].answer) {
       setcontentstate(iscontentstate + 1);
+      setScore(isScore + 1);
     } else {
       setcontentstate(-1);
+      setIsModalOpen(true);
     }
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -50,95 +99,314 @@ const Chapter1 = () => {
       className="min-h-screen w-screen bg-cover bg-center flex flex-col items-center justify-start"
       style={{ backgroundImage: `url(${jungle})` }}
     >
-      {iscontentstate == 0 ? (
+      {iscontentstate == -1 ? (
         <div>
-          <div className="h-[200px] w-screen flex flex-row justify-center items-center mt-[180px] mb-[50px]">
-            <div
-              className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[100px] justify-center text-center items-center pb-[100px]"
-              style={{ backgroundImage: `url(${cloudleft})` }}
-            >
-              <AnimatedTyping
-                text={[
-                  "Woah... Wh...Where am I....Whhat's that sound in there ??!!",
-                ]}
-                onComplete={contentchange}
-              />
-            </div>
-          </div>
-          <div className="h-[200px] w-screen flex flex-row justify-start items-center">
-            <div
-              className="h-[500px] w-[200px] bg-cover bg-center flex flex-col ml-[200px]"
-              style={{ backgroundImage: `url(${boyshocking})` }}
-            ></div>
-          </div>
+          <GameOverModal
+            isOpen={isModalOpen}
+            onOpen={openModal}
+            onClose={closeModal}
+            modalTitle="Game Over !"
+            modalContent="This is the custom modal content. You can pass any JSX or string here."
+            score={isScore}
+          />
         </div>
-      ) : null}
-      {iscontentstate == 1 ? (
+      ) : (
         <div>
-          <div className="h-[150px] w-screen flex flex-row justify-center items-center mt-[30px]">
-            <div
-              className="h-[150px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] animate-pulse cursor-pointer"
-              style={{ backgroundImage: `url(${treeBoard})` }}
-              onClick={()=>{setcontentstate(iscontentstate + 1)}}
-            >
-              <h1 className="font-bold text-center mt-[50px] text-[20px]">
-                Help the Tiger!
-              </h1>
+          {iscontentstate == 0 ? (
+            <div>
+              <div className="h-[200px] w-screen flex flex-row justify-center items-center mt-[180px] mb-[50px]">
+                <div
+                  className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[100px] justify-center text-center items-center pb-[100px]"
+                  style={{ backgroundImage: `url(${cloudleft})` }}
+                >
+                  <AnimatedTyping
+                    text={[
+                      "Woah... Wh...Where am I....Whhat's that sound in there ??!!",
+                    ]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-start items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col ml-[200px]"
+                  style={{ backgroundImage: `url(${boyshocking})` }}
+                ></div>
+              </div>
             </div>
-          </div>
-          <div className="h-[200px] w-screen flex flex-row justify-center items-center mb-[50px]">
-            <div
-              className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
-              style={{ backgroundImage: `url(${cloudright})` }}
-            >
-              <AnimatedTyping text={["Someone, he...Helppp me...!!"]} />
+          ) : null}
+          {iscontentstate == 1 ? (
+            <div>
+              <div className="h-[150px] w-screen flex flex-row justify-center items-center mt-[30px]">
+                <div
+                  className="h-[150px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] animate-pulse cursor-pointer"
+                  style={{ backgroundImage: `url(${treeBoard})` }}
+                  onClick={() => {
+                    setcontentstate(iscontentstate + 1);
+                  }}
+                >
+                  <h1 className="font-bold text-center mt-[50px] text-[20px]">
+                    Help the Tiger!
+                  </h1>
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping text={["Someone, he...Helppp me...!!"]} />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boylooking})` }}
+                ></div>
+                <div
+                  className="h-[200px] w-[150px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${tigerscary})` }}
+                ></div>
+                <div
+                  className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${snake})` }}
+                ></div>
+              </div>
             </div>
-          </div>
-          <div className="h-[200px] w-screen flex flex-row justify-around items-center">
-            <div
-              className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-              style={{ backgroundImage: `url(${boylooking})` }}
-            ></div>
-            <div
-              className="h-[200px] w-[150px] bg-cover bg-center flex flex-col animate-bounce"
-              style={{ backgroundImage: `url(${tigerscary})` }}
-            ></div>
-            <div
-              className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
-              style={{ backgroundImage: `url(${snake})` }}
-            ></div>
-          </div>
+          ) : null}
+          {iscontentstate == 2 ? (
+            <div>
+              <div className="h-[350px] w-screen flex flex-row justify-center items-center mt-[30px]">
+                <div
+                  className="h-[350px] w-[500px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
+                  style={{ backgroundImage: `url(${questiontree})` }}
+                >
+                  <h1 className="text-left mt-[50px] text-[15px] w-[300px] text-white">
+                    {questions[0].question}
+                  </h1>
+                </div>
+                <div className="flex-col flex">
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[0] && isanswer != "-1"
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[0])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[0]}
+                    </h1>
+                  </div>
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[1] && isanswer != "-1"
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[1])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[1]}
+                    </h1>
+                  </div>
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[2] && isanswer != "-1"
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[2])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[2]}
+                    </h1>
+                  </div>
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[3] && isanswer != "-1"
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[3])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[3]}
+                    </h1>
+                  </div>
+                </div>
+                {isanswer != "-1" ? (
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer animate-pulse
+                }`}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                    onClick={() => {
+                      CheckAnswer(0);
+                    }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      Confirm
+                    </h1>
+                  </div>
+                ) : null}
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boylooking})` }}
+                ></div>
+                <div
+                  className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${tigerscary})` }}
+                ></div>
+                <div
+                  className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${snake})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+
+          {iscontentstate == 3 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping
+                    text={[
+                      "Holaa!! Thanks for saving me.Now I will help you throughout your journey!!",
+                    ]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boylooking})` }}
+                ></div>
+                <div
+                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${happytiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 4 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping
+                    text={[
+                      "The only way to escape this forest is to learn physics. Search for hints, to escape the forest!!",
+                    ]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boylooking})` }}
+                ></div>
+                <div
+                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${happytiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 5 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping
+                    text={[
+                      "Let's Gooooooo...!",
+                    ]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boyrunning})` }}
+                ></div>
+                <div
+                  className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${tigerscary})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 6 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping
+                    text={[
+                      "Search for hints...!",
+                    ]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${boyrunning})` }}
+                ></div>
+                <div
+                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${walkingtiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 7 ? (
+            <div className="mt-[100px]">
+               <div className="h-[200px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping text={["There is an hint for you...!!"]} />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boylooking})` }}
+                ></div>
+                <div
+                  className="h-[70px] w-[60px] bg-cover bg-center flex flex-col animate-spin mt-[250px] cursor-pointer"
+                  style={{ backgroundImage: `url(${trashpaper})` }}
+                ></div>
+                <div
+                  className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{ backgroundImage: `url(${happytiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
         </div>
-      ) : null}
-      {iscontentstate == 2 ? (
-        <div>
-          <div className="h-[350px] w-screen flex flex-row justify-center items-center mt-[30px]">
-            <div
-              className="h-[350px] w-[400px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
-              style={{ backgroundImage: `url(${questiontree})` }}
-            >
-              <h1 className="font-bold text-center mt-[50px] text-[20px]">
-                Which of the following is an interpreted, object-oriented,
-                high-level programming language with dynamic semantics.
-              </h1>
-            </div>
-          </div>
-          <div className="h-[200px] w-screen flex flex-row justify-around items-center">
-            <div
-              className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-              style={{ backgroundImage: `url(${boylooking})` }}
-            ></div>
-            <div
-              className="h-[200px] w-[150px] bg-cover bg-center flex flex-col animate-bounce"
-              style={{ backgroundImage: `url(${tigerscary})` }}
-            ></div>
-            <div
-              className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
-              style={{ backgroundImage: `url(${snake})` }}
-            ></div>
-          </div>
-        </div>
-      ) : null}
+      )}
     </div>
   );
 };

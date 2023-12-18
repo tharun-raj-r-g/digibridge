@@ -1,0 +1,1350 @@
+{
+  "physics": {
+    "name": "Physics",
+    "chapters": [
+      {
+        "chaptername": "Electricity",
+        "questions": [
+          {
+            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          },
+          {
+            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Zero"
+          },
+          {
+            "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
+            "options": ["Ferrite", "Aluminium", "Copper", "Gold"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "What is the energy stored in an inductor with inductance L and current I?",
+            "options": ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+            "answer": "LI²"
+          },
+          {
+            "question": "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Magnetic Effects of Electric Current",
+        "questions": [
+          {
+            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          },
+          {
+            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Zero"
+          },
+          {
+            "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
+            "options": ["Ferrite", "Aluminium", "Copper", "Gold"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "What is the energy stored in an inductor with inductance L and current I?",
+            "options": ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+            "answer": "LI²"
+          },
+          {
+            "question": "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Sources of Energy",
+        "questions": [
+          {
+            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          },
+          {
+            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Zero"
+          },
+          {
+            "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
+            "options": ["Ferrite", "Aluminium", "Copper", "Gold"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "What is the energy stored in an inductor with inductance L and current I?",
+            "options": ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+            "answer": "LI²"
+          },
+          {
+            "question": "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Our Environment",
+        "questions": [
+          {
+            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          },
+          {
+            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Zero"
+          },
+          {
+            "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
+            "options": ["Ferrite", "Aluminium", "Copper", "Gold"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "What is the energy stored in an inductor with inductance L and current I?",
+            "options": ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+            "answer": "LI²"
+          },
+          {
+            "question": "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Management of Natural Resources",
+        "questions": [
+          {
+            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          },
+          {
+            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Zero"
+          },
+          {
+            "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
+            "options": ["Ferrite", "Aluminium", "Copper", "Gold"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "What is the energy stored in an inductor with inductance L and current I?",
+            "options": ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+            "answer": "LI²"
+          },
+          {
+            "question": "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
+            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "answer": "Increases"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      }
+    ]
+  },
+  "chemistry": {
+    "name": "Chemistry",
+    "chapters": [
+      {
+        "chaptername": "Chemical Reactions and Equations",
+        "questions": [
+          {
+            "question": "Which of the following elements belongs to the periodic table's second transition series?",
+            "options": ["Ni", "Au", "La", "Nb"],
+            "answer": "Nb"
+          },
+          {
+            "question": "What are the transition elements' characteristics?",
+            "options": [
+              "Metallic",
+              "Non-metallic",
+              "Metalloid",
+              "Varies from element to element"
+            ],
+            "answer": "Metallic"
+          },
+          {
+            "question": "What is the first element in the periodic table's fourth transition series?",
+            "options": ["Scandium", "Yttrium", "Actinium", "Lanthanum"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "Mendeleev's periodic table's horizontal rows were called ",
+            "options": ["periods", "groups", "series", "rows"],
+            "answer": "series"
+          },
+          {
+            "question": "An element's physical and chemical properties are a periodic function of its mass",
+            "options": [
+              "Atomic Mass",
+              "Element behaviour",
+              "No of electrons",
+              "Atomic number"
+            ],
+            "answer": "Atomic number"
+          }
+        ],
+        "threedmodeltopics": [
+          {
+            "modelname": "Litium Structure",
+            "content": "",
+            "qrcode": "",
+            "model": ""
+          }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Acid, Base and Salt",
+        "questions": [
+          {
+            "question": "Which of the following elements belongs to the periodic table's second transition series?",
+            "options": ["Ni", "Au", "La", "Nb"],
+            "answer": "Nb"
+          },
+          {
+            "question": "What are the transition elements' characteristics?",
+            "options": [
+              "Metallic",
+              "Non-metallic",
+              "Metalloid",
+              "Varies from element to element"
+            ],
+            "answer": "Metallic"
+          },
+          {
+            "question": "What is the first element in the periodic table's fourth transition series?",
+            "options": ["Scandium", "Yttrium", "Actinium", "Lanthanum"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "Mendeleev's periodic table's horizontal rows were called ",
+            "options": ["periods", "groups", "series", "rows"],
+            "answer": "series"
+          },
+          {
+            "question": "An element's physical and chemical properties are a periodic function of its mass",
+            "options": [
+              "Atomic Mass",
+              "Element behaviour",
+              "No of electrons",
+              "Atomic number"
+            ],
+            "answer": "Atomic number"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Metals and Non-Metals",
+        "questions": [
+          {
+            "question": "Which of the following elements belongs to the periodic table's second transition series?",
+            "options": ["Ni", "Au", "La", "Nb"],
+            "answer": "Nb"
+          },
+          {
+            "question": "What are the transition elements' characteristics?",
+            "options": [
+              "Metallic",
+              "Non-metallic",
+              "Metalloid",
+              "Varies from element to element"
+            ],
+            "answer": "Metallic"
+          },
+          {
+            "question": "What is the first element in the periodic table's fourth transition series?",
+            "options": ["Scandium", "Yttrium", "Actinium", "Lanthanum"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "Mendeleev's periodic table's horizontal rows were called ",
+            "options": ["periods", "groups", "series", "rows"],
+            "answer": "series"
+          },
+          {
+            "question": "An element's physical and chemical properties are a periodic function of its mass",
+            "options": [
+              "Atomic Mass",
+              "Element behaviour",
+              "No of electrons",
+              "Atomic number"
+            ],
+            "answer": "Atomic number"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Carbon and Its Compounds",
+        "questions": [
+          {
+            "question": "Which of the following elements belongs to the periodic table's second transition series?",
+            "options": ["Ni", "Au", "La", "Nb"],
+            "answer": "Nb"
+          },
+          {
+            "question": "What are the transition elements' characteristics?",
+            "options": [
+              "Metallic",
+              "Non-metallic",
+              "Metalloid",
+              "Varies from element to element"
+            ],
+            "answer": "Metallic"
+          },
+          {
+            "question": "What is the first element in the periodic table's fourth transition series?",
+            "options": ["Scandium", "Yttrium", "Actinium", "Lanthanum"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "Mendeleev's periodic table's horizontal rows were called ",
+            "options": ["periods", "groups", "series", "rows"],
+            "answer": "series"
+          },
+          {
+            "question": "An element's physical and chemical properties are a periodic function of its mass",
+            "options": [
+              "Atomic Mass",
+              "Element behaviour",
+              "No of electrons",
+              "Atomic number"
+            ],
+            "answer": "Atomic number"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Periodic Classification of Elements",
+        "questions": [
+          {
+            "question": "Which of the following elements belongs to the periodic table's second transition series?",
+            "options": ["Ni", "Au", "La", "Nb"],
+            "answer": "Nb"
+          },
+          {
+            "question": "What are the transition elements' characteristics?",
+            "options": [
+              "Metallic",
+              "Non-metallic",
+              "Metalloid",
+              "Varies from element to element"
+            ],
+            "answer": "Metallic"
+          },
+          {
+            "question": "What is the first element in the periodic table's fourth transition series?",
+            "options": ["Scandium", "Yttrium", "Actinium", "Lanthanum"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "Mendeleev's periodic table's horizontal rows were called ",
+            "options": ["periods", "groups", "series", "rows"],
+            "answer": "series"
+          },
+          {
+            "question": "An element's physical and chemical properties are a periodic function of its mass",
+            "options": [
+              "Atomic Mass",
+              "Element behaviour",
+              "No of electrons",
+              "Atomic number"
+            ],
+            "answer": "Atomic number"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      }
+    ]
+  },
+  "biology": {
+    "name": "Biology",
+    "chapters": [
+      {
+        "chaptername": "Life Processes",
+        "questions": [
+          {
+            "question": "The walls of the ventricles possess thick muscular projections, they are known as",
+            "options": [
+              "Conus arteriosus",
+              "Truncus arterosus",
+              "Chordae tendineae",
+              "Columnae carneae"
+            ],
+            "answer": "Columnae carneae"
+          },
+          {
+            "question": "Regulation of normal activities of the human heart takes place",
+            "options": [
+              "by the autonomic nervous system",
+              "intrinsically",
+              "by the diencephalon",
+              "by the brain stem"
+            ],
+            "answer": "intrinsically"
+          },
+          {
+            "question": "The location of the neuro centre activity of the heart is",
+            "options": ["Midbrain", "Pons", "Cerebrum", "Medulla Oblongata"],
+            "answer": "Medulla Oblongata"
+          },
+          {
+            "question": "The hormonal regulation of cardiac output is",
+            "options": [
+              "mediated by the adrenal medulla",
+              "mediated by the adrenal cortex",
+              "mediated by thyroid",
+              "mediated by pineal"
+            ],
+            "answer": "mediated by the adrenal medulla"
+          },
+          {
+            "question": "The reason why tricuspid and bicuspid valves are closed is",
+            "options": [
+              "ventricular relaxation",
+              "ventricular filling",
+              "atrial systole",
+              "attempted backflow of blood into the atria"
+            ],
+            "answer": "attempted backflow of blood into the atria"
+          }
+        ],
+
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Control and Coordination",
+        "questions": [
+          {
+            "question": "The walls of the ventricles possess thick muscular projections, they are known as",
+            "options": [
+              "Conus arteriosus",
+              "Truncus arterosus",
+              "Chordae tendineae",
+              "Columnae carneae"
+            ],
+            "answer": "Columnae carneae"
+          },
+          {
+            "question": "Regulation of normal activities of the human heart takes place",
+            "options": [
+              "by the autonomic nervous system",
+              "intrinsically",
+              "by the diencephalon",
+              "by the brain stem"
+            ],
+            "answer": "intrinsically"
+          },
+          {
+            "question": "The location of the neuro centre activity of the heart is",
+            "options": ["Midbrain", "Pons", "Cerebrum", "Medulla Oblongata"],
+            "answer": "Medulla Oblongata"
+          },
+          {
+            "question": "The hormonal regulation of cardiac output is",
+            "options": [
+              "mediated by the adrenal medulla",
+              "mediated by the adrenal cortex",
+              "mediated by thyroid",
+              "mediated by pineal"
+            ],
+            "answer": "mediated by the adrenal medulla"
+          },
+          {
+            "question": "The reason why tricuspid and bicuspid valves are closed is",
+            "options": [
+              "ventricular relaxation",
+              "ventricular filling",
+              "atrial systole",
+              "attempted backflow of blood into the atria"
+            ],
+            "answer": "attempted backflow of blood into the atria"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "How Do Organisms Reproduce",
+        "questions": [
+          {
+            "question": "The walls of the ventricles possess thick muscular projections, they are known as",
+            "options": [
+              "Conus arteriosus",
+              "Truncus arterosus",
+              "Chordae tendineae",
+              "Columnae carneae"
+            ],
+            "answer": "Columnae carneae"
+          },
+          {
+            "question": "Regulation of normal activities of the human heart takes place",
+            "options": [
+              "by the autonomic nervous system",
+              "intrinsically",
+              "by the diencephalon",
+              "by the brain stem"
+            ],
+            "answer": "intrinsically"
+          },
+          {
+            "question": "The location of the neuro centre activity of the heart is",
+            "options": ["Midbrain", "Pons", "Cerebrum", "Medulla Oblongata"],
+            "answer": "Medulla Oblongata"
+          },
+          {
+            "question": "The hormonal regulation of cardiac output is",
+            "options": [
+              "mediated by the adrenal medulla",
+              "mediated by the adrenal cortex",
+              "mediated by thyroid",
+              "mediated by pineal"
+            ],
+            "answer": "mediated by the adrenal medulla"
+          },
+          {
+            "question": "The reason why tricuspid and bicuspid valves are closed is",
+            "options": [
+              "ventricular relaxation",
+              "ventricular filling",
+              "atrial systole",
+              "attempted backflow of blood into the atria"
+            ],
+            "answer": "attempted backflow of blood into the atria"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Heridity and Evolution",
+        "questions": [
+          {
+            "question": "The walls of the ventricles possess thick muscular projections, they are known as",
+            "options": [
+              "Conus arteriosus",
+              "Truncus arterosus",
+              "Chordae tendineae",
+              "Columnae carneae"
+            ],
+            "answer": "Columnae carneae"
+          },
+          {
+            "question": "Regulation of normal activities of the human heart takes place",
+            "options": [
+              "by the autonomic nervous system",
+              "intrinsically",
+              "by the diencephalon",
+              "by the brain stem"
+            ],
+            "answer": "intrinsically"
+          },
+          {
+            "question": "The location of the neuro centre activity of the heart is",
+            "options": ["Midbrain", "Pons", "Cerebrum", "Medulla Oblongata"],
+            "answer": "Medulla Oblongata"
+          },
+          {
+            "question": "The hormonal regulation of cardiac output is",
+            "options": [
+              "mediated by the adrenal medulla",
+              "mediated by the adrenal cortex",
+              "mediated by thyroid",
+              "mediated by pineal"
+            ],
+            "answer": "mediated by the adrenal medulla"
+          },
+          {
+            "question": "The reason why tricuspid and bicuspid valves are closed is",
+            "options": [
+              "ventricular relaxation",
+              "ventricular filling",
+              "atrial systole",
+              "attempted backflow of blood into the atria"
+            ],
+            "answer": "attempted backflow of blood into the atria"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "The Human Eye",
+        "questions": [
+          {
+            "question": "The walls of the ventricles possess thick muscular projections, they are known as",
+            "options": [
+              "Conus arteriosus",
+              "Truncus arterosus",
+              "Chordae tendineae",
+              "Columnae carneae"
+            ],
+            "answer": "Columnae carneae"
+          },
+          {
+            "question": "Regulation of normal activities of the human heart takes place",
+            "options": [
+              "by the autonomic nervous system",
+              "intrinsically",
+              "by the diencephalon",
+              "by the brain stem"
+            ],
+            "answer": "intrinsically"
+          },
+          {
+            "question": "The location of the neuro centre activity of the heart is",
+            "options": ["Midbrain", "Pons", "Cerebrum", "Medulla Oblongata"],
+            "answer": "Medulla Oblongata"
+          },
+          {
+            "question": "The hormonal regulation of cardiac output is",
+            "options": [
+              "mediated by the adrenal medulla",
+              "mediated by the adrenal cortex",
+              "mediated by thyroid",
+              "mediated by pineal"
+            ],
+            "answer": "mediated by the adrenal medulla"
+          },
+          {
+            "question": "The reason why tricuspid and bicuspid valves are closed is",
+            "options": [
+              "ventricular relaxation",
+              "ventricular filling",
+              "atrial systole",
+              "attempted backflow of blood into the atria"
+            ],
+            "answer": "attempted backflow of blood into the atria"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
+          {
+            "modelname": "Animal Cell",
+            "content": "",
+            "qrcode": "",
+            "model": ""
+          }
+        ],
+        "videos": {
+          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
+          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+        }
+      }
+    ]
+  },
+  "maths": {
+    "name": "Maths",
+    "chapters": [
+      {
+        "chaptername": "Real Numbers",
+        "questions": [
+            {
+              "question": "The value of cos 0°. cos 1°. cos 2°. cos 3°… cos 89° cos 90° is",
+              "options": ["1", "-1", "0", "12√"],
+              "answer": "0"
+            },
+            {
+              "question": "If x tan 45° sin 30° = cos 30° tan 30°, then x is equal to",
+              "options": ["√3", "12", "12√", "1"],
+              "answer": "1"
+            },
+            {
+              "question": "If x and y are complementary angles, then",
+              "options": ["sin x = sin y", "tan x = tan y", "cos x = cos y", "sec x = cosec y"],
+              "answer": "sec x = cosec y"
+            },
+            {
+              "question": "sin 2B = 2 sin B is true when B is equal to",
+              "options": ["90°", "60°", "30°", "0°"],
+              "answer": "0°"
+            },
+            {
+              "question": "If A and (2A – 45°) are acute angles such that sin A = cos (2A – 45°), then tan A is equal to",
+              "options": ["0", "13√", "1", "√3"],
+              "answer": "1"
+            }
+          ],
+
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Polynomials",
+        "questions": [
+            {
+              "question": "The value of cos 0°. cos 1°. cos 2°. cos 3°… cos 89° cos 90° is",
+              "options": ["1", "-1", "0", "12√"],
+              "answer": "0"
+            },
+            {
+              "question": "If x tan 45° sin 30° = cos 30° tan 30°, then x is equal to",
+              "options": ["√3", "12", "12√", "1"],
+              "answer": "1"
+            },
+            {
+              "question": "If x and y are complementary angles, then",
+              "options": ["sin x = sin y", "tan x = tan y", "cos x = cos y", "sec x = cosec y"],
+              "answer": "sec x = cosec y"
+            },
+            {
+              "question": "sin 2B = 2 sin B is true when B is equal to",
+              "options": ["90°", "60°", "30°", "0°"],
+              "answer": "0°"
+            },
+            {
+              "question": "If A and (2A – 45°) are acute angles such that sin A = cos (2A – 45°), then tan A is equal to",
+              "options": ["0", "13√", "1", "√3"],
+              "answer": "1"
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Pair of Linear Equations in Two Variables",
+        "questions": [
+            {
+              "question": "The value of cos 0°. cos 1°. cos 2°. cos 3°… cos 89° cos 90° is",
+              "options": ["1", "-1", "0", "12√"],
+              "answer": "0"
+            },
+            {
+              "question": "If x tan 45° sin 30° = cos 30° tan 30°, then x is equal to",
+              "options": ["√3", "12", "12√", "1"],
+              "answer": "1"
+            },
+            {
+              "question": "If x and y are complementary angles, then",
+              "options": ["sin x = sin y", "tan x = tan y", "cos x = cos y", "sec x = cosec y"],
+              "answer": "sec x = cosec y"
+            },
+            {
+              "question": "sin 2B = 2 sin B is true when B is equal to",
+              "options": ["90°", "60°", "30°", "0°"],
+              "answer": "0°"
+            },
+            {
+              "question": "If A and (2A – 45°) are acute angles such that sin A = cos (2A – 45°), then tan A is equal to",
+              "options": ["0", "13√", "1", "√3"],
+              "answer": "1"
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Quadratic Equations",
+        "questions": [
+            {
+              "question": "The value of cos 0°. cos 1°. cos 2°. cos 3°… cos 89° cos 90° is",
+              "options": ["1", "-1", "0", "12√"],
+              "answer": "0"
+            },
+            {
+              "question": "If x tan 45° sin 30° = cos 30° tan 30°, then x is equal to",
+              "options": ["√3", "12", "12√", "1"],
+              "answer": "1"
+            },
+            {
+              "question": "If x and y are complementary angles, then",
+              "options": ["sin x = sin y", "tan x = tan y", "cos x = cos y", "sec x = cosec y"],
+              "answer": "sec x = cosec y"
+            },
+            {
+              "question": "sin 2B = 2 sin B is true when B is equal to",
+              "options": ["90°", "60°", "30°", "0°"],
+              "answer": "0°"
+            },
+            {
+              "question": "If A and (2A – 45°) are acute angles such that sin A = cos (2A – 45°), then tan A is equal to",
+              "options": ["0", "13√", "1", "√3"],
+              "answer": "1"
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Arithmetic Progression",
+        "questions": [
+            {
+              "question": "The value of cos 0°. cos 1°. cos 2°. cos 3°… cos 89° cos 90° is",
+              "options": ["1", "-1", "0", "12√"],
+              "answer": "0"
+            },
+            {
+              "question": "If x tan 45° sin 30° = cos 30° tan 30°, then x is equal to",
+              "options": ["√3", "12", "12√", "1"],
+              "answer": "1"
+            },
+            {
+              "question": "If x and y are complementary angles, then",
+              "options": ["sin x = sin y", "tan x = tan y", "cos x = cos y", "sec x = cosec y"],
+              "answer": "sec x = cosec y"
+            },
+            {
+              "question": "sin 2B = 2 sin B is true when B is equal to",
+              "options": ["90°", "60°", "30°", "0°"],
+              "answer": "0°"
+            },
+            {
+              "question": "If A and (2A – 45°) are acute angles such that sin A = cos (2A – 45°), then tan A is equal to",
+              "options": ["0", "13√", "1", "√3"],
+              "answer": "1"
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
+          {
+            "modelname": "Animal Cell",
+            "content": "",
+            "qrcode": "",
+            "model": ""
+          }
+        ],
+        "videos": {
+          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
+          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+        }
+      }
+    ]
+  },
+  "social": {
+    "name": "Social",
+    "chapters": [
+      {
+        "chaptername": "Events and Processes",
+        "questions": [
+          {
+            "question": "Who made the famous remark, ‘When France sneezes, the rest of Europe catches a cold’?",
+            "options": ["Metternich", "Mazzini", "Garibaldi", "Louis Philippe"],
+            "answer": "Metternich"
+          },
+          {
+            "question": "The Treaty of Constantinople was signed in _______.",
+            "options": ["1835", "1735", "1834", "1832"],
+            "answer": "1832"
+          },
+          {
+            "question": "The famous Italian Revolutionary Giuseppe Mazzini was born in _____ in 1807.",
+            "options": ["Turin", "Rome", "Genoa", "Atlanta"],
+            "answer": "Genoa"
+          },
+          {
+            "question": "Giuseppe Mazzini founded the secret underground society named ‘Young Europe’ in __________.",
+            "options": ["Marseilles", "Berne", "Vienna", "Brussels"],
+            "answer": "Berne"
+          },
+          {
+            "question": "_________ believed that established, traditional institutions of state and society should be preserved.",
+            "options": [
+              "Conservatives",
+              "Liberals",
+              "Democrats",
+              "None of the above"
+            ],
+            "answer": "Conservatives"
+          }
+        ],
+
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Livelihood, economies, and societies",
+        "questions": [
+          {
+            "question": "Who made the famous remark, ‘When France sneezes, the rest of Europe catches a cold’?",
+            "options": ["Metternich", "Mazzini", "Garibaldi", "Louis Philippe"],
+            "answer": "Metternich"
+          },
+          {
+            "question": "The Treaty of Constantinople was signed in _______.",
+            "options": ["1835", "1735", "1834", "1832"],
+            "answer": "1832"
+          },
+          {
+            "question": "The famous Italian Revolutionary Giuseppe Mazzini was born in _____ in 1807.",
+            "options": ["Turin", "Rome", "Genoa", "Atlanta"],
+            "answer": "Genoa"
+          },
+          {
+            "question": "Giuseppe Mazzini founded the secret underground society named ‘Young Europe’ in __________.",
+            "options": ["Marseilles", "Berne", "Vienna", "Brussels"],
+            "answer": "Berne"
+          },
+          {
+            "question": "_________ believed that established, traditional institutions of state and society should be preserved.",
+            "options": [
+              "Conservatives",
+              "Liberals",
+              "Democrats",
+              "None of the above"
+            ],
+            "answer": "Conservatives"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Everyday life, culture,and politics",
+        "questions": [
+          {
+            "question": "Who made the famous remark, ‘When France sneezes, the rest of Europe catches a cold’?",
+            "options": ["Metternich", "Mazzini", "Garibaldi", "Louis Philippe"],
+            "answer": "Metternich"
+          },
+          {
+            "question": "The Treaty of Constantinople was signed in _______.",
+            "options": ["1835", "1735", "1834", "1832"],
+            "answer": "1832"
+          },
+          {
+            "question": "The famous Italian Revolutionary Giuseppe Mazzini was born in _____ in 1807.",
+            "options": ["Turin", "Rome", "Genoa", "Atlanta"],
+            "answer": "Genoa"
+          },
+          {
+            "question": "Giuseppe Mazzini founded the secret underground society named ‘Young Europe’ in __________.",
+            "options": ["Marseilles", "Berne", "Vienna", "Brussels"],
+            "answer": "Berne"
+          },
+          {
+            "question": "_________ believed that established, traditional institutions of state and society should be preserved.",
+            "options": [
+              "Conservatives",
+              "Liberals",
+              "Democrats",
+              "None of the above"
+            ],
+            "answer": "Conservatives"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Agriculture",
+        "questions": [
+          {
+            "question": "Who made the famous remark, ‘When France sneezes, the rest of Europe catches a cold’?",
+            "options": ["Metternich", "Mazzini", "Garibaldi", "Louis Philippe"],
+            "answer": "Metternich"
+          },
+          {
+            "question": "The Treaty of Constantinople was signed in _______.",
+            "options": ["1835", "1735", "1834", "1832"],
+            "answer": "1832"
+          },
+          {
+            "question": "The famous Italian Revolutionary Giuseppe Mazzini was born in _____ in 1807.",
+            "options": ["Turin", "Rome", "Genoa", "Atlanta"],
+            "answer": "Genoa"
+          },
+          {
+            "question": "Giuseppe Mazzini founded the secret underground society named ‘Young Europe’ in __________.",
+            "options": ["Marseilles", "Berne", "Vienna", "Brussels"],
+            "answer": "Berne"
+          },
+          {
+            "question": "_________ believed that established, traditional institutions of state and society should be preserved.",
+            "options": [
+              "Conservatives",
+              "Liberals",
+              "Democrats",
+              "None of the above"
+            ],
+            "answer": "Conservatives"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Manufacturing Industries",
+        "questions": [
+          {
+            "question": "Who made the famous remark, ‘When France sneezes, the rest of Europe catches a cold’?",
+            "options": ["Metternich", "Mazzini", "Garibaldi", "Louis Philippe"],
+            "answer": "Metternich"
+          },
+          {
+            "question": "The Treaty of Constantinople was signed in _______.",
+            "options": ["1835", "1735", "1834", "1832"],
+            "answer": "1832"
+          },
+          {
+            "question": "The famous Italian Revolutionary Giuseppe Mazzini was born in _____ in 1807.",
+            "options": ["Turin", "Rome", "Genoa", "Atlanta"],
+            "answer": "Genoa"
+          },
+          {
+            "question": "Giuseppe Mazzini founded the secret underground society named ‘Young Europe’ in __________.",
+            "options": ["Marseilles", "Berne", "Vienna", "Brussels"],
+            "answer": "Berne"
+          },
+          {
+            "question": "_________ believed that established, traditional institutions of state and society should be preserved.",
+            "options": [
+              "Conservatives",
+              "Liberals",
+              "Democrats",
+              "None of the above"
+            ],
+            "answer": "Conservatives"
+          }
+        ],
+        "threedmodeltopics": [
+          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
+          {
+            "modelname": "Animal Cell",
+            "content": "",
+            "qrcode": "",
+            "model": ""
+          }
+        ],
+        "videos": {
+          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
+          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+        }
+      }
+    ]
+  },
+  "english": {
+    "name": "English",
+    "chapters": [
+      {
+        "chaptername": "A Letter to God",
+        "questions": [
+            {
+              "question": "What inspired the protagonist to pursue a career in science in the story?",
+              "options": ["A childhood dream", "A mentor's influence", "A personal tragedy", "Random chance"],
+              "answer": null
+            },
+            {
+              "question": "In the early years, what challenges did the protagonist face while trying to pursue a scientific education?",
+              "options": ["Lack of interest", "Financial struggles", "Easy access to resources", "Overwhelming support"],
+              "answer": null
+            },
+            {
+              "question": "Which scientific experiment or discovery marked a turning point in the protagonist's career?",
+              "options": ["Creating a groundbreaking theory", "Conducting a successful experiment", "Collaborating with other scientists", "Overcoming a personal setback"],
+              "answer": null
+            },
+            {
+              "question": "What motivated the scientist to overcome obstacles and continue their research?",
+              "options": ["Fame and recognition", "Passion for knowledge", "External pressure", "Monetary gain"],
+              "answer": null
+            },
+            {
+              "question": "How did the protagonist deal with skepticism and criticism from the scientific community?",
+              "options": ["Ignored it", "Adapted their approach", "Gave up", "Sought revenge"],
+              "answer": null
+            }
+          ],
+
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Nelson Mandela: Long Walk to Freedom",
+        "questions": [
+            {
+              "question": "What inspired the protagonist to pursue a career in science in the story?",
+              "options": ["A childhood dream", "A mentor's influence", "A personal tragedy", "Random chance"],
+              "answer": null
+            },
+            {
+              "question": "In the early years, what challenges did the protagonist face while trying to pursue a scientific education?",
+              "options": ["Lack of interest", "Financial struggles", "Easy access to resources", "Overwhelming support"],
+              "answer": null
+            },
+            {
+              "question": "Which scientific experiment or discovery marked a turning point in the protagonist's career?",
+              "options": ["Creating a groundbreaking theory", "Conducting a successful experiment", "Collaborating with other scientists", "Overcoming a personal setback"],
+              "answer": null
+            },
+            {
+              "question": "What motivated the scientist to overcome obstacles and continue their research?",
+              "options": ["Fame and recognition", "Passion for knowledge", "External pressure", "Monetary gain"],
+              "answer": null
+            },
+            {
+              "question": "How did the protagonist deal with skepticism and criticism from the scientific community?",
+              "options": ["Ignored it", "Adapted their approach", "Gave up", "Sought revenge"],
+              "answer": null
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "Two Stories about Flying",
+        "questions": [
+            {
+              "question": "What inspired the protagonist to pursue a career in science in the story?",
+              "options": ["A childhood dream", "A mentor's influence", "A personal tragedy", "Random chance"],
+              "answer": null
+            },
+            {
+              "question": "In the early years, what challenges did the protagonist face while trying to pursue a scientific education?",
+              "options": ["Lack of interest", "Financial struggles", "Easy access to resources", "Overwhelming support"],
+              "answer": null
+            },
+            {
+              "question": "Which scientific experiment or discovery marked a turning point in the protagonist's career?",
+              "options": ["Creating a groundbreaking theory", "Conducting a successful experiment", "Collaborating with other scientists", "Overcoming a personal setback"],
+              "answer": null
+            },
+            {
+              "question": "What motivated the scientist to overcome obstacles and continue their research?",
+              "options": ["Fame and recognition", "Passion for knowledge", "External pressure", "Monetary gain"],
+              "answer": null
+            },
+            {
+              "question": "How did the protagonist deal with skepticism and criticism from the scientific community?",
+              "options": ["Ignored it", "Adapted their approach", "Gave up", "Sought revenge"],
+              "answer": null
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "From the Diary of Anne Frank",
+        "questions": [
+            {
+              "question": "What inspired the protagonist to pursue a career in science in the story?",
+              "options": ["A childhood dream", "A mentor's influence", "A personal tragedy", "Random chance"],
+              "answer": null
+            },
+            {
+              "question": "In the early years, what challenges did the protagonist face while trying to pursue a scientific education?",
+              "options": ["Lack of interest", "Financial struggles", "Easy access to resources", "Overwhelming support"],
+              "answer": null
+            },
+            {
+              "question": "Which scientific experiment or discovery marked a turning point in the protagonist's career?",
+              "options": ["Creating a groundbreaking theory", "Conducting a successful experiment", "Collaborating with other scientists", "Overcoming a personal setback"],
+              "answer": null
+            },
+            {
+              "question": "What motivated the scientist to overcome obstacles and continue their research?",
+              "options": ["Fame and recognition", "Passion for knowledge", "External pressure", "Monetary gain"],
+              "answer": null
+            },
+            {
+              "question": "How did the protagonist deal with skepticism and criticism from the scientific community?",
+              "options": ["Ignored it", "Adapted their approach", "Gave up", "Sought revenge"],
+              "answer": null
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+        ],
+        "videos": {
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+        }
+      },
+      {
+        "chaptername": "The Hundred Dresses",
+        "questions": [
+            {
+              "question": "What inspired the protagonist to pursue a career in science in the story?",
+              "options": ["A childhood dream", "A mentor's influence", "A personal tragedy", "Random chance"],
+              "answer": null
+            },
+            {
+              "question": "In the early years, what challenges did the protagonist face while trying to pursue a scientific education?",
+              "options": ["Lack of interest", "Financial struggles", "Easy access to resources", "Overwhelming support"],
+              "answer": null
+            },
+            {
+              "question": "Which scientific experiment or discovery marked a turning point in the protagonist's career?",
+              "options": ["Creating a groundbreaking theory", "Conducting a successful experiment", "Collaborating with other scientists", "Overcoming a personal setback"],
+              "answer": null
+            },
+            {
+              "question": "What motivated the scientist to overcome obstacles and continue their research?",
+              "options": ["Fame and recognition", "Passion for knowledge", "External pressure", "Monetary gain"],
+              "answer": null
+            },
+            {
+              "question": "How did the protagonist deal with skepticism and criticism from the scientific community?",
+              "options": ["Ignored it", "Adapted their approach", "Gave up", "Sought revenge"],
+              "answer": null
+            }
+          ],
+        "threedmodeltopics": [
+          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
+          {
+            "modelname": "Animal Cell",
+            "content": "",
+            "qrcode": "",
+            "model": ""
+          }
+        ],
+        "videos": {
+          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
+          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+        }
+      }
+    ]
+  }
+}
