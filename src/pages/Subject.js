@@ -7,6 +7,8 @@ import biology from "../images/biology.png";
 import gift from "../images/gift.png";
 import physicsanimate from "../images/physics-animate-main.jpg";
 import biologyanimate from "../images/biology-animate-main.png";
+import cubeanimate from "../images/cube-animate-main.png";
+import coneanimate from "../images/cone-animate-main.png"
 import { MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "../components/ui/button.tsx";
 import { Link } from "react-router-dom";
@@ -88,7 +90,7 @@ const Subject = () => {
             <h1 className="font-semibold text-3xl">
               Magnetic Effects of Electric Current
             </h1>
-            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
+            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer" onClick={openModal}>
               <h1 className="text-center text-white font-semibold">Start</h1>
             </div>
           </div>
@@ -98,7 +100,7 @@ const Subject = () => {
         <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
           <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
             <h1 className="font-semibold text-3xl">Sources of Energy</h1>
-            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
+            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer" onClick={openModal}>
               <h1 className="text-center text-white font-semibold">Start</h1>
             </div>
           </div>
@@ -108,7 +110,7 @@ const Subject = () => {
         <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
           <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
             <h1 className="font-semibold text-3xl">Our Environment</h1>
-            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
+            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer" onClick={openModal}>
               <h1 className="text-center text-white font-semibold">Start</h1>
             </div>
           </div>
@@ -120,7 +122,7 @@ const Subject = () => {
             <h1 className="font-semibold text-3xl">
               Management of Natural Resources
             </h1>
-            <div className="h-[50px] bg-[#eee] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
+            <div className="h-[50px] bg-[#eee] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer" onClick={openModal}>
               <h1 className="text-center text-black font-semibold">
                 Completed
               </h1>

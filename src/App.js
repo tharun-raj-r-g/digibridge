@@ -173,6 +173,10 @@ function ClerkProviderWithRoutes() {
     );
 }
 
+import ThreeDModel from './pages/ThreeDModel';
+import StoryGame from './pages/StoryGame';
+import InteractiveQuiz from './pages/InteractiveQuiz';
+import Chapter1 from './pages/Chapter1';
 function App() {
     return (
         <BrowserRouter>
