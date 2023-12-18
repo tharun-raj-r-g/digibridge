@@ -6,7 +6,6 @@ import {Input} from '../components/ui/input.tsx';
 import {Button} from '../components/ui/button.tsx';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "../components/ui/card.tsx";
 import {Link, useNavigate} from "react-router-dom";
-import {useSignIn} from "@clerk/clerk-react";
 import {Alert, AlertDescription, AlertTitle} from "../components/ui/alert.tsx"
 import {AlertCircle} from "lucide-react";
 import {useEffect, useState} from "react";
@@ -15,45 +14,38 @@ import logo from "../images/logo-full.png";
 
 
 const formSchema = z.object({
-    name: z.string().min(1, 'Name is required'),
+    enrolment: z.string().min(6, 'Enrolment Number is minimum of 8 characters'),
     password: z.string().min(8, 'Password must be minimum of 8 characters')
 });
 
 
 const StudentSignUp = () => {
-    const {signIn, setActive} = useSignIn();
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            name: "",
+            enrolment: "",
             password: ""
         }
     });
     const isLoading = form.formState.isSubmitting;
     const navigate = useNavigate();
     const [alertMessage, setAlertMessage] = useState("");
-    const [alertDialog, setAlertDialog] = useState(false);
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            sessionStorage.setItem("student Data", JSON.stringify(values))
-            await signIn.create({
-                identifier: values.name,
-                password: values.password
-            })
-                .then(async (result) => {
-                    if (result.status === "complete") {
-                        await setActive({session: result.createdSessionId});
-                        form.reset()
-                        navigate("/dashboard")
-                    } else {
-                        console.log(result);
-                    }
-                })
-                .catch((err) => {
-                    setAlertMessage(err.errors[0].longMessage);
-                    console.error("SignUp Error", err.errors[0].longMessage)
-                });
+            const data = JSON.parse(localStorage.getItem("studentData"));
+            const user = data.find(obj => obj.id.slice(-6) === values.enrolment);
+            if (user!=null) {
+                if (user.password === values.password) {
+                    sessionStorage.setItem("current-user", JSON.stringify(user));
+                    navigate("/dashboard");
+
+                } else {
+                    setAlertMessage("Password Doesn't Match");
+                }
+            }else{
+                setAlertMessage("User Not Found");
+            }
 
         } catch (error) {
             console.error(error)
@@ -110,15 +102,15 @@ const StudentSignUp = () => {
                             <div className="grid w-full items-center gap-10 ">
                                 <FormField
                                     disabled={isLoading}
-                                    name={"name"}
+                                    name={"enrolment"}
                                     control={form.control}
                                     render={({field}) => (
                                         <FormItem>
-                                            <FormLabel>Username</FormLabel>
+                                            <FormLabel>Enrolment</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     disabled={isLoading}
-                                                    placeholder="Enter Username"
+                                                    placeholder="Enter Enrolment"
                                                     {...field}
                                                 />
                                             </FormControl>

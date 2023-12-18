@@ -21,10 +21,8 @@ const Dashboard = (props) => {
         console.log("Button clicked!");
     };
     const handleBiologyClick = () => {
-    console.log("Button clicked!");
-  };
-
-  
+        console.log("Button clicked!");
+    };
 
     return (
         <div className={"h-screen flex flex-col justify-between"}>
