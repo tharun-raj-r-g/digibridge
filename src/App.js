@@ -17,6 +17,7 @@ import Chapter1 from './pages/Chapter1';
 // import Inductor from "./pages/Inductor";
 import {useEffect} from "react";
 import AuthGuard from "./components/AuthGuard";
+import Dna from "./pages/dna";
 
 
 function App() {
@@ -28,6 +29,12 @@ function App() {
     }, );
     return (
         <BrowserRouter>
+            <div>
+                <model-viewer id="modview" src="skin_.glb" camera-controls>
+                </model-viewer>
+                <model-viewer id="modview" src="dna4.glb" camera-controls>
+                </model-viewer>
+            </div>
             <Routes>
                 <Route path="/" element={<Landing/>}/>
                 <Route
@@ -204,39 +211,39 @@ function App() {
                                 <div className={"absolute top-2"}>
                                     <SideNav/>
                                 </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <ThreeDModel/>
-                                </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <ThreeDModel/>
+                            </div>
 
                         </>
                     }
                 >
 
                 </Route>
-                {/*<Route*/}
-                {/*    path="/threedmodel/inductor"*/}
-                {/*    element={*/}
-                {/*        <>*/}
-                {/*            <div className={"absolute top-2"}>*/}
-                {/*                <SideNav/>*/}
-                {/*            </div>*/}
-                {/*            <div className={"p-2 ml-20 mr-20"}>*/}
-                {/*                <Inductor/>*/}
-                {/*            </div>*/}
+                <Route
+                    path="/threedmodel/inductor"
+                    element={
+                        <>
+                            <div className={"absolute top-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Dna/>
+                            </div>
 
-                {/*        </>*/}
-                {/*    }*/}
-                {/*/>*/}
+                        </>
+                    }
+                />
                 <Route
                     path="/storygame"
                     element={
                         <>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <StoryGame/>
-                                </div>
+                            <div className={"absolute top-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <StoryGame/>
+                            </div>
 
                         </>
                     }
