@@ -162,7 +162,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -181,7 +181,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -194,13 +194,13 @@ function ClerkProviderWithRoutes() {
                                     <div className={"absolute top-2"}>
                                         <SideNav/>
                                     </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
+                                    <div className={""}>
                                         <StoryGame/>
                                     </div>
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -219,7 +219,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -232,7 +232,7 @@ function ClerkProviderWithRoutes() {
                                     <div className={"absolute top-2"}>
                                         <SideNav/>
                                     </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
+                                    <div className={""}>
                                         <Chapter1/>
                                     </div>
 
@@ -257,7 +257,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -276,7 +276,7 @@ function ClerkProviderWithRoutes() {
 
                                 </SignedIn>
                                 <SignedOut>
-                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                    <RedirectToSignIn/>
                                 </SignedOut>
                             </>
                         }
@@ -319,7 +319,6 @@ function ClerkProviderWithRoutes() {
                             </>
                         }
                     />
-
                 </Routes>
             </div>
 
