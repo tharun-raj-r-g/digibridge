@@ -57,6 +57,7 @@ function createWindow() {
     mainWindow.maximize();
     const size = mainWindow.getSize();
     mainWindow.setMinimumSize(size.at(0) - 20, size.at(1) - 20);
+    mainWindow.setFullScreen(true)
 }
 
 app.on('browser-window-created', (event, win) => {

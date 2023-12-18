@@ -34,6 +34,7 @@
     "publish": "electron-forge publish"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^4.30.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "chart.js": "^4.4.1",
     "class-variance-authority": "^0.7.0",
