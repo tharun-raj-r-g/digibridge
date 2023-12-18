@@ -6,10 +6,8 @@ import {Link, useNavigate} from 'react-router-dom';
 
 import logo from "../images/logo-full.png"
 import {cn} from "../lib/utils.ts";
-import {useClerk} from "@clerk/clerk-react";
 
 const SideNav = () => {
-    const {signOut} = useClerk();
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const location = "/";
@@ -21,6 +19,10 @@ const SideNav = () => {
         {name: "Notes", url: "/notes"},
         {name: "Settings", url: "/settings"},
     ]
+    const handleOnLogOut = () =>{
+        sessionStorage.removeItem("current-user");
+        navigate("/");
+    }
     return (
         <Sheet open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
             <SheetTrigger>
@@ -45,7 +47,7 @@ const SideNav = () => {
 
                 </div>
                 <SheetFooter className={"justify-center items-center text-center"}>
-                    <Button variant={"ghost"} onClick={() => signOut(() => navigate("/"))}>
+                    <Button variant={"ghost"} onClick={handleOnLogOut}>
                         <div className={"flex flex-row items-center text-center"}>
                             <LogOut className={"mr-4"}/>
                             <span> Log Out</span>

@@ -5,13 +5,23 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage,} from '.
 import {Input} from '../components/ui/input.tsx';
 import {Button} from '../components/ui/button.tsx';
 import {Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue} from '../components/ui/select.tsx';
-
+import {v4 as uuidv4} from 'uuid';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "../components/ui/card.tsx";
 import {Link, useNavigate} from "react-router-dom";
-import {useSignUp} from "@clerk/clerk-react";
 import {Alert, AlertDescription, AlertTitle} from "../components/ui/alert.tsx";
 import {cn} from "../lib/utils.ts";
 import {AlertCircle} from "lucide-react";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "../components/ui/alert-dialog"
 
 import logo from "../images/logo-full.png";
 import {useState} from "react";
@@ -29,7 +39,7 @@ const formSchema = z.object({
 
 const StudentSignUp = () => {
     const [alertMessage, setAlertMessage] = useState("");
-    const {signUp, setActive} = useSignUp();
+    const [alertDialog, setAlertDialog] = useState(false);
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -46,30 +56,30 @@ const StudentSignUp = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            sessionStorage.setItem("student Data", JSON.stringify(values))
-            await signUp.create({
-                username: values.name,
-                password: values.password
-            })
-                .then(async (result) => {
-                    if (result.status === "complete") {
-                        await setActive({session: result.createdSessionId});
-                        form.reset()
-                        navigate("/dashboard")
-                    } else {
-                        console.log(result);
-                    }
-                })
-                .catch((err) => {
-                    setAlertMessage(err.errors[0].longMessage);
-                    console.error("SignUp Error", err.errors[0].longMessage)
-                });
+            const data = JSON.parse(localStorage.getItem("studentData"));
+            const newData = {
+                name: values.name,
+                id: uuidv4(),
+                password: values.password,
+                age: values.age,
+                gender: values.gender,
+                standard: values.standard,
+                phone: values.phone
+            }
+            setAlertMessage(newData.id.slice(-6));
+            setAlertDialog(true);
+            data.push(newData);
+            localStorage.setItem("studentData", JSON.stringify(data));
+            sessionStorage.setItem("current-user", JSON.stringify(newData))
+            // navigate("/dashboard");
+
 
         } catch (error) {
-            setAlertMessage(error.errors[0].longMessage);
+            setAlertMessage(error);
             console.error(error)
         }
     };
+
 
     return (
         <div className={"h-screen flex flex-col justify-evenly items-center align-middle"}>
@@ -77,14 +87,24 @@ const StudentSignUp = () => {
                 className={cn("absolute bg-white md:w-[30%] w-[40%] top-5 right-2", alertMessage.length > 0 ? "" : "hidden")}
                 variant={"destructive"}>
                 <AlertCircle className={"h-4 w-4 "}/>
-                <AlertTitle>
-
-                    Error</AlertTitle>
+                <AlertTitle>Error</AlertTitle>
                 <AlertDescription>
-                    Message
-                    {/*{alertMessage}*/}
+                    {alertMessage}
                 </AlertDescription>
             </Alert>
+            <AlertDialog open={alertDialog}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Congratulations on Your Enrolment</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            Your Enrolment Number is : <strong>{alertMessage}</strong>.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogAction onClick={()=>navigate("/dashboard")}>Continue</AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
 
 
             <img src={logo} alt={"Logo"} className={"h-40"}/>
@@ -103,7 +123,7 @@ const StudentSignUp = () => {
                                     control={form.control}
                                     render={({field}) => (
                                         <FormItem>
-                                            <FormLabel>Name:</FormLabel>
+                                            <FormLabel>Name</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     disabled={isLoading}
@@ -221,6 +241,7 @@ const StudentSignUp = () => {
                                                 <Input
                                                     disabled={isLoading}
                                                     placeholder="Enter your Phone Number"
+                                                    type={"number"}
                                                     {...field}
                                                 />
                                             </FormControl>

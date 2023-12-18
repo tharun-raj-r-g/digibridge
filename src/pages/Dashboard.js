@@ -18,8 +18,8 @@ const Dashboard = () => {
         console.log("Button clicked!");
     };
     const handleBiologyClick = () => {
-    console.log("Button clicked!");
-  };
+        console.log("Button clicked!");
+    };
 
     return (
         <div className={"h-screen flex flex-col justify-between"}>
@@ -58,63 +58,65 @@ const Dashboard = () => {
                     <span className={"text-4xl font-bold"}>40</span>
                 </div>
             </div>
-            <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
-        <Link
-          to="/subject"
-          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
-          onClick={handlePhyicsClick}
-        >
-          <img
-            src={physics}
-            className="rounded-3xl brightness-50 object-cover w-[100%]"
-          />
-          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-            Physics
-          </p>
-        </Link>
+            <div className={"flex flex-col w-full h-2/4 justify-center items-center"}>
+                <div className=" w-[70%] rounded-3xl relative flex-row flex mb-5 justify-center">
+                    <Link
+                        to="/subject"
+                        className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+                        onClick={handlePhyicsClick}
+                    >
+                        <img
+                            src={physics}
+                            className="rounded-3xl brightness-50 object-cover w-[100%]"
+                        />
+                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+                            Physics
+                        </p>
+                    </Link>
 
-        <Link
-          to="/settings"
-          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
-          onClick={handleChemistryClick}
-        >
-          <img
-            src={chemistry}
-            className="rounded-3xl brightness-50 object-cover w-[100%]"
-          />
-          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-            Chemistry
-          </p>
-        </Link>
-      </div>
-      <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
-        <Link
-          to="/mentor"
-          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
-          onClick={handleMathsClick}
-        >
-          <img
-            src={maths}
-            className="rounded-3xl brightness-50 object-cover w-[100%]"
-          />
-          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-            Maths
-          </p>
-        </Link>
-        <Link
-          to="/notes"
-          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
-          onClick={handleBiologyClick}
-        >
-          <img
-            src={biology}
-            className="rounded-3xl brightness-50 object-cover w-[100%]"
-          />
-          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-            Biology
-          </p>
-        </Link>
-      </div>
+                    <Link
+                        to="/settings"
+                        className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
+                        onClick={handleChemistryClick}
+                    >
+                        <img
+                            src={chemistry}
+                            className="rounded-3xl brightness-50 object-cover w-[100%]"
+                        />
+                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+                            Chemistry
+                        </p>
+                    </Link>
+                </div>
+                <div className=" w-[70%] rounded-3xl relative flex-row flex mb-5 justify-center">
+                    <Link
+                        to="/mentor"
+                        className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+                        onClick={handleMathsClick}
+                    >
+                        <img
+                            src={maths}
+                            className="rounded-3xl brightness-50 object-cover w-[100%]"
+                        />
+                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+                            Maths
+                        </p>
+                    </Link>
+                    <Link
+                        to="/notes"
+                        className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
+                        onClick={handleBiologyClick}
+                    >
+                        <img
+                            src={biology}
+                            className="rounded-3xl brightness-50 object-cover w-[100%]"
+                        />
+                        <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+                            Biology
+                        </p>
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 };

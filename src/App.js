@@ -1,7 +1,6 @@
 import SideNav from './components/SideNav';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import {ClerkProvider, RedirectToSignIn, SignedIn, SignedOut} from "@clerk/clerk-react";
 import Landing from "./pages/landing";
 import Report from "./pages/Report";
 import Subject from "./pages/Subject";
@@ -15,322 +14,262 @@ import ThreeDModel from './pages/ThreeDModel';
 import StoryGame from './pages/StoryGame';
 import InteractiveQuiz from './pages/InteractiveQuiz';
 import Chapter1 from './pages/Chapter1';
-const clerkPubKey = "pk_test_YWRhcHRpbmctbW9uc3Rlci03MS5jbGVyay5hY2NvdW50cy5kZXYk";
+// import Inductor from "./pages/Inductor";
+import {useEffect} from "react";
+import AuthGuard from "./components/AuthGuard";
 
-function ClerkProviderWithRoutes() {
-    return (
-        <ClerkProvider
-            publishableKey={clerkPubKey}
-        >
-
-            <div className="bg-[#eeeeee] h-[98%]">
-                <Routes>
-                    <Route path="/" element={<Landing/>}/>
-                    <Route
-                        path="/signin/*"
-                        element={<StudentSignIn/>}
-                    />
-                    <Route
-                        path="/signup/*"
-                        element={<StudentSignUp/>}
-                    />
-                    <Route
-                        path="/dashboard"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-4 left-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Dashboard/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                    <Route
-                        path="/report"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Report/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                    <Route
-                        path="/notes"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Notes/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                    <Route
-                        path="/events"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Events/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                    <Route
-                        path="/settings"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Settings/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                    <Route
-                        path="/subject"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Subject/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                    <Route
-                        path="/mentor"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Mentor/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/threedmodel"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <ThreeDModel/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/storygame"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={""}>
-                                        <StoryGame/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/interactivequiz"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <InteractiveQuiz/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/chapter1"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={""}>
-                                        <Chapter1/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/threedmodel"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <ThreeDModel/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/storygame"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <StoryGame/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/interactivequiz"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <InteractiveQuiz/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn />
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                     <Route
-                        path="/chapter1"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <div className={"absolute top-2"}>
-                                        <SideNav/>
-                                    </div>
-                                    <div className={"p-2 ml-20 mr-20"}>
-                                        <Chapter1/>
-                                    </div>
-
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn/>
-                                </SignedOut>
-                            </>
-                        }
-                    />
-                </Routes>
-            </div>
-
-        </ClerkProvider>
-
-    );
-}
 
 function App() {
+    useEffect(() => {
+        const data = localStorage.getItem("studentData");
+        if (data === null){
+            localStorage.setItem("studentData", JSON.stringify([]));
+        }
+    }, );
     return (
         <BrowserRouter>
-            <ClerkProviderWithRoutes/>
+            <Routes>
+                <Route path="/" element={<Landing/>}/>
+                <Route
+                    path="/signin/"
+                    element={<StudentSignIn/>}
+                />
+                <Route
+                    path="/signup/"
+                    element={<StudentSignUp/>}
+                />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-4 left-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Dashboard/>
+                                </div>
+
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/report"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Report/>
+                                </div>
+
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/notes"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Notes/>
+                                </div>
+
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/events"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Events/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/settings"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Settings/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/subject"
+                    element={
+                        <AuthGuard>
+
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Subject/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/mentor"
+                    element={
+                        <AuthGuard>
+
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Mentor/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/threedmodel"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <ThreeDModel/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/storygame"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={""}>
+                                    <StoryGame/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/interactivequiz"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <InteractiveQuiz/>
+                                </div>
+
+                        </>
+                    }
+                />
+                <Route
+                    path="/chapter1"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={""}>
+                                    <Chapter1/>
+                                </div>
+
+                        </>
+                    }
+                />
+                <Route
+                    path="/threedmodel"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <ThreeDModel/>
+                                </div>
+
+                        </>
+                    }
+                >
+
+                </Route>
+                {/*<Route*/}
+                {/*    path="/threedmodel/inductor"*/}
+                {/*    element={*/}
+                {/*        <>*/}
+                {/*            <div className={"absolute top-2"}>*/}
+                {/*                <SideNav/>*/}
+                {/*            </div>*/}
+                {/*            <div className={"p-2 ml-20 mr-20"}>*/}
+                {/*                <Inductor/>*/}
+                {/*            </div>*/}
+
+                {/*        </>*/}
+                {/*    }*/}
+                {/*/>*/}
+                <Route
+                    path="/storygame"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <StoryGame/>
+                                </div>
+
+                        </>
+                    }
+                />
+                <Route
+                    path="/interactivequiz"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <InteractiveQuiz/>
+                                </div>
+
+                        </>
+                    }
+                />
+                <Route
+                    path="/chapter1"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <Chapter1/>
+                                </div>
+
+                        </>
+                    }
+                />
+            </Routes>
         </BrowserRouter>
     );
 }
