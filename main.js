@@ -53,7 +53,7 @@ function createWindow() {
     mainWindow.once('ready-to-show', () => {
         mainWindow.show()
     });
-    mainWindow.setMenu(null);
+    //mainWindow.setMenu(null);
     mainWindow.maximize();
     const size = mainWindow.getSize();
     mainWindow.setMinimumSize(size.at(0) - 20, size.at(1) - 20);

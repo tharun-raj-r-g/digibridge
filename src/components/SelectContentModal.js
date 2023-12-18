@@ -9,6 +9,7 @@ const SelectContentModal = ({
   onClose,
   modalTitle,
   modalContent,
+  subject
 }) => {
   const openModal = () => {
     onOpen();
@@ -17,7 +18,7 @@ const SelectContentModal = ({
   const closeModal = () => {
     onClose();
   };
-
+  console.log(subject)
   return (
     <div>
       {/* Button to open the modal */}
@@ -46,7 +47,7 @@ const SelectContentModal = ({
                 </p>
               </Link>
 
-              <Link to="/storygame" className="relative cursor-pointer">
+              <Link to={`/storygame/${subject}`} className="relative cursor-pointer">
                 <img
                   src={gamifiedlearning}
                   className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"

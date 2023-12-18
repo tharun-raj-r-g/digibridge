@@ -11,14 +11,17 @@ import cubeanimate from "../images/cube-animate-main.png";
 import coneanimate from "../images/cone-animate-main.png"
 import { MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "../components/ui/button.tsx";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import { useState } from "react";
 import SelectContentModal from "../components/SelectContentModal.js";
 import jungle from "../images/jungle.jpg";
 import rulesmap from "../images/oldmapwithoutbg.png";
 import { TypeAnimation } from "react-type-animation";
 import physicslogo from "../images/physicsstart.png";
+import sub from "../json/subject.json";
 const StoryGame = () => {
+  const { subject } = useParams();
+  const subjectdetails = sub[subject];
   return (
     <div className="min-h-screen w-screen bg-cover bg-center flex flex-col" style={{ backgroundImage: `url(${jungle})`}}>
       <div className="h-1/5 bg-inherit flex-row flex justify-center mt-10 mb-10">
@@ -31,7 +34,7 @@ const StoryGame = () => {
       <div className="h-[480px] w-[40%] flex-col flex bg-contain ml-[440px] text-left items-center justify-center" style={{backgroundImage:`url(${rulesmap})`}}>
       <TypeAnimation
         sequence={[
-          `Welcome, Intrepid Python Explorer!\nYou've entered the heart of Python Forest, where the path to freedom
+          `Welcome, Intrepid ${subjectdetails.name} Explorer!\nYou've entered the heart of Python Forest, where the path to freedom
           winds through the wisdom of Python code.\n\n The forest hold secrets,
           and each challenge you face is a step towards unlocking them.`,
           1000,
@@ -43,7 +46,7 @@ const StoryGame = () => {
       />
       </div>
       <div className="w-screen items-center flex text-center flex-col">
-        <Link to={"/chapter1"}>
+        <Link to={`/chapter1/${subject}`}>
       <img src={physicslogo} className="h-[100px] w-[100px] cursor-pointer animate-pulse"/>
       <p className="text-white animate-pulse">Click to start !</p>
       </Link>

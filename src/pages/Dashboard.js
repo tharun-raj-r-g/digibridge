@@ -63,7 +63,7 @@ const Dashboard = (props) => {
             </div>
             <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
         <Link
-          to={{ pathname: '/subject', state: dataToPass}}
+          to={{ pathname: '/subject/physics', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
           onClick={handlePhyicsClick}
         >
@@ -77,7 +77,7 @@ const Dashboard = (props) => {
         </Link>
 
         <Link
-          to="/subject"
+          to={{ pathname: '/subject/chemistry', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
           onClick={handleChemistryClick}
         >
@@ -90,7 +90,7 @@ const Dashboard = (props) => {
           </p>
         </Link>
         <Link
-          to="/subject"
+          to={{ pathname: '/subject/social', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-20 cursor-pointer"
           onClick={handleChemistryClick}
         >
@@ -105,7 +105,7 @@ const Dashboard = (props) => {
       </div>
       <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
         <Link
-          to="/subject"
+          to={{ pathname: '/subject/maths', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
           onClick={handleMathsClick}
         >
@@ -118,7 +118,7 @@ const Dashboard = (props) => {
           </p>
         </Link>
         <Link
-          to="/subject"
+          to={{ pathname: '/subject/biology', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
           onClick={handleBiologyClick}
         >
@@ -131,7 +131,7 @@ const Dashboard = (props) => {
           </p>
         </Link>
         <Link
-          to="/subject"
+          to={{ pathname: '/subject/english', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-20 cursor-pointer"
           onClick={handleChemistryClick}
         >
