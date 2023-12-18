@@ -9,7 +9,10 @@ import Settings from "./pages/Settings";
 import Events from "./pages/Events";
 import Notes from "./pages/Notes";
 import Mentor from "./pages/Mentor";
-
+import ThreeDModel from './pages/ThreeDModel';
+import StoryGame from './pages/StoryGame';
+import InteractiveQuiz from './pages/InteractiveQuiz';
+import Chapter1 from './pages/Chapter1';
 const clerkPubKey = "pk_test_YWRhcHRpbmctbW9uc3Rlci03MS5jbGVyay5hY2NvdW50cy5kZXYk";
 
 function ClerkProviderWithRoutes() {
@@ -164,6 +167,82 @@ function ClerkProviderWithRoutes() {
                             </>
                         }
                     />
+                     <Route
+                        path="/threedmodel"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <ThreeDModel/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
+                     <Route
+                        path="/storygame"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <StoryGame/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
+                     <Route
+                        path="/interactivequiz"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <InteractiveQuiz/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
+                     <Route
+                        path="/chapter1"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <div className={"absolute top-2"}>
+                                        <SideNav/>
+                                    </div>
+                                    <div className={"p-2 ml-20 mr-20"}>
+                                        <Chapter1/>
+                                    </div>
+
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/signup"}/>
+                                </SignedOut>
+                            </>
+                        }
+                    />
                 </Routes>
             </div>
             {/*<Route path={"/"} element={<Login/>}></Route>*/}
@@ -178,10 +257,6 @@ function ClerkProviderWithRoutes() {
     );
 }
 
-import ThreeDModel from './pages/ThreeDModel';
-import StoryGame from './pages/StoryGame';
-import InteractiveQuiz from './pages/InteractiveQuiz';
-import Chapter1 from './pages/Chapter1';
 function App() {
     return (
         <BrowserRouter>
