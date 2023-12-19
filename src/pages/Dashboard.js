@@ -8,21 +8,16 @@ import social from "../images/social.jpg";
 import english from "../images/english.png"
 import {MessageCircleMore} from "lucide-react";
 import {Link} from "react-router-dom";
-import subject from "../json/subject.json"
-const Dashboard = (props) => {
-  const dataToPass = { name: 'John Doe', age: 25 };
-    const handlePhyicsClick = () => {
-        console.log("Button clicked!");
-    };
-    const handleChemistryClick = () => {
-        console.log("Button clicked!");
-    };
-    const handleMathsClick = () => {
-        console.log("Button clicked!");
-    };
-    const handleBiologyClick = () => {
-        console.log("Button clicked!");
-    };
+import * as z from "zod";
+
+const formSchema = z.object({
+    title: z.string().min(1, 'Title is required'),
+    content: z.string().min(1, 'Content is required'),
+
+});
+
+const Dashboard = () => {
+    const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
 
     return (
         <div className={"h-screen flex flex-col justify-between"}>
@@ -30,7 +25,7 @@ const Dashboard = (props) => {
                 <div className="h-inherit w-[50%] flex-col flex text-left justify-around">
                     <h1 className="font-poppins font-bold text-[25px]">Dashboard</h1>
                     <h1 className="font-poppins font-bold text-[45px]">
-                        Welcome, John Doe
+                        Welcome, {currentUser.name}
                     </h1>
                 </div>
                 <div className="h-inherit flex-row flex justify-evenly items-center">
@@ -75,6 +70,20 @@ const Dashboard = (props) => {
             Physics
           </p>
         </Link>
+            <div className={"w-full justify-center flex mt-5"}>
+            <div className=" w-[60%]  rounded-3xl  relative gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-center">
+                <Link
+                    to={'/subject'}
+                    className=" h-[150px] w-[200px] rounded-3xl relative flex-row flex  cursor-pointer"
+                >
+                    <img
+                        src={physics}
+                        className="rounded-3xl brightness-50 object-cover w-[100%]"
+                    />
+                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+                        Physics
+                    </p>
+                </Link>
 
         <Link
           to={{ pathname: '/subject/chemistry', }}

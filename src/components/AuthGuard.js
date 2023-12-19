@@ -12,7 +12,7 @@ const AuthGuard = ({ children }) => {
         if (!isAuthenticated) {
             navigate('/signin'); // Replace '/login' with your desired redirect path
         }
-    }, []);
+    }, [sessionStorage.getItem('current-user')] );
 
     // Render children only if the key exists
     return (

@@ -20,6 +20,7 @@ import Chapter2 from './pages/Chapter2';
 import {useEffect} from "react";
 import AuthGuard from "./components/AuthGuard";
 import Dna from "./pages/dna";
+import Inductor from './inductor';
 
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
         const data = localStorage.getItem("studentData");
         if (data === null){
             localStorage.setItem("studentData", JSON.stringify([]));
+        }
+        const notes = localStorage.getItem("notes");
+        if (notes === null){
+            localStorage.setItem("notes", JSON.stringify([]));
         }
     }, );
     return (
@@ -190,7 +195,7 @@ function App() {
                 <Route
                     path="/interactivequiz"
                     element={
-                        <>
+                        <AuthGuard>
                                 <div className={"absolute top-2"}>
                                     <SideNav/>
                                 </div>
@@ -198,13 +203,13 @@ function App() {
                                     <InteractiveQuiz/>
                                 </div>
 
-                        </>
+                        </AuthGuard>
                     }
                 />
                 <Route
                     path="/chapter1/:subject"
                     element={
-                        <>
+                        <AuthGuard>
                                 <div className={"absolute top-2"}>
                                     <SideNav/>
                                 </div>
@@ -232,7 +237,7 @@ function App() {
                 <Route
                     path="/threedmodel"
                     element={
-                        <>
+                        <AuthGuard>
                                 <div className={"absolute top-2"}>
                                     <SideNav/>
                                 </div>
@@ -240,7 +245,7 @@ function App() {
                                 <ThreeDModel/>
                             </div>
 
-                        </>
+                        </AuthGuard>
                     }
                 >
 
@@ -248,21 +253,21 @@ function App() {
                 <Route
                     path="/threedmodel/inductor"
                     element={
-                        <>
+                        <AuthGuard>
                             <div className={"absolute top-2"}>
                                 <SideNav/>
                             </div>
                             <div className={"p-2 ml-20 mr-20"}>
-                                <Dna/>
+                                <Inductor/>
                             </div>
 
-                        </>
+                        </AuthGuard>
                     }
                 />
                 <Route
                     path="/storygame"
                     element={
-                        <>
+                        <AuthGuard>
                             <div className={"absolute top-2"}>
                                 <SideNav/>
                             </div>
@@ -270,13 +275,13 @@ function App() {
                                 <StoryGame/>
                             </div>
 
-                        </>
+                        </AuthGuard>
                     }
                 />
                 <Route
                     path="/interactivequiz"
                     element={
-                        <>
+                        <AuthGuard>
                                 <div className={"absolute top-2"}>
                                     <SideNav/>
                                 </div>
@@ -284,13 +289,13 @@ function App() {
                                     <InteractiveQuiz/>
                                 </div>
 
-                        </>
+                        </AuthGuard>
                     }
                 />
                 <Route
                     path="/chapter1"
                     element={
-                        <>
+                        <AuthGuard>
                                 <div className={"absolute top-2"}>
                                     <SideNav/>
                                 </div>
@@ -298,7 +303,7 @@ function App() {
                                     <Chapter1/>
                                 </div>
 
-                        </>
+                        </AuthGuard>
                     }
                 />
             </Routes>
