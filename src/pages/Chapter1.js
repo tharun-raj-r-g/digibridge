@@ -178,7 +178,7 @@ const Chapter1 = () => {
                 <div className="flex-col flex">
                   <div
                     className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                      isanswer != questions[0].options[0] && isanswer != "-1"
+                      isanswer != questions[0].options[0] && isanswer != ""
                         ? "brightness-[25%]"
                         : "brightness-[100%]"
                     }`}
@@ -191,7 +191,7 @@ const Chapter1 = () => {
                   </div>
                   <div
                     className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                      isanswer != questions[0].options[1] && isanswer != "-1"
+                      isanswer != questions[0].options[1] && isanswer != ""
                         ? "brightness-[25%]"
                         : "brightness-[100%]"
                     }`}
@@ -204,7 +204,7 @@ const Chapter1 = () => {
                   </div>
                   <div
                     className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                      isanswer != questions[0].options[2] && isanswer != "-1"
+                      isanswer != questions[0].options[2] && isanswer != ""
                         ? "brightness-[25%]"
                         : "brightness-[100%]"
                     }`}
@@ -217,7 +217,7 @@ const Chapter1 = () => {
                   </div>
                   <div
                     className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                      isanswer != questions[0].options[3] && isanswer != "-1"
+                      isanswer != questions[0].options[3] && isanswer != ""
                         ? "brightness-[25%]"
                         : "brightness-[100%]"
                     }`}
@@ -499,7 +499,7 @@ const Chapter1 = () => {
               <div className="h-[200px] w-screen flex flex-row justify-start items-center">
                 <div
                   className={cn(
-                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transition-transform hover:translate-x-20 duration-800 ease-in-out mr-[150px]`
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce transition-transform hover:translate-x-20 duration-800 ease-in-out mr-[100px] ml-[50px]`
                   )}
                   style={{ backgroundImage: `url(${boyshocking})` }}
                 ></div>
