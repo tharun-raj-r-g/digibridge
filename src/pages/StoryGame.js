@@ -36,10 +36,10 @@ const StoryGame = () => {
       <div className="h-[480px] w-[40%] flex-col flex bg-contain ml-[440px] text-left items-center justify-center" style={{backgroundImage:`url(${rulesmap})`}}>
       <TypeAnimation
         sequence={[
-          `Welcome, Intrepid ${subjectdetails.name} Explorer!\nYou've entered the heart of Python Forest, where the path to freedom
-          winds through the wisdom of Python code.\n\n The forest hold secrets,
+            `Welcome, Intrepid ${subjectdetails.name} Explorer!\nYou've entered the heart of ${subjectdetails.name} Forest, where the path to freedom
+          winds through the wisdom of ${subjectdetails.name}.\n\n The forest hold secrets,
           and each challenge you face is a step towards unlocking them.`,
-          1000,
+            1000,
         ]}
         speed={80}
         style={{ whiteSpace: 'pre-line'}}
