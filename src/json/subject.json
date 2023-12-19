@@ -8,9 +8,14 @@
         "chaptername": "Electricity",
         "questions": [
           {
-            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Increases"
+            "question": "What Subject is the combination of experiment, observation and mathematics?",
+            "options": [
+              "Physics",
+              "Chemistry",
+              "Maths",
+              "Geography"
+            ],
+            "answer": "Physics"
           },
           {
             "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
@@ -24,18 +29,36 @@
           },
           {
             "question": "What is the energy stored in an inductor with inductance L and current I?",
-            "options": ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
+            "options": [
+              "0.5LI²",
+              "LI²",
+              "0.5L²I",
+              "0.5LI"
+            ],
             "answer": "LI²"
           },
           {
             "question": "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
+            "options": [
+              "Decreases",
+              "Increases",
+              "Same",
+              "Zero"
+            ],
             "answer": "Increases"
           }
         ],
-        "content":["F=ma",""],
+        "content": [
+          "Newtons second Law : F=ma",
+          ""
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          {
+            "modelname": "Inductor",
+            "content": "",
+            "qrcode": "",
+            "model": ""
+          }
         ],
         "videos": {
           "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",

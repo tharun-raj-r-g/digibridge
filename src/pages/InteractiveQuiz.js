@@ -1,49 +1,28 @@
-import home from "../images/dashboard.png";
-import boy from "../images/boy1.png";
-import physics from "../images/physics.jpg";
-import chemistry from "../images/chemistry.jpg";
-import maths from "../images/maths.jpg";
-import biology from "../images/biology.png";
-import gift from "../images/gift.png";
 import physicsanimate from "../images/physics-animate-main.jpg";
-import biologyanimate from "../images/biology-animate-main.png";
-import cubeanimate from "../images/cube-animate-main.png";
-import coneanimate from "../images/cone-animate-main.png"
-import { MessageSquare, MessageCircleMore } from "lucide-react";
-import { Button } from "../components/ui/button.tsx";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import {useParams} from "react-router-dom";
+import {useState} from "react";
 import SelectContentModal from "../components/SelectContentModal.js";
+
 const InteractiveQuiz = () => {
-  const handlePhyicsClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleChemistryClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleMathsClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleBiologyClick = () => {
-    console.log("Button clicked!");
-  };
-  const [isModalOpen, setIsModalOpen] = useState(false);
+    const {subject} = useParams();
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
   return (
     <div className={"flex flex-col justify-between"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-center mb-20">
         <div className="h-inherit w-[40%] flex-row flex text-center justify-around">
-          <img src={physicsanimate} className="h-[70px] animate-spin" />
-          <h1 className="font-poppins font-bold text-[45px]">Physics</h1>
-          <img src={physicsanimate} className="h-[70px] animate-spin" />
+            <img src={physicsanimate} className="h-[70px] animate-spin"/>
+            <h1 className="font-poppins font-bold text-[45px] capitalize">{subject}</h1>
+            <img src={physicsanimate} className="h-[70px] animate-spin"/>
         </div>
       </div>
       <div className="h-[100px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">

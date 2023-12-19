@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
 import threeDdModel from "../images/3d-model.png";
 import gamifiedlearning from "../images/gamified-learning.jpeg";
 import quizzes from "../images/quizzes.jpeg";
+
 const SelectContentModal = ({
   isOpen,
   onOpen,
@@ -73,15 +74,15 @@ const SelectContentModal = ({
                   </p>
                 </Link>
               )}
-              <Link to="/interactivequiz" className="relative cursor-pointer">
-                <img
-                  src={quizzes}
-                  className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
-                  alt="Interactive Quizzes"
-                />
-                <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
-                  Interactive Quizzes
-                </p>
+              <Link to={`/interactivequiz/${subject}`} className="relative cursor-pointer">
+                  <img
+                      src={quizzes}
+                      className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
+                      alt="Interactive Quizzes"
+                  />
+                  <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+                      Interactive Quizzes
+                  </p>
               </Link>
             </div>
             {/* Close Button */}

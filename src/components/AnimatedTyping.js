@@ -1,5 +1,7 @@
-import { useRef, useState, useEffect } from 'react';
+import {useEffect, useRef, useState} from 'react';
+
 export default function AnimatedTyping(props) {
+
     let [text, setText] = useState("");
     let [cursorColor, setCursorColor] = useState("transparent");
     let [messageIndex, setMessageIndex] = useState(0);
@@ -50,6 +52,7 @@ export default function AnimatedTyping(props) {
             if (props.onComplete) {
                 props.onComplete();
             }
+
         }
     };
 
@@ -66,11 +69,13 @@ export default function AnimatedTyping(props) {
     };
 
     useEffect(() => {
-        let updatedTimeouts = { ...timeoutsRef.current };
+        let updatedTimeouts = {...timeoutsRef.current};
         updatedTimeouts.typingTimeout = setTimeout(typingAnimation, 500);
         updatedTimeouts.cursorTimeout = setInterval(cursorAnimation, 250);
         setTimeouts(updatedTimeouts);
-
+        if (props.onStart) {
+            props.onStart();
+        }
         return () => {
             clearTimeout(timeoutsRef.current.typingTimeout);
             clearTimeout(timeoutsRef.current.firstNewLineTimeout);

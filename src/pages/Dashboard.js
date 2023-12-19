@@ -6,10 +6,10 @@ import biology from "../images/biology.png";
 import gift from "../images/gift.png";
 import social from "../images/social.jpg";
 import english from "../images/english.png";
-import { MessageCircleMore } from "lucide-react";
-import { Link } from "react-router-dom";
-import subject from "../json/subject.json";
+import {MessageCircleMore} from "lucide-react";
+import {Link} from "react-router-dom";
 import trophy from "../images/trophy.jpg";
+
 const Dashboard = (props) => {
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
 
@@ -44,7 +44,7 @@ const Dashboard = (props) => {
             "w-[10%] pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black"
           }
         >
-          <span className={"font-semibold"}>Streak</span>
+          <span className={"font-semibold"}>Consistency</span>
           <span className={"text-4xl font-bold"}>8</span>
         </div>
 
