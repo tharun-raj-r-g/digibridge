@@ -23,6 +23,8 @@ import { MessageCircleMore, PlusCircle } from 'lucide-react';
 import {useState} from "react";
 import NotesComponent from '../components/NotesComponent.js';
 
+import {Alert, AlertDescription, AlertTitle} from "../components/ui/alert.tsx";
+import {AlertCircle} from "lucide-react";
 
 const formSchema = z.object({
     title: z.string().min(1, 'Title is required'),
@@ -31,6 +33,7 @@ const formSchema = z.object({
 
 
 const StudentSignUp = () => {
+    const [alertMessage, setAlertMessage] = useState("");
     const data = JSON.parse(localStorage.getItem("notes"));
     const [dialog, setDialog] = useState(false);
     const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
@@ -62,13 +65,26 @@ const StudentSignUp = () => {
         }
     };
 
-    const handleOpenChange = () =>{
-        
+    const handleOpenChange = () => {
+        if (!form.formState.isDirty){
+            setDialog(false);
+        }else{
+            setAlertMessage("Changes Not Saved!!!")
+        }
     }
 
 
     return (
         <div className={"m-3 flex flex-col justify-between "}>
+            <Alert
+                className={cn("absolute bg-white md:w-[30%] w-[40%] top-5 right-2", alertMessage.length > 0 ? "" : "hidden")}
+                variant={"destructive"}>
+                <AlertCircle className={"h-4 w-4 "}/>
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>
+                    {alertMessage}
+                </AlertDescription>
+            </Alert>
             <div className={"flex flex-row justify-between"}>
                 <div className={"flex flex-col align-middle justify-evenly"}>
                     <span className={"text-3xl font-semibold"}>Notes</span>

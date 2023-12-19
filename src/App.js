@@ -248,7 +248,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/interactivequiz"
+                    path="/interactivequiz/:subject"
                     element={
                         <AuthGuard>
                                 <div className={"absolute top-2"}>
