@@ -7,7 +7,7 @@ import Chapter1 from "../pages/Chapter1";
 import boyrunning from "../images/boyrunning.jpg";
 import boyshocking from "../images/boyscary.png";
 import jungle from "../images/gamified-learning.jpeg";
-const GameOverModal = ({
+const GameOverModal2 = ({
   isOpen,
   onOpen,
   onClose,
@@ -53,7 +53,7 @@ const GameOverModal = ({
                     <span className={"font-semibold text-[20px]"}>Your Score</span>
                     <span className={"text-[100px] font-bold"}>{score}</span>
                 </div>
-              <Link to={`/storygame/${subject}`} className="relative cursor-pointer">
+              <Link to={`/storygame2/${subject}`} className="relative cursor-pointer">
                 <img
                   src={gamifiedlearning}
                   className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
@@ -78,4 +78,4 @@ const GameOverModal = ({
   );
 };
 
-export default GameOverModal;
+export default GameOverModal2;

@@ -12,8 +12,10 @@ import StudentSignUp from "./pages/StudentSignUp";
 import StudentSignIn from "./pages/StudentSignIn";
 import ThreeDModel from './pages/ThreeDModel';
 import StoryGame from './pages/StoryGame';
+import StoryGame2 from './pages/StoryGame2';
 import InteractiveQuiz from './pages/InteractiveQuiz';
 import Chapter1 from './pages/Chapter1';
+import Chapter2 from './pages/Chapter2';
 // import Inductor from "./pages/Inductor";
 import {useEffect} from "react";
 import AuthGuard from "./components/AuthGuard";
@@ -29,12 +31,7 @@ function App() {
     }, );
     return (
         <BrowserRouter>
-            <div>
-                <model-viewer id="modview" src="skin_.glb" camera-controls>
-                </model-viewer>
-                <model-viewer id="modview" src="dna4.glb" camera-controls>
-                </model-viewer>
-            </div>
+            
             <Routes>
                 <Route path="/" element={<Landing/>}/>
                 <Route
@@ -177,6 +174,20 @@ function App() {
                     }
                 />
                 <Route
+                    path="/storygame2/:subject"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={""}>
+                                    <StoryGame2/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
                     path="/interactivequiz"
                     element={
                         <>
@@ -199,6 +210,20 @@ function App() {
                                 </div>
                                 <div className={""}>
                                     <Chapter1/>
+                                </div>
+
+                        </>
+                    }
+                />
+                <Route
+                    path="/chapter2/:subject"
+                    element={
+                        <>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={""}>
+                                    <Chapter2/>
                                 </div>
 
                         </>

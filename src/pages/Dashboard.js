@@ -51,13 +51,13 @@ const Dashboard = (props) => {
                 </div>
                 <div
                     className={"w-[10%] pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black"}>
-                    <span className={"font-semibold"}>Streak</span>
+                    <span className={"font-semibold"}>Consistency</span>
                     <span className={"text-4xl font-bold"}>8</span>
                 </div>
 
                 <div
                     className={"w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white"}>
-                    <span className={"font-semibold"}>Peak</span>
+                    <span className={"font-semibold"}>Your Best</span>
                     <span className={"text-4xl font-bold"}>40</span>
                 </div>
             </div>
