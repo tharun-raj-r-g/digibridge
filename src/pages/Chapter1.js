@@ -11,8 +11,8 @@ import cubeanimate from "../images/cube-animate-main.png";
 import coneanimate from "../images/cone-animate-main.png";
 import { MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "../components/ui/button.tsx";
-import { Link,useParams } from "react-router-dom";
-import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import SelectContentModal from "../components/SelectContentModal.js";
 import jungle from "../images/forest1.png";
 import rulesmap from "../images/oldmapwithoutbg.png";
@@ -30,17 +30,24 @@ import questiontree from "../images/questiontree.png";
 import GameOverModal from "../components/GameOverModal.js";
 import happytiger from "../images/happytiger.jpg";
 import boyrunning from "../images/boyrunning.jpg";
-import walkingtiger from "../images/walkingtiger.png"
+import walkingtiger from "../images/walkingtiger.png";
 import trashpaper from "../images/trashpaper.jpg";
 import sub from "../json/subject.json";
+import openpaper from "../images/openpaper1.jpg";
+import brick from "../images/greenwall.jpg";
+import { cn } from "../lib/utils.ts";
+import jungleriver from "../images/jungleriver.jpg";
 const Chapter1 = () => {
   const { subject } = useParams();
   const subjectdetails = sub[subject];
   const questions = subjectdetails.chapters[0].questions;
   const [iscontentstate, setcontentstate] = useState(0);
-  const [isanswer, setanswer] = useState("-1");
+  const [isanswer, setanswer] = useState("");
   const [ispaperopen, setpaperopen] = useState(false);
   const [isScore, setScore] = useState(0);
+  const [boyPosition, setBoyPosition] = useState(0);
+  const [tigerPosition, setTigerPosition] = useState(0);
+  const [moved, setmoved] = useState(false);
   const contentchange = () => {
     setTimeout(() => {
       setcontentstate(iscontentstate + 1);
@@ -56,6 +63,17 @@ const Chapter1 = () => {
     }
   };
 
+  const Move = () => {
+    setBoyPosition(boyPosition + 20);
+    setTigerPosition(tigerPosition + 20);
+  };
+
+  const startMoving = () => {
+    // Call Move immediately
+    setcontentstate(iscontentstate + 1);
+    setmoved(true);
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -69,7 +87,7 @@ const Chapter1 = () => {
   return (
     <div
       className="min-h-screen w-screen bg-cover bg-center flex flex-col items-center justify-start"
-      style={{ backgroundImage: `url(${jungle})` }}
+      style={{ backgroundImage: iscontentstate<=10?(`url(${jungle})`):(`url(${jungleriver})`) }}
     >
       {iscontentstate == -1 ? (
         <div>
@@ -211,7 +229,7 @@ const Chapter1 = () => {
                     </h1>
                   </div>
                 </div>
-                {isanswer != "-1" ? (
+                {isanswer != "" ? (
                   <div
                     className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer animate-pulse
                 }`}
@@ -305,9 +323,7 @@ const Chapter1 = () => {
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
                   <AnimatedTyping
-                    text={[
-                      "Let's Gooooooo...!",
-                    ]}
+                    text={["Let's Gooooooo...!"]}
                     onComplete={contentchange}
                   />
                 </div>
@@ -332,9 +348,7 @@ const Chapter1 = () => {
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
                   <AnimatedTyping
-                    text={[
-                      "Search for hints...!",
-                    ]}
+                    text={["Search for hints...!"]}
                     onComplete={contentchange}
                   />
                 </div>
@@ -353,7 +367,7 @@ const Chapter1 = () => {
           ) : null}
           {iscontentstate == 7 ? (
             <div className="mt-[100px]">
-               <div className="h-[200px] w-screen flex flex-row justify-center items-center mb-[50px]">
+              <div className="h-[200px] w-screen flex flex-row justify-center items-center mb-[50px]">
                 <div
                   className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
                   style={{ backgroundImage: `url(${cloudright})` }}
@@ -369,10 +383,129 @@ const Chapter1 = () => {
                 <div
                   className="h-[70px] w-[60px] bg-cover bg-center flex flex-col animate-spin mt-[250px] cursor-pointer"
                   style={{ backgroundImage: `url(${trashpaper})` }}
+                  onClick={contentchange}
                 ></div>
                 <div
                   className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-bounce"
                   style={{ backgroundImage: `url(${happytiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 8 ? (
+            <div className="mt-[100px]">
+              <div className="h-[200px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
+                  style={{ backgroundImage: `url(${openpaper})` }}
+                >
+                  <h1 className="w-[280px] text-center">
+                    {subjectdetails.chapters[0].content[0]}
+                  </h1>
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{ backgroundImage: `url(${boylooking})` }}
+                ></div>
+                <div
+                  className="h-[50px] w-[140px] bg-cover bg-center flex flex-col mt-[250px] cursor-pointer bg-white rounded-2xl text-center justify-center animate-pulse"
+                  style={{ backgroundImage: `url(${brick})` }}
+                  onClick={startMoving}
+                >
+                  <h1 className="text-white">Continue</h1>
+                </div>
+                <div
+                  className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-none"
+                  style={{ backgroundImage: `url(${happytiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 9 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping
+                    text={["Let's Gooooooo...!"]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className={cn(
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce transform translate-x-5`
+                  )}
+                  style={{ backgroundImage: `url(${boyrunning})` }}
+                ></div>
+                <div
+                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${tigerPosition}px]`}
+                  style={{ backgroundImage: `url(${walkingtiger})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 10 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudright})` }}
+                >
+                  <AnimatedTyping
+                    text={["Ohhhhh!!.. Did you hear that sound!!??"]}
+                    onComplete={contentchange}
+                  />
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className={cn(
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transform translate-x-5`
+                  )}
+                  style={{ backgroundImage: `url(${boyshocking})` }}
+                ></div>
+                <div
+                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${tigerPosition}px]`}
+                  style={{ backgroundImage: `url(${tigerscary})` }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 11 ? (
+            <div className="mt-[100px]">
+              <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
+                <div
+                  className="h-[280px] w-[280px] bg-cover bg-center flex flex-col justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudleft})` }}
+                >
+                  <AnimatedTyping
+                    text={["We have reached the river!!"]}
+                  />
+                </div>
+                <div
+                  className="h-[80px] w-[180px] rounded-3xl bg-cover bg-center flex flex-row justify-center text-center items-center ml-[200px]"
+                  style={{ backgroundImage: `url(${brick})` }}
+                >
+                  <h1 className="font-bold text-white text-3xl">F=</h1>
+                  <input className="font-bold text-white text-2xl w-[70px] bg-inherit border-2 rounded-2xl" onChange={(e)=>{setanswer(e)}}/>
+                </div>
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-start items-center">
+                <div
+                  className={cn(
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transition-transform hover:translate-x-20 duration-800 ease-in-out mr-[150px]`
+                  )}
+                  style={{ backgroundImage: `url(${boyshocking})` }}
+                ></div>
+                <div
+                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none transition-transform hover:animate-bounce hover:translate-x-20 duration-800 ease-in-out`}
+                  style={{ backgroundImage: `url(${walkingtiger})` }}
                 ></div>
               </div>
             </div>

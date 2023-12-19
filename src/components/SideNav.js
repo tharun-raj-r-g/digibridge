@@ -14,6 +14,7 @@ const SideNav = () => {
     const locations = [
         {name: "Dashboard", url: "/dashboard"},
         {name: "My Report", url: "/report"},
+        {name:"Leaderboard", url: "/leaderboard"},
         {name: "Mentor", url: "/mentor"},
         {name: "Events", url: "/events"},
         {name: "Notes", url: "/notes"},

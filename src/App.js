@@ -21,7 +21,7 @@ import { useEffect } from "react";
 import AuthGuard from "./components/AuthGuard";
 import Dna from "./pages/dna";
 import Inductor from "./inductor";
-
+import LeaderBrd from "./pages/LeaderBrd";
 function App() {
     useEffect(() => {
         const data = localStorage.getItem("studentData");
@@ -57,6 +57,19 @@ function App() {
                                 </div>
 
 
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/leaderboard"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-4 left-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={"p-2 ml-20 mr-20"}>
+                                    <LeaderBrd/>
+                                </div>
                         </AuthGuard>
                     }
                 />
@@ -176,6 +189,20 @@ function App() {
                         </AuthGuard>
                     }
                 />
+                  <Route
+                    path="/storygame2/:subject"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={""}>
+                                    <StoryGame2/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
                 <Route
                     path="/interactivequiz"
                     element={
@@ -199,6 +226,20 @@ function App() {
                                 </div>
                                 <div className={""}>
                                     <Chapter1/>
+                                </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/chapter2/:subject"
+                    element={
+                        <AuthGuard>
+                                <div className={"absolute top-2"}>
+                                    <SideNav/>
+                                </div>
+                                <div className={""}>
+                                    <Chapter2/>
                                 </div>
 
                         </AuthGuard>
