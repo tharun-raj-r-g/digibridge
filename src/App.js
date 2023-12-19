@@ -77,12 +77,12 @@ function App() {
                     path="/report"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
+                                <div className={"absolute top-4 left-2"}>
                                     <SideNav/>
                                 </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Report/>
-                                </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Report/>
+                            </div>
 
 
                         </AuthGuard>
@@ -92,12 +92,12 @@ function App() {
                     path="/notes"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Notes/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Notes/>
+                            </div>
 
 
                         </AuthGuard>
@@ -107,12 +107,12 @@ function App() {
                     path="/events"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Events/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Events/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -121,12 +121,12 @@ function App() {
                     path="/settings"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Settings/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Settings/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -136,12 +136,12 @@ function App() {
                     element={
                         <AuthGuard>
 
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Subject/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Subject/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -151,12 +151,12 @@ function App() {
                     element={
                         <AuthGuard>
 
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Mentor/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Mentor/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -165,12 +165,12 @@ function App() {
                     path="/threedmodel/:subject"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <ThreeDModel/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <ThreeDModel/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -179,12 +179,12 @@ function App() {
                     path="/storygame/:subject"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={""}>
-                                    <StoryGame/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={""}>
+                                <StoryGame/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -193,93 +193,7 @@ function App() {
                     path="/storygame2/:subject"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={""}>
-                                    <StoryGame2/>
-                                </div>
-
-                        </AuthGuard>
-                    }
-                />
-                <Route
-                    path="/interactivequiz/:subject"
-                    element={
-                        <AuthGuard>
-                            <div className={"absolute top-2"}>
-                                <SideNav/>
-                            </div>
-                            <div className={"p-2 ml-20 mr-20"}>
-                                <InteractiveQuiz/>
-                            </div>
-
-                        </AuthGuard>
-                    }
-                />
-                <Route
-                    path="/chapter1/:subject"
-                    element={
-                        <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={""}>
-                                    <Chapter1/>
-                                </div>
-
-                        </AuthGuard>
-                    }
-                />
-                <Route
-                    path="/chapter2/:subject"
-                    element={
-                        <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={""}>
-                                    <Chapter2/>
-                                </div>
-
-                        </AuthGuard>
-                    }
-                />
-                <Route
-                    path="/threedmodel"
-                    element={
-                        <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                            <div className={"p-2 ml-20 mr-20"}>
-                                <ThreeDModel/>
-                            </div>
-
-                        </AuthGuard>
-                    }
-                >
-
-                </Route>
-                <Route
-                    path="/threedmodel/inductor"
-                    element={
-                        <AuthGuard>
-                            <div className={"absolute top-2"}>
-                                <SideNav/>
-                            </div>
-                            <div className={"p-2 ml-20 mr-20"}>
-                                <Inductor/>
-                            </div>
-
-                        </AuthGuard>
-                    }
-                />
-                <Route
-                    path="/storygame2/:subject"
-                    element={
-                        <AuthGuard>
-                            <div className={"absolute top-2"}>
+                            <div className={"absolute top-4 left-2"}>
                                 <SideNav/>
                             </div>
                             <div className={""}>
@@ -293,12 +207,98 @@ function App() {
                     path="/interactivequiz/:subject"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <InteractiveQuiz/>
-                                </div>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <InteractiveQuiz/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/chapter1/:subject"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={""}>
+                                <Chapter1/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/chapter2/:subject"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={""}>
+                                <Chapter2/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/threedmodel"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <ThreeDModel/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                >
+
+                </Route>
+                <Route
+                    path="/threedmodel/inductor"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Inductor/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/storygame2/:subject"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={""}>
+                                <StoryGame2/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/interactivequiz/:subject"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-4 left-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <InteractiveQuiz/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -307,7 +307,7 @@ function App() {
                     path="/chapter1"
                     element={
                         <AuthGuard>
-                            <div className={"absolute top-2"}>
+                            <div className={"absolute top-4 left-2"}>
                                 <SideNav/>
                             </div>
                             <div className={"p-2 ml-20 mr-20"}>
@@ -322,7 +322,7 @@ function App() {
                     path="/chapter2/:subject"
                     element={
                         <AuthGuard>
-                            <div className={"absolute top-2"}>
+                            <div className={"absolute top-4 left-2"}>
                                 <SideNav/>
                             </div>
                             <div className={""}>

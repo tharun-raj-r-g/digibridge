@@ -3,15 +3,29 @@ import {Link} from "react-router-dom";
 import threeDdModel from "../images/3d-model.png";
 import gamifiedlearning from "../images/gamified-learning.jpeg";
 import quizzes from "../images/quizzes.jpeg";
+import {Howl} from "howler";
+import intro_audio from "../music/intro.mp3";
+import forest_audio from "../music/forest.mp3";
 
 const SelectContentModal = ({
-  isOpen,
-  onOpen,
-  onClose,
-  modalTitle,
-  modalContent,
-  subject,
-}) => {
+                              isOpen,
+                              onOpen,
+                              onClose,
+                              modalTitle,
+                              modalContent,
+                              subject,
+                            }) => {
+  const playsound = () => {
+    const intro = new Howl({
+      src: [intro_audio]
+    })
+    const forest = new Howl({
+      src: [forest_audio]
+    })
+
+    forest.play();
+    intro.play();
+  }
   const openModal = () => {
     onOpen();
   };
@@ -21,7 +35,7 @@ const SelectContentModal = ({
   };
   console.log(subject);
   return (
-    <div>
+      <div>
       {/* Button to open the modal */}
 
       {/* Modal */}
@@ -49,8 +63,9 @@ const SelectContentModal = ({
               </Link>
               {subject == "physics" ? (
                 <Link
-                  to={`/storygame/${subject}`}
-                  className="relative cursor-pointer"
+                    to={`/storygame/${subject}`}
+                    className="relative cursor-pointer"
+                    onClick={playsound}
                 >
                   <img
                     src={gamifiedlearning}
@@ -62,8 +77,9 @@ const SelectContentModal = ({
                 </Link>
               ) : (
                 <Link
-                  to={`/storygame2/${subject}`}
-                  className="relative cursor-pointer"
+                    to={`/storygame2/${subject}`}
+                    className="relative cursor-pointer"
+                    onClick={playsound}
                 >
                   <img
                     src={gamifiedlearning}
