@@ -9,7 +9,7 @@ const SelectContentModal = ({
   onClose,
   modalTitle,
   modalContent,
-  subject
+  subject,
 }) => {
   const openModal = () => {
     onOpen();
@@ -18,7 +18,7 @@ const SelectContentModal = ({
   const closeModal = () => {
     onClose();
   };
-  console.log(subject)
+  console.log(subject);
   return (
     <div>
       {/* Button to open the modal */}
@@ -46,16 +46,33 @@ const SelectContentModal = ({
                   3D Model
                 </p>
               </Link>
-
-              <Link to={`/storygame/${subject}`} className="relative cursor-pointer">
-                <img
-                  src={gamifiedlearning}
-                  className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
-                />
-                <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
-                  Gamified Learning
-                </p>
-              </Link>
+              {subject == "physics" ? (
+                <Link
+                  to={`/storygame/${subject}`}
+                  className="relative cursor-pointer"
+                >
+                  <img
+                    src={gamifiedlearning}
+                    className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
+                  />
+                  <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+                    Gamified Learning
+                  </p>
+                </Link>
+              ) : (
+                <Link
+                  to={`/storygame2/${subject}`}
+                  className="relative cursor-pointer"
+                >
+                  <img
+                    src={gamifiedlearning}
+                    className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"
+                  />
+                  <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+                    Gamified Learning
+                  </p>
+                </Link>
+              )}
               <Link to="/interactivequiz" className="relative cursor-pointer">
                 <img
                   src={quizzes}

@@ -1,5 +1,5 @@
-import SideNav from './components/SideNav';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import SideNav from "./components/SideNav";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/landing";
 import Report from "./pages/Report";
@@ -10,16 +10,17 @@ import Notes from "./pages/Notes";
 import Mentor from "./pages/Mentor";
 import StudentSignUp from "./pages/StudentSignUp";
 import StudentSignIn from "./pages/StudentSignIn";
-import ThreeDModel from './pages/ThreeDModel';
-import StoryGame from './pages/StoryGame';
-import InteractiveQuiz from './pages/InteractiveQuiz';
-import Chapter1 from './pages/Chapter1';
+import ThreeDModel from "./pages/ThreeDModel";
+import StoryGame from "./pages/StoryGame";
+import StoryGame2 from "./pages/StoryGame2";
+import InteractiveQuiz from "./pages/InteractiveQuiz";
+import Chapter1 from "./pages/Chapter1";
+import Chapter2 from "./pages/Chapter2";
 // import Inductor from "./pages/Inductor";
-import {useEffect} from "react";
+import { useEffect } from "react";
 import AuthGuard from "./components/AuthGuard";
 import Dna from "./pages/dna";
-import Inductor from './inductor';
-
+import Inductor from "./inductor";
 
 function App() {
     useEffect(() => {

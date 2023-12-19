@@ -5,18 +5,25 @@ import maths from "../images/maths.jpg";
 import biology from "../images/biology.png";
 import gift from "../images/gift.png";
 import social from "../images/social.jpg";
-import english from "../images/english.png";
-import { MessageCircleMore } from "lucide-react";
-import { Link } from "react-router-dom";
-import * as z from "zod";
-
-const formSchema = z.object({
-  title: z.string().min(1, "Title is required"),
-  content: z.string().min(1, "Content is required"),
-});
-
-const Dashboard = () => {
-  const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
+import english from "../images/english.png"
+import {MessageCircleMore} from "lucide-react";
+import {Link} from "react-router-dom";
+import subject from "../json/subject.json";
+import trophy from "../images/trophy.jpg"
+const Dashboard = (props) => {
+  const dataToPass = { name: 'John Doe', age: 25 };
+    const handlePhyicsClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleChemistryClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleMathsClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleBiologyClick = () => {
+        console.log("Button clicked!");
+    };
 
   return (
     <div className={"h-screen flex flex-col justify-evenly"}>
@@ -53,29 +60,31 @@ const Dashboard = () => {
           <span className={"text-4xl font-bold"}>8</span>
         </div>
 
-        <div
-          className={
-            "w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white"
-          }
+                <div
+                    className={"w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white"}>
+                    <span className={"font-semibold"}>Your Best</span>
+                    <span className={"text-4xl font-bold"}>40</span>
+                </div>
+                <div
+                    className={"w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white bg-cover bg-center brightness-75"} style={{ backgroundImage: `url(${trophy})`}}>
+                    <span className={"font-semibold"}>Rank</span>
+                    <span className={"text-4xl font-bold"}>10</span>
+                </div>
+            </div>
+            <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
+        <Link
+          to={{ pathname: '/subject/physics', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+          onClick={handlePhyicsClick}
         >
-          <span className={"font-semibold"}>Peak</span>
-          <span className={"text-4xl font-bold"}>40</span>
-        </div>
-      </div>
-      <div className={"w-full justify-center flex"}>
-        <div className="gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-between">
-          <Link
-            to={"/subject/physics"}
-            className=" h-[150px] w-[200px] rounded-3xl relative flex-row flex  cursor-pointer"
-          >
-            <img
-              src={physics}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              Physics
-            </p>
-          </Link>
+          <img
+            src={physics}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Physics
+          </p>
+        </Link>
 
           <Link
             to="/subject/chemistry"
