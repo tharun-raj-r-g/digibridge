@@ -1,5 +1,5 @@
 import SideNav from "./components/SideNav";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/landing";
 import Report from "./pages/Report";
@@ -17,11 +17,11 @@ import InteractiveQuiz from "./pages/InteractiveQuiz";
 import Chapter1 from "./pages/Chapter1";
 import Chapter2 from "./pages/Chapter2";
 // import Inductor from "./pages/Inductor";
-import { useEffect } from "react";
+import {useEffect} from "react";
 import AuthGuard from "./components/AuthGuard";
-import Dna from "./pages/dna";
 import Inductor from "./inductor";
 import LeaderBrd from "./pages/LeaderBrd";
+
 function App() {
     useEffect(() => {
         const data = localStorage.getItem("studentData");
@@ -204,15 +204,15 @@ function App() {
                     }
                 />
                 <Route
-                    path="/interactivequiz"
+                    path="/interactivequiz/:subject"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <InteractiveQuiz/>
-                                </div>
+                            <div className={"absolute top-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <InteractiveQuiz/>
+                            </div>
 
                         </AuthGuard>
                     }
@@ -276,14 +276,14 @@ function App() {
                     }
                 />
                 <Route
-                    path="/storygame"
+                    path="/storygame2/:subject"
                     element={
                         <AuthGuard>
                             <div className={"absolute top-2"}>
                                 <SideNav/>
                             </div>
-                            <div className={"p-2 ml-20 mr-20"}>
-                                <StoryGame/>
+                            <div className={""}>
+                                <StoryGame2/>
                             </div>
 
                         </AuthGuard>
@@ -307,12 +307,27 @@ function App() {
                     path="/chapter1"
                     element={
                         <AuthGuard>
-                                <div className={"absolute top-2"}>
-                                    <SideNav/>
-                                </div>
-                                <div className={"p-2 ml-20 mr-20"}>
-                                    <Chapter1/>
-                                </div>
+                            <div className={"absolute top-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={"p-2 ml-20 mr-20"}>
+                                <Chapter1/>
+                            </div>
+
+                        </AuthGuard>
+                    }
+                />
+
+                <Route
+                    path="/chapter2/:subject"
+                    element={
+                        <AuthGuard>
+                            <div className={"absolute top-2"}>
+                                <SideNav/>
+                            </div>
+                            <div className={""}>
+                                <Chapter2/>
+                            </div>
 
                         </AuthGuard>
                     }

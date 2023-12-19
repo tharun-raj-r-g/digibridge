@@ -1,23 +1,8 @@
-import home from "../images/dashboard.png";
-import boy from "../images/boy1.png";
-import physics from "../images/physics.jpg";
-import chemistry from "../images/chemistry.jpg";
-import maths from "../images/maths.jpg";
-import biology from "../images/biology.png";
-import gift from "../images/gift.png";
-import physicsanimate from "../images/physics-animate-main.jpg";
-import biologyanimate from "../images/biology-animate-main.png";
-import cubeanimate from "../images/cube-animate-main.png";
-import coneanimate from "../images/cone-animate-main.png";
-import { MessageSquare, MessageCircleMore } from "lucide-react";
-import { Button } from "../components/ui/button.tsx";
-import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import SelectContentModal from "../components/SelectContentModal.js";
+import {Button} from "../components/ui/button.tsx";
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {Howl} from "howler";
 import jungle from "../images/forest1.png";
-import rulesmap from "../images/oldmapwithoutbg.png";
-import { TypeAnimation } from "react-type-animation";
-import physicslogo from "../images/physicsstart.png";
 import cloudleft from "../images/cloudleft.png";
 import cloudright from "../images/cloudright.jpg";
 import boyshocking from "../images/boyscary.png";
@@ -33,12 +18,19 @@ import boyrunning from "../images/boyrunning.jpg";
 import walkingtiger from "../images/walkingtiger.png";
 import trashpaper from "../images/trashpaper.jpg";
 import sub from "../json/subject.json";
+import someone_audio from "../music/someone-help-me.mp3";
+import hola_audio from "../music/hola.mp3";
+import onlyway_audio from "../music/the only way.mp3";
+import goo_audio from "../music/lets_goo.mp3";
+import search_audio from "../music/serch-for-hints.mp3";
+import there_is_hint_audio from "../music/there-is-an-hint.mp3"
 import openpaper from "../images/openpaper1.jpg";
 import brick from "../images/greenwall.jpg";
-import { cn } from "../lib/utils.ts";
+import {cn} from "../lib/utils.ts";
 import jungleriver from "../images/jungleriver.jpg";
+
 const Chapter1 = () => {
-  const { subject } = useParams();
+  const {subject} = useParams();
   const subjectdetails = sub[subject];
   const questions = subjectdetails.chapters[0].questions;
   const [iscontentstate, setcontentstate] = useState(0);
@@ -49,9 +41,9 @@ const Chapter1 = () => {
   const [tigerPosition, setTigerPosition] = useState(0);
   const [moved, setmoved] = useState(false);
   const contentchange = () => {
-    setTimeout(() => {
+    // setTimeout(() => {
       setcontentstate(iscontentstate + 1);
-    }, 2000); // 2000 milliseconds (2 seconds)
+    // }, 2000); // 2000 milliseconds (2 seconds)
   };
   const CheckAnswer = (number) => {
     if (isanswer == questions[number].answer) {
@@ -83,16 +75,56 @@ const Chapter1 = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  useEffect(() => {
+    if (iscontentstate === 1) {
+      const someone = new Howl({
+        src: [someone_audio]
+      })
+
+      someone.play();
+
+    }
+    if (iscontentstate === 3) {
+      const hola = new Howl({
+        src: [hola_audio]
+      })
+      hola.play();
+    }
+    if (iscontentstate === 4) {
+      const onlyway = new Howl({
+        src: [onlyway_audio]
+      })
+      onlyway.play();
+    }
+    if (iscontentstate === 5) {
+      const goo = new Howl({
+        src: [goo_audio]
+      })
+      goo.play();
+    }
+    if (iscontentstate === 6) {
+      const search = new Howl({
+        src: [search_audio]
+      })
+      search.play();
+    }
+    if (iscontentstate === 7) {
+      const there_is_hint = new Howl({
+        src: [there_is_hint_audio]
+      })
+      there_is_hint.play();
+    }
+  }, [iscontentstate]);
 
   return (
-    <div
-      className="min-h-screen w-screen bg-cover bg-center flex flex-col items-center justify-start"
-      style={{ backgroundImage: iscontentstate<=10?(`url(${jungle})`):(`url(${jungleriver})`) }}
-    >
-      {iscontentstate == -1 ? (
-        <div>
-          <GameOverModal
-            isOpen={isModalOpen}
+      <div
+          className="min-h-screen w-screen bg-cover bg-center flex flex-col items-center justify-start"
+          style={{backgroundImage: iscontentstate <= 10 ? (`url(${jungle})`) : (`url(${jungleriver})`)}}
+      >
+        {iscontentstate == -1 ? (
+            <div>
+              <GameOverModal
+                  isOpen={isModalOpen}
             onOpen={openModal}
             onClose={closeModal}
             modalTitle="Game Over !"
@@ -106,23 +138,23 @@ const Chapter1 = () => {
             <div>
               <div className="h-[200px] w-screen flex flex-row justify-center items-center mt-[180px] mb-[50px]">
                 <div
-                  className="h-[300px] w-[300px] bg-cover bg-center flex flex-col mr-[100px] justify-center text-center items-center pb-[100px]"
-                  style={{ backgroundImage: `url(${cloudleft})` }}
+                    className="h-[300px] w-[300px] bg-cover bg-center  flex flex-col mr-[100px] justify-center text-center items-center pb-[100px]"
+                    style={{backgroundImage: `url(${cloudleft})`}}
                 >
                   <AnimatedTyping
                     text={[
                       "Woah... Wh...Where am I....Whhat's that sound in there ??!!",
                     ]}
-                    onComplete={contentchange}
                   />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-start items-center">
                 <div
-                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col ml-[200px]"
-                  style={{ backgroundImage: `url(${boyshocking})` }}
+                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col ml-[200px]"
+                    style={{backgroundImage: `url(${boyshocking})`}}
                 ></div>
               </div>
+              <Button onClick={contentchange}>Click To Continue</Button>
             </div>
           ) : null}
           {iscontentstate == 1 ? (
@@ -272,20 +304,20 @@ const Chapter1 = () => {
                     text={[
                       "Holaa!! Thanks for saving me.Now I will help you throughout your journey!!",
                     ]}
-                    onComplete={contentchange}
                   />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${boylooking})` }}
+                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                    style={{backgroundImage: `url(${boylooking})`}}
                 ></div>
                 <div
-                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${happytiger})` }}
+                    className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                    style={{backgroundImage: `url(${happytiger})`}}
                 ></div>
               </div>
+              <Button onClick={contentchange}>Click To Continue</Button>
             </div>
           ) : null}
           {iscontentstate == 4 ? (
@@ -299,20 +331,21 @@ const Chapter1 = () => {
                     text={[
                       "The only way to escape this forest is to learn physics. Search for hints, to escape the forest!!",
                     ]}
-                    onComplete={contentchange}
                   />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${boylooking})` }}
+                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                    style={{backgroundImage: `url(${boylooking})`}}
                 ></div>
                 <div
-                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${happytiger})` }}
+                    className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                    style={{backgroundImage: `url(${happytiger})`}}
                 ></div>
               </div>
+              <Button onClick={contentchange}>Click To Continue</Button>
+
             </div>
           ) : null}
           {iscontentstate == 5 ? (
@@ -323,21 +356,25 @@ const Chapter1 = () => {
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
                   <AnimatedTyping
-                    text={["Let's Gooooooo...!"]}
-                    onComplete={contentchange}
+                      text={[
+                        "Let's Gooooooo...!",
+                      ]}
+                      onComplete={contentchange}
                   />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${boyrunning})` }}
+                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                    style={{backgroundImage: `url(${boyrunning})`}}
                 ></div>
                 <div
-                  className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${tigerscary})` }}
+                    className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
+                    style={{backgroundImage: `url(${tigerscary})`}}
                 ></div>
               </div>
+              <Button onClick={contentchange}>Click To Continue</Button>
+
             </div>
           ) : null}
           {iscontentstate == 6 ? (
@@ -348,21 +385,24 @@ const Chapter1 = () => {
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
                   <AnimatedTyping
-                    text={["Search for hints...!"]}
-                    onComplete={contentchange}
+                      text={[
+                        "Search for hints...!",
+                      ]}
                   />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${boyrunning})` }}
+                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                    style={{backgroundImage: `url(${boyrunning})`}}
                 ></div>
                 <div
-                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${walkingtiger})` }}
+                    className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                    style={{backgroundImage: `url(${walkingtiger})`}}
                 ></div>
               </div>
+              <Button onClick={contentchange}>Click To Continue</Button>
+
             </div>
           ) : null}
           {iscontentstate == 7 ? (

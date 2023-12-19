@@ -51,6 +51,7 @@
     "cross-env": "^7.0.3",
     "electron-forge": "^5.2.4",
     "electron-serve": "1.2.0",
+    "howler": "^2.2.4",
     "lucide-react": "^0.295.0",
     "react-chartjs-2": "^5.2.0",
     "react-google-charts": "4.0.1",
