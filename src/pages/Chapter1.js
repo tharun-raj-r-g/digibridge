@@ -11,7 +11,7 @@ import cubeanimate from "../images/cube-animate-main.png";
 import coneanimate from "../images/cone-animate-main.png";
 import { MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "../components/ui/button.tsx";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import { useState } from "react";
 import SelectContentModal from "../components/SelectContentModal.js";
 import jungle from "../images/forest1.png";
@@ -31,40 +31,12 @@ import GameOverModal from "../components/GameOverModal.js";
 import happytiger from "../images/happytiger.jpg";
 import boyrunning from "../images/boyrunning.jpg";
 import walkingtiger from "../images/walkingtiger.png"
-import trashpaper from "../images/trashpaper.jpg"
+import trashpaper from "../images/trashpaper.jpg";
+import sub from "../json/subject.json";
 const Chapter1 = () => {
-  const questions = [
-    {
-      question:
-        "What happens to the magnetic field strength when the current through an inductor increases?",
-      options: ["Decreases", "Increases", "Same", "Zero"],
-      answer: "Increases",
-    },
-    {
-      question:
-        "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
-      options: ["Decreases", "Increases", "Same", "Zero"],
-      answer: "Zero",
-    },
-    {
-      question:
-        "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
-      options: ["Ferrite", "Aluminium", "Copper", "Gold"],
-      answer: "Ferrite",
-    },
-    {
-      question:
-        "What is the energy stored in an inductor with inductance L and current I?",
-      options: ["0.5LI²", "LI²", "0.5L²I", "0.5LI"],
-      answer: "LI²",
-    },
-    {
-      question:
-        "What happens to the total impedance in an RL circuit as the frequency of the AC source increases?",
-      options: ["Decreases", "Increases", "Same", "Zero"],
-      answer: "Increases",
-    },
-  ];
+  const { subject } = useParams();
+  const subjectdetails = sub[subject];
+  const questions = subjectdetails.chapters[0].questions;
   const [iscontentstate, setcontentstate] = useState(0);
   const [isanswer, setanswer] = useState("-1");
   const [ispaperopen, setpaperopen] = useState(false);

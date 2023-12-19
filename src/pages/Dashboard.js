@@ -56,6 +56,20 @@ const Dashboard = () => {
                     <span className={"text-4xl font-bold"}>40</span>
                 </div>
             </div>
+            <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
+        <Link
+          to={{ pathname: '/subject/physics', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+          onClick={handlePhyicsClick}
+        >
+          <img
+            src={physics}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Physics
+          </p>
+        </Link>
             <div className={"w-full justify-center flex mt-5"}>
             <div className=" w-[60%]  rounded-3xl  relative gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-center">
                 <Link
@@ -71,69 +85,74 @@ const Dashboard = () => {
                     </p>
                 </Link>
 
-                <Link
-                    to="/subject"
-                    className="h-[150px] w-[200px] rounded-3xl relative flex-row flex cursor-pointer"
-                >
-                    <img
-                        src={chemistry}
-                        className="rounded-3xl brightness-50 object-cover w-[100%]"
-                    />
-                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                        Chemistry
-                    </p>
-                </Link>
-                <Link
-                    to="/subject"
-                    className="h-[150px] w-[200px] rounded-3xl relative flex-row flex cursor-pointer"
-                >
-                    <img
-                        src={social}
-                        className="rounded-3xl brightness-50 object-cover w-[100%]"
-                    />
-                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                        Social
-                    </p>
-                </Link>
-
-                <Link
-                    to="/subject"
-                    className="h-[150px] w-[200px] rounded-3xl relative flex-row flex  cursor-pointer"
-                >
-                    <img
-                        src={maths}
-                        className="rounded-3xl brightness-50 object-cover w-[100%]"
-                    />
-                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                        Maths
-                    </p>
-                </Link>
-                <Link
-                    to="/subject"
-                    className="h-[150px] w-[200px] rounded-3xl relative flex-row flex  cursor-pointer"
-                >
-                    <img
-                        src={biology}
-                        className="rounded-3xl brightness-50 object-cover w-[100%]"
-                    />
-                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                        Biology
-                    </p>
-                </Link>
-                <Link
-                    to="/subject"
-                    className="h-[150px] w-[200px] rounded-3xl relative flex-row flex  cursor-pointer"
-                >
-                    <img
-                        src={english}
-                        className="rounded-3xl brightness-50 object-cover w-[100%]"
-                    />
-                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                        English
-                    </p>
-                </Link>
-            </div>
-            </div>
+        <Link
+          to={{ pathname: '/subject/chemistry', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
+          onClick={handleChemistryClick}
+        >
+          <img
+            src={chemistry}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Chemistry
+          </p>
+        </Link>
+        <Link
+          to={{ pathname: '/subject/social', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-20 cursor-pointer"
+          onClick={handleChemistryClick}
+        >
+          <img
+            src={social}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Social
+          </p>
+        </Link>
+      </div>
+      <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
+        <Link
+          to={{ pathname: '/subject/maths', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
+          onClick={handleMathsClick}
+        >
+          <img
+            src={maths}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Maths
+          </p>
+        </Link>
+        <Link
+          to={{ pathname: '/subject/biology', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-10 cursor-pointer"
+          onClick={handleBiologyClick}
+        >
+          <img
+            src={biology}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            Biology
+          </p>
+        </Link>
+        <Link
+          to={{ pathname: '/subject/english', }}
+          className="h-inherit w-[30%] rounded-3xl relative flex-row flex ml-20 cursor-pointer"
+          onClick={handleChemistryClick}
+        >
+          <img
+            src={english}
+            className="rounded-3xl brightness-50 object-cover w-[100%]"
+          />
+          <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+            English
+          </p>
+        </Link>
+      </div>
         </div>
     );
 };

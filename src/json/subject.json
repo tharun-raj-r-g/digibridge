@@ -1,6 +1,8 @@
 {
   "physics": {
     "name": "Physics",
+    "logo":"../images/physics-animate-main.jpg",
+    "gamelink":"/storygame/physics",
     "chapters": [
       {
         "chaptername": "Electricity",

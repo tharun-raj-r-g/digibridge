@@ -118,7 +118,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/subject"
+                    path="/subject/:subject"
                     element={
                         <AuthGuard>
 
@@ -148,7 +148,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/threedmodel"
+                    path="/threedmodel/:subject"
                     element={
                         <AuthGuard>
                                 <div className={"absolute top-2"}>
@@ -162,7 +162,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/storygame"
+                    path="/storygame/:subject"
                     element={
                         <AuthGuard>
                                 <div className={"absolute top-2"}>
@@ -190,7 +190,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/chapter1"
+                    path="/chapter1/:subject"
                     element={
                         <AuthGuard>
                                 <div className={"absolute top-2"}>
