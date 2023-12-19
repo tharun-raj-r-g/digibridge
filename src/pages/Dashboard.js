@@ -11,19 +11,7 @@ import {Link} from "react-router-dom";
 import subject from "../json/subject.json";
 import trophy from "../images/trophy.jpg"
 const Dashboard = (props) => {
-  const dataToPass = { name: 'John Doe', age: 25 };
-    const handlePhyicsClick = () => {
-        console.log("Button clicked!");
-    };
-    const handleChemistryClick = () => {
-        console.log("Button clicked!");
-    };
-    const handleMathsClick = () => {
-        console.log("Button clicked!");
-    };
-    const handleBiologyClick = () => {
-        console.log("Button clicked!");
-    };
+  const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
 
   return (
     <div className={"h-screen flex flex-col justify-evenly"}>
@@ -71,8 +59,9 @@ const Dashboard = (props) => {
                     <span className={"text-4xl font-bold"}>10</span>
                 </div>
             </div>
-            <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
-        <Link
+            <div className={"w-full justify-center flex"}>
+        <div className="gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-between">
+          <Link
           to={{ pathname: '/subject/physics', }}
           className="h-inherit w-[30%] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
           onClick={handlePhyicsClick}
