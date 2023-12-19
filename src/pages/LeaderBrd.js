@@ -13,138 +13,86 @@ import trophy from "../images/trophy.jpg";
 
 const LeaderBrd = (props) => {
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
-
+  const leaderlist = [
+    {
+      name: "Vishal",
+      streak: 12,
+      score: 100,
+      rank: 1,
+    },
+    {
+      name: "Freddy",
+      streak: 22,
+      score: 90,
+      rank: 2,
+    },
+    {
+      name: "Raghul",
+      streak: 8,
+      score: 70,
+      rank: 3,
+    },
+    {
+      name: "Ravi",
+      streak: 10,
+      score: 60,
+      rank: 4,
+    },
+    {
+      name: "Sam",
+      streak: 12,
+      score: 55,
+      rank: 5,
+    },
+    {
+      name: "Jacob",
+      streak: 22,
+      score: 50,
+      rank: 6,
+    },
+    {
+      name: "Raj",
+      streak: 8,
+      score: 40,
+      rank: 7,
+    },
+    {
+      name: "Arvind",
+      streak: 10,
+      score: 30,
+      rank: 8,
+    },
+  ];
   return (
-    <div className={"h-screen flex flex-col"}>
+    <div className={"h-screen flex flex-col items-center"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-between">
         <div className="h-inherit w-[50%] flex-col flex text-left justify-around">
-          <h1 className="font-poppins font-bold text-[25px]">LeaderBrd</h1>
-          <h1 className="font-poppins font-bold text-[45px]">
-            Welcome, Leader
-          </h1>
-        </div>
-        <div className="h-inherit flex-row flex justify-evenly items-center">
-          <MessageCircleMore className="h-[50px] w-[50px] mr-10" />
-          <img src={boy} className="h-[100px] w-[100px]" alt={"avatar"} />
-        </div>
-      </div>
-      <div className="mt-8 h-[100px] w-6/7 rounded-3xl relative flex-row flex justify-around">
-        <div className="h-[100px] bg-[#d9d9d9] w-[56%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-around items-center">
-            <img src={gift} className="h-[70px]" />
-            <h1 className="font-semibold text-3xl">
-              Your Daily Quest is here !
-            </h1>
-            <div className="h-[50px] bg-[#b47ede] w-[90px] rounded-2xl justify-center items-center flex">
-              <h1 className="text-center text-white font-semibold">Try now</h1>
-            </div>
+          <div className="flex flex-row items-center">
+            <img src={trophy} className="h-[50px]" />
+            <h1 className="font-poppins font-bold text-[45px]">LeaderBoard</h1>
           </div>
         </div>
-        <div
-          className={
-            "w-[10%] pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black"
-          }
-        >
-          <span className={"font-semibold"}>Streak</span>
-          <span className={"text-4xl font-bold"}>8</span>
-        </div>
-
-        <div
-          className={
-            "w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white"
-          }
-        >
-          <span className={"font-semibold"}>Your Best</span>
-          <span className={"text-4xl font-bold"}>40</span>
-        </div>
-        <div
-          className={
-            "w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white bg-cover bg-center brightness-75"
-          }
-          style={{ backgroundImage: `url(${trophy})` }}
-        >
-          <span className={"font-semibold"}>Rank</span>
-          <span className={"text-4xl font-bold"}>10</span>
+      </div>
+      <div className="h-[8%] bg-[#93e3d8] w-[100%] rounded-1xl ml-[10px] relative flex-row flex shadow-2xl">
+        <div className="absolute inset-0 bg-inherit shadow-inner rounded-1xl flex-row flex justify-start items-center pl-5">
+          <h1 className="text-2xl w-[6%] text-center">#</h1>
+          <h1 className="text-2xl w-[35%] text-center">Name</h1>
+          <h1 className="text-2xl w-[30%] text-center">Consistency</h1>
+          <h1 className="text-2xl w-[30%] text-center">Completion</h1>
+          <h1 className="text-2xl w-[30%] text-center">Score</h1>
         </div>
       </div>
-      <div className={"mt-20 w-full justify-center flex"}>
-        <div className="gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-between">
-          <Link
-            to={{ pathname: "/subject/physics" }}
-            className="h-[180px] w-[250px] rounded-3xl relative flex-row flex mr-10 cursor-pointer"
-          >
-            <img
-              src={physics}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              Physics
-            </p>
-          </Link>
-
-          <Link
-            to="/subject/chemistry"
-            className="h-[180px] w-[250px] rounded-3xl relative flex-row flex cursor-pointer"
-          >
-            <img
-              src={chemistry}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              Chemistry
-            </p>
-          </Link>
-          <Link
-            to="/subject/social"
-            className="h-[180px] w-[250px] rounded-3xl relative flex-row flex cursor-pointer"
-          >
-            <img
-              src={social}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              Social
-            </p>
-          </Link>
-
-          <Link
-            to="/subject/maths"
-            className="h-[180px] w-[250px] rounded-3xl relative flex-row flex  cursor-pointer"
-          >
-            <img
-              src={maths}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              Maths
-            </p>
-          </Link>
-          <Link
-            to="/subject/biology"
-            className="h-[180px] w-[250px] rounded-3xl relative flex-row flex  cursor-pointer"
-          >
-            <img
-              src={biology}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              Biology
-            </p>
-          </Link>
-          <Link
-            to="/subject/english"
-            className="h-[180px] w-[250px] rounded-3xl relative flex-row flex  cursor-pointer"
-          >
-            <img
-              src={english}
-              className="rounded-3xl brightness-50 object-cover w-[100%]"
-            />
-            <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-              English
-            </p>
-          </Link>
-        </div>
+      {leaderlist.map((item, index) => (
+        <div className="h-[8%] bg-[white] w-[100%] rounded-1xl ml-[10px] relative flex-row flex border-2 pl-5 items-center drop-shadow-2xl">
+          <h1 className="text-2xl w-[6%] text-center">{index+1}</h1>
+          <h1 className="text-2xl w-[35%] text-center">{item.name}</h1>
+          <h1 className="text-2xl w-[30%] text-center">{item.streak}</h1>
+          <h1 className="text-2xl w-[30%] text-center">{item.streak}</h1>
+          <div className="w-[30%] flex flex-col items-center">
+          <h1 className={`text-2xl w-[20%] rounded-2xl text-center ${index==0?"bg-[gold] text-white":(index==1?"bg-[silver] text-white":(index==2?"bg-[brown] text-white":""))}`}>{item.score}</h1>
+          </div>
       </div>
+      ))}
     </div>
   );
 };

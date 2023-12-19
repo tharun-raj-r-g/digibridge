@@ -23,8 +23,8 @@ const Dashboard = (props) => {
           </h1>
         </div>
         <div className="h-inherit flex-row flex justify-evenly items-center">
-          <MessageCircleMore className="h-[50px] w-[50px] mr-10" />
-          <img src={boy} className="h-[100px] w-[100px]" alt={"avatar"} />
+          <Link to={{pathname:"/mentor"}}><MessageCircleMore className="h-[50px] w-[50px] mr-10" /></Link>
+          <Link to={{pathname:"/settings"}}><img src={boy} className="h-[100px] w-[100px]" alt={"avatar"} /></Link>
         </div>
       </div>
       <div className="mt-8 h-[100px] w-6/7 rounded-3xl relative flex-row flex justify-around">
@@ -39,24 +39,27 @@ const Dashboard = (props) => {
             </div>
           </div>
         </div>
-        <div
+        <Link
+        to={{pathname:"/report"}}
           className={
             "w-[10%] pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black"
           }
         >
           <span className={"font-semibold"}>Consistency</span>
           <span className={"text-4xl font-bold"}>8</span>
-        </div>
+        </Link>
 
-        <div
+        <Link
+        to={{pathname:"/report"}}
           className={
             "w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white"
           }
         >
           <span className={"font-semibold"}>Your Best</span>
           <span className={"text-4xl font-bold"}>40</span>
-        </div>
-        <div
+        </Link>
+        <Link
+          to={{pathname:"/leaderboard"}}
           className={
             "w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white bg-cover bg-center brightness-75"
           }
@@ -64,7 +67,7 @@ const Dashboard = (props) => {
         >
           <span className={"font-semibold"}>Rank</span>
           <span className={"text-4xl font-bold"}>10</span>
-        </div>
+        </Link>
       </div>
       <div className={"mt-20 w-full justify-center flex"}>
         <div className="gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-between">
