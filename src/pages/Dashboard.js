@@ -8,16 +8,22 @@ import social from "../images/social.jpg";
 import english from "../images/english.png"
 import {MessageCircleMore} from "lucide-react";
 import {Link} from "react-router-dom";
-import * as z from "zod";
-
-const formSchema = z.object({
-    title: z.string().min(1, 'Title is required'),
-    content: z.string().min(1, 'Content is required'),
-
-});
-
-const Dashboard = () => {
-    const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
+import subject from "../json/subject.json";
+import trophy from "../images/trophy.jpg"
+const Dashboard = (props) => {
+  const dataToPass = { name: 'John Doe', age: 25 };
+    const handlePhyicsClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleChemistryClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleMathsClick = () => {
+        console.log("Button clicked!");
+    };
+    const handleBiologyClick = () => {
+        console.log("Button clicked!");
+    };
 
     return (
         <div className={"h-screen flex flex-col justify-between"}>
@@ -25,7 +31,7 @@ const Dashboard = () => {
                 <div className="h-inherit w-[50%] flex-col flex text-left justify-around">
                     <h1 className="font-poppins font-bold text-[25px]">Dashboard</h1>
                     <h1 className="font-poppins font-bold text-[45px]">
-                        Welcome, {currentUser.name}
+                        Welcome, John Doe
                     </h1>
                 </div>
                 <div className="h-inherit flex-row flex justify-evenly items-center">
@@ -33,8 +39,8 @@ const Dashboard = () => {
                     <img src={boy} className="h-[100px] w-[100px]" alt={"avatar"}/>
                 </div>
             </div>
-            <div className="h-[100px] w-6/7 rounded-3xl relative flex-row flex justify-around">
-                <div className="h-[100px] bg-[#d9d9d9] w-[66%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
+            <div className="h-[100px] w-[100%] rounded-3xl relative flex-row flex justify-around">
+                <div className="h-[100px] bg-[#d9d9d9] w-[56%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
                     <div
                         className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-around items-center">
                         <img src={gift} className="h-[70px]"/>
@@ -55,6 +61,11 @@ const Dashboard = () => {
                     <span className={"font-semibold"}>Your Best</span>
                     <span className={"text-4xl font-bold"}>40</span>
                 </div>
+                <div
+                    className={"w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white bg-cover bg-center brightness-75"} style={{ backgroundImage: `url(${trophy})`}}>
+                    <span className={"font-semibold"}>Rank</span>
+                    <span className={"text-4xl font-bold"}>10</span>
+                </div>
             </div>
             <div className="h-1/4 w-[70%] rounded-3xl ml-[150px] relative flex-row flex mb-5 justify-center">
         <Link
@@ -70,20 +81,6 @@ const Dashboard = () => {
             Physics
           </p>
         </Link>
-            <div className={"w-full justify-center flex mt-5"}>
-            <div className=" w-[60%]  rounded-3xl  relative gap-5 grid md:grid-cols-3 grid-cols-2  justify-items-center">
-                <Link
-                    to={'/subject'}
-                    className=" h-[150px] w-[200px] rounded-3xl relative flex-row flex  cursor-pointer"
-                >
-                    <img
-                        src={physics}
-                        className="rounded-3xl brightness-50 object-cover w-[100%]"
-                    />
-                    <p className="absolute text-white font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                        Physics
-                    </p>
-                </Link>
 
         <Link
           to={{ pathname: '/subject/chemistry', }}
