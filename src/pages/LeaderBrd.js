@@ -1,68 +1,97 @@
-import boy from "../images/boy1.png";
-import physics from "../images/physics.jpg";
-import chemistry from "../images/chemistry.jpg";
-import maths from "../images/maths.jpg";
-import biology from "../images/biology.png";
-import gift from "../images/gift.png";
-import social from "../images/social.jpg";
-import english from "../images/english.png";
-import { MessageCircleMore } from "lucide-react";
-import { Link } from "react-router-dom";
-import subject from "../json/subject.json";
 import trophy from "../images/trophy.jpg";
 
 const LeaderBrd = (props) => {
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
-  const leaderlist = [
-    {
-      name: "Vishal",
-      streak: 12,
-      score: 100,
-      rank: 1,
-    },
-    {
-      name: "Freddy",
-      streak: 22,
-      score: 90,
-      rank: 2,
-    },
-    {
-      name: "Raghul",
-      streak: 8,
-      score: 70,
-      rank: 3,
-    },
-    {
-      name: "Ravi",
-      streak: 10,
-      score: 60,
-      rank: 4,
-    },
-    {
-      name: "Sam",
-      streak: 12,
-      score: 55,
-      rank: 5,
-    },
-    {
-      name: "Jacob",
-      streak: 22,
-      score: 50,
-      rank: 6,
-    },
-    {
-      name: "Raj",
-      streak: 8,
-      score: 40,
-      rank: 7,
-    },
-    {
-      name: "Arvind",
-      streak: 10,
-      score: 30,
-      rank: 8,
-    },
-  ];
+  const users = JSON.parse(localStorage.getItem("studentData"));
+  console.log(users)
+  const scores = JSON.parse(localStorage.getItem("scores"));
+  function createLeaderboard(scores) {
+    // Create an object to store the total scores for each student
+    const totalScores = {};
+
+    // Calculate total scores for each student
+    scores.forEach(entry => {
+      const studentId = entry.studentId;
+      totalScores[studentId] = (totalScores[studentId] || 0) + entry.score;
+    });
+
+    // Convert the object into an array of { studentId, totalScore } objects
+    const leaderboardData = Object.entries(totalScores).map(([studentId, totalScore]) => ({
+      studentId,
+      totalScore
+    }));
+
+    // Sort the leaderboardData in descending order based on totalScore
+    leaderboardData.sort((a, b) => b.totalScore - a.totalScore);
+
+    // Add ranks to the leaderboardData
+    leaderboardData.forEach((entry, index) => {
+      entry.rank = index + 1;
+    });
+
+    // Map the leaderboardData to the required format
+    const leaderboard = leaderboardData.map(entry => ({
+      name: entry.studentId, // Assuming studentId is the name
+      score: entry.totalScore,
+      rank: entry.rank
+    }));
+
+    return leaderboard;
+  }
+  const leaderlist  = createLeaderboard(scores);
+  const findUser = (user)=>{
+    return (users.find(obj=>obj.id === user));
+  }
+  // const leaderlist = [
+  //   {
+  //     name: "Vishal",
+  //     streak: 12,
+  //     score: 100,
+  //     rank: 1,
+  //   },
+  //   {
+  //     name: "Freddy",
+  //     streak: 22,
+  //     score: 90,
+  //     rank: 2,
+  //   },
+  //   {
+  //     name: "Raghul",
+  //     streak: 8,
+  //     score: 70,
+  //     rank: 3,
+  //   },
+  //   {
+  //     name: "Ravi",
+  //     streak: 10,
+  //     score: 60,
+  //     rank: 4,
+  //   },
+  //   {
+  //     name: "Sam",
+  //     streak: 12,
+  //     score: 55,
+  //     rank: 5,
+  //   },
+  //   {
+  //     name: "Jacob",
+  //     streak: 22,
+  //     score: 50,
+  //     rank: 6,
+  //   },
+  //   {
+  //     name: "Raj",
+  //     streak: 8,
+  //     score: 40,
+  //     rank: 7,
+  //   },
+  //   {
+  //     name: "Arvind",
+  //     streak: 10,
+  //     score: 30,
+  //     rank: 8,
+  //   },
+  // ];
   return (
     <div className={"h-screen flex flex-col items-center"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-between">
@@ -77,17 +106,17 @@ const LeaderBrd = (props) => {
         <div className="absolute inset-0 bg-inherit shadow-inner rounded-1xl flex-row flex justify-start items-center pl-5">
           <h1 className="text-2xl w-[6%] text-center">#</h1>
           <h1 className="text-2xl w-[35%] text-center">Name</h1>
-          <h1 className="text-2xl w-[30%] text-center">Consistency</h1>
-          <h1 className="text-2xl w-[30%] text-center">Completion</h1>
+          {/*<h1 className="text-2xl w-[30%] text-center">Consistency</h1>*/}
+          {/*<h1 className="text-2xl w-[30%] text-center">Completion</h1>*/}
           <h1 className="text-2xl w-[30%] text-center">Score</h1>
         </div>
       </div>
       {leaderlist.map((item, index) => (
         <div className="h-[8%] bg-[white] w-[100%] rounded-1xl ml-[10px] relative flex-row flex border-2 pl-5 items-center drop-shadow-2xl">
           <h1 className="text-2xl w-[6%] text-center">{index+1}</h1>
-          <h1 className="text-2xl w-[35%] text-center">{item.name}</h1>
-          <h1 className="text-2xl w-[30%] text-center">{item.streak}</h1>
-          <h1 className="text-2xl w-[30%] text-center">{item.streak}</h1>
+          <h1 className="text-2xl w-[35%] text-center">{findUser(item.name)}</h1>
+          {/*<h1 className="text-2xl w-[30%] text-center">{item.streak}</h1>*/}
+          {/*<h1 className="text-2xl w-[30%] text-center">{item.score}</h1>*/}
           <div className="w-[30%] flex flex-col items-center">
           <h1 className={`text-2xl w-[20%] rounded-2xl text-center ${index==0?"bg-[gold] text-white":(index==1?"bg-[silver] text-white":(index==2?"bg-[brown] text-white":""))}`}>{item.score}</h1>
           </div>

@@ -1,5 +1,3 @@
-import home from "../images/dashboard.png";
-import boy from "../images/boy1.png";
 // import physicsanimate from "../images/physics-animate-main.jpg";
 import chemistryanimate from "../images/chemistryanimate.png"
 import biologyanimate from "../images/biology-animate-main.png";
@@ -27,8 +25,11 @@ const Subject = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
+  const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
+  const scores = JSON.parse(localStorage.getItem("scores")).filter(obj=>obj.studentId === currentUser.id)
+  const totalScore = scores.reduce((sum, entry) => sum + entry.score, 0);
   return (
+
     <div className={"flex flex-col justify-between"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-center mb-20">
         <div className="h-inherit w-[40%] flex-row flex text-center justify-around">
@@ -41,7 +42,7 @@ const Subject = () => {
           <h1 className="font-poppins font-bold text-[45px]">
             {subjectdetails.name} 
           </h1>
-          {/* {subject=="physics"?(<img src={physicsanimate} className="h-[70px] animate-spin" />):null} */}
+          {subject=="physics"?(<img src={subjectdetails.logo} className="h-[70px] animate-spin" />):null}
           {subject=="chemistry"?(<img src={chemistryanimate} className="h-[70px] animate-spin" />):null}
           {subject=="maths"?(<img src={coneanimate} className="h-[70px] animate-spin" />):null}
           {subject=="biology"?(<img src={biologyanimate} className="h-[70px] animate-spin" />):null}
@@ -58,7 +59,7 @@ const Subject = () => {
                 "w-1/4 h-4/5 pr-5 pl-5 flex flex-col rounded-2xl bg-white dark:bg-white text-center text-white dark:text-black justify-center"
               }
             >
-              <span className={"text-3xl font-bold text-black"}>700</span>
+              <span className={"text-3xl font-bold text-black"}>{totalScore}</span>
             </div>
           </div>
         </div>
@@ -73,7 +74,7 @@ const Subject = () => {
                 "w-1/4 h-4/5 pr-5 pl-5 flex flex-col rounded-2xl bg-white dark:bg-white text-center text-white dark:text-black justify-center"
               }
             >
-              <span className={"text-3xl font-bold text-black"}>75%</span>
+              <span className={"text-3xl font-bold text-black"}>0%</span>
             </div>
           </div>
         </div>

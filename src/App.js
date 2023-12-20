@@ -33,7 +33,11 @@ function App() {
     if (notes === null) {
       localStorage.setItem("notes", JSON.stringify([]));
     }
-  });
+    const scores = localStorage.getItem("scores");
+    if (scores === null) {
+      localStorage.setItem("scores", JSON.stringify([]));
+    }
+  }, []);
   return (
     <BrowserRouter>
       <Routes>

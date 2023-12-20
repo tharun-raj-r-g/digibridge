@@ -1,7 +1,6 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import sub from "../json/subject.json"
-import video from "../images/video/inductor.mp4"
 import {Counter} from "../components/Counter";
 import {cn} from "../lib/utils";
 import {Button} from "../components/ui/button";
@@ -18,12 +17,12 @@ import {
 const InteractiveQuiz = () => {
     const {subject, chapter} = useParams();
     const videoRef = useRef(null);
-
+    const subjectName = sub[subject].name;
     const chapterObj = sub[subject].chapters[chapter];
-
+    const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
     const [time, setTime] = useState();
     const [timeRunning, setTimeRunning] = useState(true);
-    const [initialTime, setInitialTime] = useState(10);
+    const [initialTime, setInitialTime] = useState(5);
     const [currentTime, setCurrentTime] = useState(0);
     const [state, setState] = useState(0);
     const [disp, setDisp] = useState(false);
@@ -32,7 +31,7 @@ const InteractiveQuiz = () => {
     const [answered, setAnswered] = useState(false)
     const [selectedAnswer, setSelectedAnswer] = useState("")
     const [qstate, setQState] = useState(0)
-
+    const scores = JSON.parse(localStorage.getItem("scores"));
     const onComplete = () => {
         if (state % 2 === 0) {
             videoRef.current.pause();
@@ -73,21 +72,19 @@ const InteractiveQuiz = () => {
         };
     }, []); // Empty dependency array to ensure the effect runs only once
 
-    // const handlePlay = () => {
-    //     // Play the video
-    //     videoRef.current.play();
-    //     setTimeRunning(true)
-    // };
-    //
-    // const handlePause = () => {
-    //     // Pause the video
-    //     videoRef.current.pause();
-    //     setTimeRunning(false)
-    // };
+
     const [alertDialog, setAlertDialog] = useState(false);
     const handleNext = () => {
         if (qstate === chapterObj.questions.length - 1) {
             setAlertDialog(true)
+            const newScore = {
+                subject: subject,
+                chapter: chapterObj.chaptername,
+                studentId: currentUser.id,
+                score: score
+            }
+            scores.push(newScore);
+            localStorage.setItem("scores", JSON.stringify(scores));
             videoRef.current.pause();
         } else {
             setState(state + 1);
@@ -137,7 +134,7 @@ const InteractiveQuiz = () => {
                     // onPlay={handlePlay}
                     // onPause={handlePause}
                 >
-                    <source src={video} type="video/mp4"/>
+                    <source src={sub[subject].chapters[0].videos.english} type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
                 <div className={"justify-evenly flex flex-col w-full"}>

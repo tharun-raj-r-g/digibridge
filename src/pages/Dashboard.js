@@ -12,6 +12,8 @@ import trophy from "../images/trophy.jpg";
 
 const Dashboard = (props) => {
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
+  const scores = JSON.parse(localStorage.getItem("scores")).filter(obj=>obj.studentId === currentUser.id)
+  const totalScore = scores.reduce((sum, entry) => sum + entry.score, 0);
 
   return (
     <div className={"h-screen flex flex-col"}>
@@ -46,7 +48,7 @@ const Dashboard = (props) => {
           }
         >
           <span className={"font-semibold"}>Consistency</span>
-          <span className={"text-4xl font-bold"}>8</span>
+          <span className={"text-4xl font-bold"}>1</span>
         </Link>
 
         <Link
@@ -56,7 +58,7 @@ const Dashboard = (props) => {
           }
         >
           <span className={"font-semibold"}>Your Best</span>
-          <span className={"text-4xl font-bold"}>40</span>
+          <span className={"text-4xl font-bold"}>{totalScore}</span>
         </Link>
         <Link
           to={{pathname:"/leaderboard"}}

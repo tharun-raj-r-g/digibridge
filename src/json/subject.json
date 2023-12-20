@@ -61,8 +61,7 @@
           }
         ],
         "videos": {
-          "english": "../images/video/inductor.mp4",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
@@ -98,8 +97,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
@@ -135,8 +133,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
@@ -172,8 +169,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
@@ -209,8 +205,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       }
     ]
@@ -270,8 +265,7 @@
           }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/chemistry.mp4"
         }
       },
       {
@@ -317,8 +311,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/chemistry.mp4"
         }
       },
       {
@@ -364,8 +357,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/chemistry.mp4"
         }
       },
       {
@@ -411,8 +403,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/chemistry.mp4"
         }
       },
       {
@@ -458,8 +449,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/chemistry.mp4"
         }
       }
     ]
@@ -525,8 +515,7 @@
           { "modelname": "Heart", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/biology.mp4"
         }
       },
       {
@@ -582,8 +571,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/biology.mp4"
         }
       },
       {
@@ -639,8 +627,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/biology.mp4"
         }
       },
       {
@@ -696,8 +683,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/biology.mp4"
         }
       },
       {
@@ -759,8 +745,7 @@
           }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "/video/biology.mp4"
         }
       }
     ]
@@ -805,8 +790,7 @@
           { "modelname": "Pyramid", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/maths.mp4"
         }
       },
       {
@@ -842,8 +826,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/maths.mp4"
         }
       },
       {
@@ -879,8 +862,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/maths.mp4"
         }
       },
       {
@@ -916,8 +898,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/maths.mp4"
         }
       },
       {
@@ -959,8 +940,7 @@
           }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "/video/maths.mp4"
         }
       }
     ]
@@ -1010,8 +990,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/social.mp4"
         }
       },
       {
@@ -1052,8 +1031,7 @@
           { "modelname": "Globe", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/social.mp4"
         }
       },
       {
@@ -1094,8 +1072,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/social.mp4"
         }
       },
       {
@@ -1136,8 +1113,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/social.mp4"
         }
       },
       {
@@ -1184,8 +1160,7 @@
           }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "/video/social.mp4"
         }
       }
     ]
@@ -1230,8 +1205,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/english.mp4"
         }
       },
       {
@@ -1267,8 +1241,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/english.mp4"
         }
       },
       {
@@ -1304,8 +1277,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/english.mp4"
         }
       },
       {
@@ -1341,8 +1313,7 @@
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/english.mp4"
         }
       },
       {
@@ -1384,8 +1355,7 @@
           }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "/video/english.mp4"
         }
       }
     ]

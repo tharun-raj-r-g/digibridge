@@ -4,56 +4,86 @@ import {useState} from "react";
 import PieChart from '../components/PieChart';
 import {Button} from "../components/ui/button";
 import {cn} from "../lib/utils";
+import subject from "../json/subject.json"
 
 
 const Report = () => {
     const [selectedSubject, setSelectedSubject] = useState("");
+    const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
+    const scores = JSON.parse(localStorage.getItem("scores")).filter(obj=>obj.studentId === currentUser.id);
+
+    const totalScore = scores.reduce((sum, entry) => sum + entry.score, 0);
+    const sumBySubject = scores.reduce((result, entry) => {
+        const subject = entry.subject;
+        result[subject] = (result[subject] || 0) + entry.score;
+        return result;
+    }, {});
+    const sumByCharacter = scores.reduce((result, entry) => {
+        const firstCharacter = entry.subject.charAt(0).toLowerCase();
+        result[firstCharacter] = (result[firstCharacter] || 0) + entry.score;
+        return result;
+    }, {});
+    const sumBySubjectAndChapter = scores.reduce((result, entry) => {
+        const subject = entry.subject;
+        const chapter = entry.chapter;
+
+        if (!result[subject]) {
+            result[subject] = {};
+        }
+
+        result[subject][chapter] = (result[subject][chapter] || 0) + entry.score;
+
+        return result;
+    }, {});
+
+    console.log(sumBySubjectAndChapter[subject.physics.name.toLowerCase()])
+
     const [data, setData] = useState({
-        streak: 28,
-        peak: 48,
-        score: 250.5,
+        streak: 1,
+        peak: 1,
+        score: totalScore,
         rank: 8,
         subjects: {
             physics: {
-                data_s: [15, 12, 11, 10, 5, 3],
-                labels: ["Magnetism", "EMF", "Force", "Inertia", "Momentum", "Gravity"],
-                score: 150,
+                data_s: subject.physics.chapters.map((chapter)=>(sumBySubjectAndChapter[subject.physics.name.toLowerCase()][chapter.chaptername] || 0)),
+                labels: subject.physics.chapters.map((chapter)=>chapter.chaptername.slice(0, 6)),
+                score: sumBySubject[subject.physics.name.toLowerCase()],
                 rank: 7
             },
             overall: {
-                data_s: [11, 13, 10, 8, 7, 5],
+                data_s: Object.values(sumBySubject),
                 labels: ["Physics", "Chemistry", "Biology", "Maths", "Social", "English"],
-                score: 125,
+                score: totalScore,
                 rank: 6
             },
             chemistry: {
-                data_s: [18, 12, 13, 10, 19, 8],
-                labels: ["Chemistry", "Chemistry", "Chemistry", "Chemistry", "Chemistry"],
-                score: 135,
+                data_s: subject.chemistry.chapters.map((chapter)=>(sumBySubjectAndChapter[subject.chemistry.name.toLowerCase()][chapter.chaptername] || 0)),
+                labels: subject.chemistry.chapters.map((chapter)=>chapter.chaptername.slice(0, 10)),
+                score: sumBySubject[subject.chemistry.name.toLowerCase()],
                 rank: 8
             },
             biology: {
-                data_s: [4, 19, 8, 12, 15, 5],
-                labels: ["Biology", "Biology", "Biology", "Biology", "Biology"],
-                score: 145,
+                data_s: subject.biology.chapters.map((chapter)=>(sumBySubjectAndChapter[subject.biology.name.toLowerCase()][chapter.chaptername] || 0)),
+                labels: subject.biology.chapters.map((chapter)=>chapter.chaptername.slice(0, 10)),
+                score: sumBySubject[subject.biology.name.toLowerCase()],
                 rank: 5
             },
             english: {
-                data_s: [18, 20, 14, 12, 2, 4],
-                labels: ["Grammar", "Vocabulary", "Communication", "Reading", "Writing", "Speaking"],
-                score: 155,
+                data_s: subject.english.chapters.map((chapter)=>(sumBySubjectAndChapter[subject.english.name.toLowerCase()][chapter.chaptername] || 0)),
+                labels: subject.english.chapters.map((chapter)=>chapter.chaptername.slice(0, 10)),
+                score: sumBySubject[subject.english.name.toLowerCase()],
                 rank: 6
             },
             social: {
-                data_s: [7, 2, 16, 2, 15, 11],
-                labels: ["Culture", "Gender", "Geography", "History", "Functionalism", "Fundamental Theory"],
-                score: 80,
+                data_s: subject.social.chapters.map((chapter)=>(sumBySubjectAndChapter[subject.social.name.toLowerCase()][chapter.chaptername] || 0)),
+                labels: subject.social.chapters.map((chapter)=>chapter.chaptername.slice(0, 10)),
+                score: sumBySubject[subject.social.name.toLowerCase()],
                 rank: 2
             },
             maths: {
-                data_s: [13, 18, 12, 19, 6, 10],
-                labels: ["Algebra", "Ratio", "Data Handling", "Fractions", "Decimals", "Mensuration"],
-                score: 150,
+                data_s: subject.maths.chapters.map((chapter)=>(sumBySubjectAndChapter[subject.maths.name.toLowerCase()][chapter.chaptername] || 0)),
+                labels: subject.maths.chapters.map((chapter)=>chapter.chaptername.slice(0, 10)),
+                score: sumBySubject[subject.maths.name.toLowerCase()],
                 rank: 5
             },
         }

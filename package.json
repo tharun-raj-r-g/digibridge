@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Digibridge E-learning Platform",
   "private": true,
-  "main": "main.js",
+  "main": "public/electron.js",
   "author": "Vishal <vishal.pvn.edu@gmail.com>",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
