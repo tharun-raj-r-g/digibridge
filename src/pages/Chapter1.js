@@ -161,7 +161,7 @@ const Chapter1 = () => {
             onClose={closeModal}
             modalTitle="Game Over !"
             modalContent="This is the custom modal content. You can pass any JSX or string here."
-            score={isScore}
+            score={iscontentstate}
           />
         </div>
       ) : (

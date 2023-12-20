@@ -30,9 +30,10 @@ const Subject = () => {
     console.log("Button clicked!");
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
+  const [chapter,setChapter]=useState(0);
+  const openModal = (i) => {
     setIsModalOpen(true);
+    setChapter(i);
   };
 
   const closeModal = () => {
@@ -96,7 +97,7 @@ const Subject = () => {
               <h1 className="font-semibold text-3xl">{item.chaptername}</h1>
               <div
                 className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer"
-                onClick={openModal}
+                onClick={()=>{openModal(index)}}
               >
                 <h1 className="text-center text-white font-semibold">
                   Continue
@@ -114,6 +115,7 @@ const Subject = () => {
         modalTitle="Choose your way!"
         modalContent="This is the custom modal content. You can pass any JSX or string here."
         subject={subject}
+        chapter={chapter}
       />
     </div>
   );

@@ -222,9 +222,9 @@
         "chaptername": "Chemical Reactions and Equations",
         "questions": [
           {
-            "question": "Which of the following elements belongs to the periodic table's second transition series?",
-            "options": ["Ni", "Au", "La", "Nb"],
-            "answer": "Nb"
+            "question": "Which subject provides insight into how we interact with the world around us, from the air we breathe to the food we eat.",
+            "options": ["Chemistry", "Physics", "Maths", "Social"],
+            "answer": "Social"
           },
           {
             "question": "What are the transition elements' characteristics?",
@@ -257,9 +257,13 @@
             "answer": "Atomic number"
           }
         ],
+        "content": [
+          "THEY ARE METALS!!!",
+          ""
+        ],
         "threedmodeltopics": [
           {
-            "modelname": "Litium Structure",
+            "modelname": "Molecules",
             "content": "",
             "qrcode": "",
             "model": ""
@@ -467,14 +471,14 @@
         "chaptername": "Life Processes",
         "questions": [
           {
-            "question": "The walls of the ventricles possess thick muscular projections, they are known as",
+            "question": "Which subject is about how species (including humans) function, evolve, and interact",
             "options": [
-              "Conus arteriosus",
-              "Truncus arterosus",
-              "Chordae tendineae",
-              "Columnae carneae"
+              "Biology",
+              "Physics",
+              "Chemistry",
+              "Social"
             ],
-            "answer": "Columnae carneae"
+            "answer": "Biology"
           },
           {
             "question": "Regulation of normal activities of the human heart takes place",
@@ -512,9 +516,13 @@
             "answer": "attempted backflow of blood into the atria"
           }
         ],
-
+        "content": [
+          "Intrinsic Human Heart!",
+          ""
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Brain", "content": "", "qrcode": "", "model": "" },
+          { "modelname": "Heart", "content": "", "qrcode": "", "model": "" }
         ],
         "videos": {
           "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
@@ -789,7 +797,10 @@
               "answer": "1"
             }
           ],
-
+          "content": [
+            "Tan45=1",
+            ""
+          ],
         "threedmodeltopics": [
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
@@ -961,9 +972,9 @@
         "chaptername": "Events and Processes",
         "questions": [
           {
-            "question": "Who made the famous remark, ‘When France sneezes, the rest of Europe catches a cold’?",
-            "options": ["Metternich", "Mazzini", "Garibaldi", "Louis Philippe"],
-            "answer": "Metternich"
+            "question": "Which subject is important for connected human well-being?",
+            "options": ["Social", "Science", "Maths", "Physics"],
+            "answer": "Social"
           },
           {
             "question": "The Treaty of Constantinople was signed in _______.",
@@ -991,7 +1002,10 @@
             "answer": "Conservatives"
           }
         ],
-
+        "content": [
+          "Constantinople-1832!",
+          ""
+        ],
         "threedmodeltopics": [
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
@@ -1185,12 +1199,12 @@
             {
               "question": "What inspired the protagonist to pursue a career in science in the story?",
               "options": ["A childhood dream", "A mentor's influence", "A personal tragedy", "Random chance"],
-              "answer": null
+              "answer": "A childhood dream"
             },
             {
               "question": "In the early years, what challenges did the protagonist face while trying to pursue a scientific education?",
               "options": ["Lack of interest", "Financial struggles", "Easy access to resources", "Overwhelming support"],
-              "answer": null
+              "answer": "Financial struggles"
             },
             {
               "question": "Which scientific experiment or discovery marked a turning point in the protagonist's career?",
@@ -1208,7 +1222,10 @@
               "answer": null
             }
           ],
-
+          "content": [
+            "Newtons second Law : F=ma",
+            ""
+          ],
         "threedmodeltopics": [
           { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
         ],
