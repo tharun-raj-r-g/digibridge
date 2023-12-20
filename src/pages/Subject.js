@@ -1,13 +1,5 @@
-// import physicsanimate from "../images/physics-animate-main.jpg";
-import chemistryanimate from "../images/chemistryanimate.png"
-import biologyanimate from "../images/biology-animate-main.png";
-import cubeanimate from "../images/cube-animate-main.png";
-import coneanimate from "../images/cone-animate-main.png";
-import socialanimate from "../images/socialanimate.png";
-import englishanimate from "../images/englishanimate.jpg"
 import {useParams} from "react-router-dom";
 import {useState} from "react";
-
 import SelectContentModal from "../components/SelectContentModal.js";
 import sub from "../json/subject.json";
 
@@ -33,21 +25,11 @@ const Subject = () => {
     <div className={"flex flex-col justify-between"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-center mb-20">
         <div className="h-inherit w-[40%] flex-row flex text-center justify-around">
-          {subject=="physics"?(<img src={subjectdetails.logo} className="h-[70px] animate-spin" />):null}
-          {subject=="chemistry"?(<img src={chemistryanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="maths"?(<img src={cubeanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="biology"?(<img src={biologyanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="social"?(<img src={socialanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="english"?(<img src={englishanimate} className="h-[70px] animate-spin" />):null}
+          <img src={subjectdetails.logo} className="h-[70px] animate-spin" />
           <h1 className="font-poppins font-bold text-[45px]">
             {subjectdetails.name} 
           </h1>
-          {subject=="physics"?(<img src={subjectdetails.logo} className="h-[70px] animate-spin" />):null}
-          {subject=="chemistry"?(<img src={chemistryanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="maths"?(<img src={coneanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="biology"?(<img src={biologyanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="social"?(<img src={socialanimate} className="h-[70px] animate-spin" />):null}
-          {subject=="english"?(<img src={englishanimate} className="h-[70px] animate-spin" />):null}
+          <img src={subjectdetails.logo} className="h-[70px] animate-spin" />
         </div>
       </div>
       <div className="h-[100px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">

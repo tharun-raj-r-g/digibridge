@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import threeDdModel from "../images/3d-model.png";
 import gamifiedlearning from "../images/gamified-learning.jpeg";
-import quizzes from "../images/quizzes.jpeg";
-import Chapter1 from "../pages/Chapter1";
-import boyrunning from "../images/boyrunning.jpg";
-import boyshocking from "../images/boyscary.png";
-import jungle from "../images/gamified-learning.jpeg";
 const GameOverModal = ({
   isOpen,
   onOpen,
   onClose,
   modalTitle,
-  modalContent,
   score,
-  subject
+  subject,
+  storymode
 }) => {
   const openModal = () => {
     onOpen();
@@ -41,19 +35,12 @@ const GameOverModal = ({
             {/* Modal Content */}
             <p className="text-3xl font-semibold mt-5 mb-10">{modalTitle}</p>
             <div className="flex flex-row w-[900px] justify-around">
-              <div className="h-[200px] flex flex-row items-center">
-                <div
-                  className="h-[330px] w-[250px] bg-cover bg-center flex flex-col mb-10"
-                  style={{ backgroundImage: `url(${boyshocking})` }}
-                ></div>
-              </div>
-
               <div
                     className={"w-[250px] pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black justify-around"}>
                     <span className={"font-semibold text-[20px]"}>Your Score</span>
                     <span className={"text-[100px] font-bold"}>{score}</span>
                 </div>
-              <Link to={`/storygame/${subject}`} className="relative cursor-pointer">
+              <Link to={`/storygame/${subject}/${storymode}`} className="relative cursor-pointer">
                 <img
                   src={gamifiedlearning}
                   className="rounded-3xl brightness-50 object-cover w-[250px] h-[230px]"

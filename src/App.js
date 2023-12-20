@@ -162,7 +162,7 @@ function App() {
           }
         />
         <Route
-          path="/storygame/:subject"
+          path="/storygame/:subject/:storymode"
           element={
             <AuthGuard>
               <div className={"absolute top-4 left-2"}>
@@ -201,7 +201,7 @@ function App() {
             }
         />
         <Route
-          path="/chapter1/:subject"
+          path="/chapter1/:subject/:storymode"
           element={
             <AuthGuard>
               <div className={"absolute top-4 left-2"}>

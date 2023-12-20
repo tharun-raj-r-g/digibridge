@@ -1,0 +1,45 @@
+{
+    "jungle":{
+        "name":"Escape the Jungle",
+        "questionbackground":"/imgs/jungle.jpg",
+        "frames":["/imgs/forest1.png","/imgs/jungleriver.jpg"],
+        "character":{
+            "name":"boy",
+            "scary":"/imgs/boyscary.png",
+            "running":"/imgs/boylooking.png",
+            "looking":"/imgs/boylooking.png"
+        },
+        "cartoon":{
+            "name":"tiger",
+            "scary":"/imgs/tigerscary.png",
+            "walking":"/imgs/walkingtiger.png",
+            "happy":"/imgs/happytiger.jpg"
+        },
+        "antagonist":{
+            "name":"snake",
+            "angry":"/imgs/snakeimage.jpg"
+        }
+    },
+    "temple":{
+        "name":"Escape the Temple",
+        "questionbackground":"/imgs/temple.jpg",
+        "frames":["/imgs/maintemple.jpg","/imgs/templemain.jpg"],
+        "character":{
+            "name":"boy",
+            "scary":"/imgs/boyscary.png",
+            "running":"/imgs/boylooking.png",
+            "looking":"/imgs/boylooking.png"
+        },
+        "cartoon":{
+            "name":"panda",
+            "scary":"/imgs/pandasad.png",
+            "walking":"imgs/walkingpanda.jpg",
+            "happy":"imgs/happypanda.png"
+        },
+        "antagonist":{
+            "name":"snake",
+            "angry":"/imgs/panther.png"
+        }
+
+    }
+}

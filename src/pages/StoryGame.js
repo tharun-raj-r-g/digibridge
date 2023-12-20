@@ -8,7 +8,7 @@ import sub from "../json/subject.json";
 import {Howl} from "howler";
 import sound_file from "../music/whereami.mp3";
 import forest_audio from "../music/forest.mp3"
-
+import story from "../json/story.json";
 const StoryGame = () => {
     const playsound = () => {
         const sound = new Howl({
@@ -21,25 +21,26 @@ const StoryGame = () => {
         sound.play();
         forest.play();
     }
-    const {subject} = useParams();
+    const {subject,storymode} = useParams();
+    const currentstory=story[storymode];
     const subjectdetails = sub[subject];
     return (
         <div className="min-h-screen w-screen bg-cover bg-center flex flex-col"
-             style={{backgroundImage: `url(${jungle})`}}>
+             style={{backgroundImage: `url(${currentstory.questionbackground})`}}>
             <div className="h-1/5 bg-inherit flex-row flex justify-center mt-10 mb-10">
                 <div className="h-inherit w-[60%] flex-row flex text-center justify-around">
                     <img src={physicsanimate} className="h-[70px] animate-bounce"/>
-                    <h1 className="font-poppins font-bold text-[45px]">Escape the Jungle</h1>
+                    <h1 className="font-poppins font-bold text-[45px]">{currentstory.name}</h1>
                     <img src={physicsanimate} className="h-[70px] animate-bounce"/>
                 </div>
       </div>
-      <div className="h-[480px] w-[40%] flex-col flex bg-contain ml-[440px] text-left items-center justify-center" style={{backgroundImage:`url(${rulesmap})`}}>
+      <div className="h-[480px] w-[40%] flex-col flex bg-cover ml-[440px] text-left items-center justify-center" style={{backgroundImage:`url(${rulesmap})`}}>
       <TypeAnimation
         sequence={[
             `Welcome, Intrepid ${subjectdetails.name} Explorer!\nYou've entered the heart of ${subjectdetails.name} Forest, where the path to freedom
           winds through the wisdom of ${subjectdetails.name}.\n\n The forest hold secrets,
           and each challenge you face is a step towards unlocking them.`,
-            1000,
+            500,
         ]}
         speed={80}
         style={{ whiteSpace: 'pre-line'}}
@@ -48,9 +49,9 @@ const StoryGame = () => {
       />
       </div>
       <div className="w-screen items-center flex text-center flex-col">
-          <Link to={`/chapter1/${subject}`} onClick={playsound}>
-              <img src={physicslogo} className="h-[100px] w-[100px] cursor-pointer animate-pulse"/>
-              <p className="text-white animate-pulse">Click to start !</p>
+          <Link to={`/chapter1/${subject}/${storymode}`} onClick={playsound}>
+              <img src={physicslogo} className="h-[100px] w-[100px] cursor-pointer"/>
+              <p className="text-white">Click to start !</p>
           </Link>
       </div>
       

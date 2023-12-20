@@ -79,7 +79,7 @@ const SelectContentModal = ({
               </Link>
               {(subject == "physics" || subject =="chemistry" || subject=="social") ? (
                 <Link
-                  to={`/storygame/${subject}`}
+                  to={`/storygame/${subject}/${"jungle"}`}
                   className="relative cursor-pointer"
                   onClick={playsound}
                 >
@@ -93,7 +93,7 @@ const SelectContentModal = ({
                 </Link>
               ) : (
                 <Link
-                  to={`/storygame2/${subject}`}
+                  to={`/storygame/${subject}/${"temple"}`}
                   className="relative cursor-pointer"
                   onClick={playsound2}
                 >
