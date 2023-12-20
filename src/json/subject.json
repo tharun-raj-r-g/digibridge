@@ -61,7 +61,7 @@
           }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
+          "english": "../images/video/inductor.mp4",
           "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
         }
       },

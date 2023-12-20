@@ -14,13 +14,13 @@ const SideNav = () => {
     const locations = [
         {name: "Dashboard", url: "/dashboard"},
         {name: "My Report", url: "/report"},
-        {name:"Leaderboard", url: "/leaderboard"},
+        {name: "Leaderboard", url: "/leaderboard"},
         {name: "Mentor", url: "/mentor"},
         {name: "Events", url: "/events"},
         {name: "Notes", url: "/notes"},
         {name: "Settings", url: "/settings"},
     ]
-    const handleOnLogOut = () =>{
+    const handleOnLogOut = () => {
         sessionStorage.removeItem("current-user");
         navigate("/");
     }
@@ -33,7 +33,9 @@ const SideNav = () => {
             </SheetTrigger>
             <SheetContent side={"left"} className={"w-fit"}>
                 <SheetHeader className={"justify-center items-center"}>
-                    <img src={logo} alt={"Logo"} className={"mt-3 w-3/4"}/>
+                    <Link to={"/dashboard"}>
+                        <img src={logo} alt={"Logo"} className={"mt-3 w-3/4"}/>
+                    </Link>
                 </SheetHeader>
                 <div className={"h-[80%] flex flex-col align-middle justify-center items-center"}>
                     {locations.map((item) => (

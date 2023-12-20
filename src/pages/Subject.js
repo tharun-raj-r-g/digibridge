@@ -7,28 +7,16 @@ import cubeanimate from "../images/cube-animate-main.png";
 import coneanimate from "../images/cone-animate-main.png";
 import socialanimate from "../images/socialanimate.png";
 import englishanimate from "../images/englishanimate.jpg"
-import { MessageSquare, MessageCircleMore } from "lucide-react";
-import { Button } from "../components/ui/button.tsx";
-import { Link, useParams } from "react-router-dom";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import {useParams} from "react-router-dom";
+import {useState} from "react";
+
 import SelectContentModal from "../components/SelectContentModal.js";
 import sub from "../json/subject.json";
+
 const Subject = () => {
   const { subject } = useParams();
   const subjectdetails = sub[subject];
-  const handlePhyicsClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleChemistryClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleMathsClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleBiologyClick = () => {
-    console.log("Button clicked!");
-  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [chapter,setChapter]=useState(0);
   const openModal = (i) => {

@@ -1,5 +1,5 @@
 import SideNav from "./components/SideNav";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/landing";
 import Report from "./pages/Report";
@@ -17,7 +17,7 @@ import InteractiveQuiz from "./pages/InteractiveQuiz";
 import Chapter1 from "./pages/Chapter1";
 import Chapter2 from "./pages/Chapter2";
 // import Inductor from "./pages/Inductor";
-import { useEffect } from "react";
+import {useEffect} from "react";
 import AuthGuard from "./components/AuthGuard";
 import Inductor from "./inductor";
 import LeaderBrd from "./pages/LeaderBrd";
@@ -184,17 +184,17 @@ function App() {
           }
         />
         <Route
-          path="/interactivequiz/:subject"
-          element={
-            <AuthGuard>
-              <div className={"absolute top-4 left-2"}>
-                <SideNav />
-              </div>
-              <div className={"p-2 ml-20 mr-20"}>
-                <InteractiveQuiz />
-              </div>
-            </AuthGuard>
-          }
+            path="/interactivequiz/:subject/:chapter"
+            element={
+              <AuthGuard>
+                <div className={"absolute top-4 left-2"}>
+                  <SideNav/>
+                </div>
+                <div className={"p-2 ml-20 mr-20"}>
+                  <InteractiveQuiz/>
+                </div>
+              </AuthGuard>
+            }
         />
         <Route
           path="/chapter1/:subject"
