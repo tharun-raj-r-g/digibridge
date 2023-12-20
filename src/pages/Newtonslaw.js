@@ -47,8 +47,8 @@ const StoryGame = () => {
       </div>
       <div className="w-screen items-center flex text-center flex-col">
         <Link to={`/chapter1/${subject}`}>
-      <img src={physicslogo} className="h-[100px] w-[100px] cursor-pointer animate-pulse"/>
-      <p className="text-white animate-pulse">Click to start !</p>
+      <img src={physicslogo} className="h-[100px] w-[100px] cursor-pointer "/>
+      <p className="text-white ">Click to start !</p>
       </Link>
       </div>
       

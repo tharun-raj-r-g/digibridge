@@ -2,7 +2,6 @@
   "physics": {
     "name": "Physics",
     "logo":"/imgs/physics-animate-main.jpg",
-    "gamelink":"/storygame/physics",
     "chapters": [
       {
         "chaptername": "Electricity",
@@ -18,9 +17,9 @@
             "answer": "Physics"
           },
           {
-            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Zero"
+            "question": "F=",
+            "options": ["ma", "ca", "na", "ma2"],
+            "answer": "ma"
           },
           {
             "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
@@ -49,34 +48,36 @@
           }
         ],
         "content": [
-          "Newtons second Law : F=ma",
-          ""
+          "Newtons second Law : F=ma"
         ],
         "threedmodeltopics": [
           {
             "modelname": "Inductor",
             "content": "",
-            "qrcode": "",
-            "model": ""
+            "model":""
           }
         ],
         "videos": {
-          "english": "../images/video/inductor.mp4",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
         "chaptername": "Magnetic Effects of Electric Current",
         "questions": [
           {
-            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Increases"
+            "question": "What Subject is the combination of experiment, observation and mathematics?",
+            "options": [
+              "Physics",
+              "Chemistry",
+              "Maths",
+              "Geography"
+            ],
+            "answer": "Physics"
           },
           {
-            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Zero"
+            "question": "F=",
+            "options": ["ma", "ca", "na", "ma2"],
+            "answer": "ma"
           },
           {
             "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
@@ -94,26 +95,33 @@
             "answer": "Increases"
           }
         ],
+        "content": [
+          "Newtons second Law : F=ma"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Inductor", "content": "","model":"" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "video/inductor.mp4"
         }
       },
       {
         "chaptername": "Sources of Energy",
         "questions": [
           {
-            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Increases"
+            "question": "What Subject is the combination of experiment, observation and mathematics?",
+            "options": [
+              "Physics",
+              "Chemistry",
+              "Maths",
+              "Geography"
+            ],
+            "answer": "Physics"
           },
           {
-            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Zero"
+            "question": "F=",
+            "options": ["ma", "ca", "na", "ma2"],
+            "answer": "ma"
           },
           {
             "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
@@ -131,26 +139,33 @@
             "answer": "Increases"
           }
         ],
+        "content": [
+          "Newtons second Law : F=ma"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Inductor", "content": "","model":"" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
         "chaptername": "Our Environment",
         "questions": [
           {
-            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Increases"
+            "question": "What Subject is the combination of experiment, observation and mathematics?",
+            "options": [
+              "Physics",
+              "Chemistry",
+              "Maths",
+              "Geography"
+            ],
+            "answer": "Physics"
           },
           {
-            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Zero"
+            "question": "F=",
+            "options": ["ma", "ca", "na", "ma2"],
+            "answer": "ma"
           },
           {
             "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
@@ -168,26 +183,33 @@
             "answer": "Increases"
           }
         ],
+        "content": [
+          "Newtons second Law : F=ma"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Inductor", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
         "chaptername": "Management of Natural Resources",
         "questions": [
           {
-            "question": "What happens to the magnetic field strength when the current through an inductor increases?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Increases"
+            "question": "What Subject is the combination of experiment, observation and mathematics?",
+            "options": [
+              "Physics",
+              "Chemistry",
+              "Maths",
+              "Geography"
+            ],
+            "answer": "Physics"
           },
           {
-            "question": "In an RL circuit, what happens to the current when the inductor is removed and replaced with a wire?",
-            "options": ["Decreases", "Increases", "Same", "Zero"],
-            "answer": "Zero"
+            "question": "F=",
+            "options": ["ma", "ca", "na", "ma2"],
+            "answer": "ma"
           },
           {
             "question": "Which of the following materials is commonly used for high-frequency inductor cores due to its stability and high Q-factor?",
@@ -205,18 +227,21 @@
             "answer": "Increases"
           }
         ],
+        "content": [
+          "Newtons second Law : F=ma"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Inductor", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       }
     ]
   },
   "chemistry": {
     "name": "Chemistry",
+    "logo":"/imgs/chemistryanimate.png",
     "chapters": [
       {
         "chaptername": "Chemical Reactions and Equations",
@@ -258,20 +283,17 @@
           }
         ],
         "content": [
-          "THEY ARE METALS!!!",
-          ""
+          "THEY ARE METALS!!!"
         ],
         "threedmodeltopics": [
           {
             "modelname": "Molecules",
             "content": "",
-            "qrcode": "",
             "model": ""
           }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "/video/inductor.mp4"
         }
       },
       {
@@ -313,12 +335,14 @@
             "answer": "Atomic number"
           }
         ],
+        "content": [
+          "THEY ARE METALS!!!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Molecules", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": ""
         }
       },
       {
@@ -360,12 +384,14 @@
             "answer": "Atomic number"
           }
         ],
+        "content": [
+          "THEY ARE METALS!!!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Molecules", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": ""
         }
       },
       {
@@ -407,12 +433,14 @@
             "answer": "Atomic number"
           }
         ],
+        "content": [
+          "THEY ARE METALS!!!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Molecules", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": ""
         }
       },
       {
@@ -454,18 +482,21 @@
             "answer": "Atomic number"
           }
         ],
+        "content": [
+          "THEY ARE METALS!!!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Molecules", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": ""
         }
       }
     ]
   },
   "biology": {
     "name": "Biology",
+    "logo":"/imgs/biology-animate-main.png",
     "chapters": [
       {
         "chaptername": "Life Processes",
@@ -517,16 +548,14 @@
           }
         ],
         "content": [
-          "Intrinsic Human Heart!",
-          ""
+          "Intrinsic Human Heart!"
         ],
         "threedmodeltopics": [
-          { "modelname": "Brain", "content": "", "qrcode": "", "model": "" },
-          { "modelname": "Heart", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Brain", "content": "","model": "" },
+          { "modelname": "Heart", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -578,12 +607,15 @@
             "answer": "attempted backflow of blood into the atria"
           }
         ],
+        "content": [
+          "Intrinsic Human Heart!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Brain", "content": "","model": "" },
+          { "modelname": "Heart", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -635,12 +667,15 @@
             "answer": "attempted backflow of blood into the atria"
           }
         ],
+        "content": [
+          "Intrinsic Human Heart!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Brain", "content": "","model": "" },
+          { "modelname": "Heart", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -692,12 +727,15 @@
             "answer": "attempted backflow of blood into the atria"
           }
         ],
+        "content": [
+          "Intrinsic Human Heart!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Brain", "content": "","model": "" },
+          { "modelname": "Heart", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -749,24 +787,22 @@
             "answer": "attempted backflow of blood into the atria"
           }
         ],
+        "content": [
+          "Intrinsic Human Heart!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
-          {
-            "modelname": "Animal Cell",
-            "content": "",
-            "qrcode": "",
-            "model": ""
-          }
+          { "modelname": "Brain", "content": "","model": "" },
+          { "modelname": "Heart", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       }
     ]
   },
   "maths": {
     "name": "Maths",
+    "logo":"/imgs/cube-animate-main.png",
     "chapters": [
       {
         "chaptername": "Real Numbers",
@@ -798,15 +834,13 @@
             }
           ],
           "content": [
-            "Tan45=1",
-            ""
+            "Tan45=1"
           ],
         "threedmodeltopics": [
-          { "modelname": "Pyramid", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Pyramid", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -838,12 +872,14 @@
               "answer": "1"
             }
           ],
+          "content": [
+            "Tan45=1"
+          ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Pyramid", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -875,12 +911,14 @@
               "answer": "1"
             }
           ],
+          "content": [
+            "Tan45=1"
+          ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Pyramid", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -912,12 +950,14 @@
               "answer": "1"
             }
           ],
+          "content": [
+            "Tan45=1"
+          ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Pyramid", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -949,24 +989,21 @@
               "answer": "1"
             }
           ],
+          "content": [
+            "Tan45=1"
+          ],
         "threedmodeltopics": [
-          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
-          {
-            "modelname": "Animal Cell",
-            "content": "",
-            "qrcode": "",
-            "model": ""
-          }
+          { "modelname": "Pyramid", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       }
     ]
   },
   "social": {
     "name": "Social",
+    "logo":"/imgs/socialanimate.png",
     "chapters": [
       {
         "chaptername": "Events and Processes",
@@ -1003,15 +1040,13 @@
           }
         ],
         "content": [
-          "Constantinople-1832!",
-          ""
+          "Constantinople-1832!"
         ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Globe", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1048,12 +1083,14 @@
             "answer": "Conservatives"
           }
         ],
+        "content": [
+          "Constantinople-1832!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Globe", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Globe", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1090,12 +1127,14 @@
             "answer": "Conservatives"
           }
         ],
+        "content": [
+          "Constantinople-1832!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Globe", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1132,12 +1171,14 @@
             "answer": "Conservatives"
           }
         ],
+        "content": [
+          "Constantinople-1832!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "Globe", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1174,24 +1215,21 @@
             "answer": "Conservatives"
           }
         ],
+        "content": [
+          "Constantinople-1832!"
+        ],
         "threedmodeltopics": [
-          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
-          {
-            "modelname": "Animal Cell",
-            "content": "",
-            "qrcode": "",
-            "model": ""
-          }
+          { "modelname": "Globe", "content": "","model": "" }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       }
     ]
   },
   "english": {
     "name": "English",
+    "logo":"/imgs/englishanimate.jpg",
     "chapters": [
       {
         "chaptername": "A Letter to God",
@@ -1223,15 +1261,13 @@
             }
           ],
           "content": [
-            "Newtons second Law : F=ma",
-            ""
+            "Its all about money"
           ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "English", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1263,12 +1299,14 @@
               "answer": null
             }
           ],
+          "content": [
+            "Its all about money"
+          ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "English", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1300,12 +1338,14 @@
               "answer": null
             }
           ],
+          "content": [
+            "Its all about money"
+          ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "English", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1337,12 +1377,14 @@
               "answer": null
             }
           ],
+          "content": [
+            "Its all about money"
+          ],
         "threedmodeltopics": [
-          { "modelname": "Inductor", "content": "", "qrcode": "", "model": "" }
+          { "modelname": "English", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94",
-          "telugu": "https://www.youtube.com/watch?v=U8q1JetNu"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       },
       {
@@ -1374,18 +1416,14 @@
               "answer": null
             }
           ],
+          "content": [
+            "Its all about money"
+          ],
         "threedmodeltopics": [
-          { "modelname": "DNA", "content": "", "qrcode": "", "model": "" },
-          {
-            "modelname": "Animal Cell",
-            "content": "",
-            "qrcode": "",
-            "model": ""
-          }
+          { "modelname": "English", "content": "", "model": "" }
         ],
         "videos": {
-          "english": "https://youtu.be/0xe1s65IH0w?si=ieo6FfEofJ65f4rA",
-          "telugu": "https://youtu.be/WmKXHhUHI-8?si=qDpb__K2Yb3OvSrP"
+          "english": "https://www.youtube.com/watch?v=bKKJkxqIg94"
         }
       }
     ]

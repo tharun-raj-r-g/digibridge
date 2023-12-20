@@ -55,7 +55,7 @@ const Dashboard = (props) => {
             "w-[10%] pr-5 pl-5 flex flex-col border-2 border-black dark:border-white p-3 rounded-2xl bg-white dark:bg-black text-center text-black dark:text-white"
           }
         >
-          <span className={"font-semibold"}>Your Best</span>
+          <span className={"font-semibold"}>Best Score</span>
           <span className={"text-4xl font-bold"}>40</span>
         </Link>
         <Link

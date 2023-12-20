@@ -191,7 +191,7 @@ const Chapter2 = () => {
             <div>
               <div className="h-[150px] w-screen flex flex-row justify-center items-center mt-[30px]">
                 <div
-                  className="h-[150px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] animate-pulse cursor-pointer"
+                  className="h-[150px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]  cursor-pointer"
                   style={{ backgroundImage: `url(${treeBoard})` }}
                   onClick={() => {
                     setcontentstate(iscontentstate + 1);
@@ -293,7 +293,7 @@ const Chapter2 = () => {
                   </div>
                   {isanswer != "" ? (
                       <div
-                          className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer animate-pulse
+                          className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer 
                 }`}
                           style={{backgroundImage: `url(${treeBoard})`}}
                           onClick={() => {
@@ -480,7 +480,7 @@ const Chapter2 = () => {
                   style={{ backgroundImage: `url(${boylooking})` }}
                 ></div>
                 <div
-                  className="h-[50px] w-[140px] bg-cover bg-center flex flex-col mt-[250px] cursor-pointer bg-white rounded-2xl text-center justify-center animate-pulse"
+                  className="h-[50px] w-[140px] bg-cover bg-center flex flex-col mt-[250px] cursor-pointer bg-white rounded-2xl text-center justify-center "
                   style={{ backgroundImage: `url(${brick})` }}
                   onClick={startMoving}
                 >

@@ -1,21 +1,15 @@
-import {Button} from "../components/ui/button.tsx";
-import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {Howl} from "howler";
+import { Button } from "../components/ui/button.tsx";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Howl } from "howler";
 import jungle from "../images/forest1.png";
 import cloudleft from "../images/cloudleft.png";
 import cloudright from "../images/cloudright.jpg";
-import boyshocking from "../images/boyscary.png";
 import AnimatedTyping from "../components/AnimatedTyping.js";
-import boylooking from "../images/boylooking.png";
-import tigerscary from "../images/tigerscary.png";
 import snake from "../images/snakeimage.jpg";
 import treeBoard from "../images/treeboard.png";
 import questiontree from "../images/questiontree.png";
 import GameOverModal from "../components/GameOverModal.js";
-import happytiger from "../images/happytiger.jpg";
-import boyrunning from "../images/boyrunning.jpg";
-import walkingtiger from "../images/walkingtiger.png";
 import trashpaper from "../images/trashpaper.jpg";
 import sub from "../json/subject.json";
 import someone_audio from "../music/someone-help-me.mp3";
@@ -23,42 +17,46 @@ import hola_audio from "../music/hola.mp3";
 import onlyway_audio from "../music/the only way.mp3";
 import goo_audio from "../music/lets_goo.mp3";
 import search_audio from "../music/serch-for-hints.mp3";
-import there_is_hint_audio from "../music/there-is-an-hint.mp3"
+import there_is_hint_audio from "../music/there-is-an-hint.mp3";
 import openpaper from "../images/openpaper1.jpg";
 import brick from "../images/greenwall.jpg";
-import {cn} from "../lib/utils.ts";
+import { cn } from "../lib/utils.ts";
 import jungleriver from "../images/jungleriver.jpg";
 import didyouhear_audio from "../music/didyouhear.mp3";
 import reached_audio from "../music/reached.mp3";
-
+import story from "../json/story.json";
+import WinModal from "../components/WinModal.js";
 const Chapter1 = () => {
-  const {subject} = useParams();
+  const { subject, storymode } = useParams();
   const subjectdetails = sub[subject];
+  const currentstory = story[storymode];
   const questions = subjectdetails.chapters[0].questions;
   const [iscontentstate, setcontentstate] = useState(0);
   const [isanswer, setanswer] = useState("");
-  const [secondlaw, setsecondlaw] = useState("");
+  const [secondquestion, setsecondlaw] = useState("");
   const [ispaperopen, setpaperopen] = useState(false);
   const [isScore, setScore] = useState(0);
   const [boyPosition, setBoyPosition] = useState(0);
-  const [tigerPosition, setTigerPosition] = useState(0);
+  const [cartoonPosition, setTigerPosition] = useState(0);
   const [moved, setmoved] = useState(false);
-  const [win, setwin] = useState(false)
+  const [win, setwin] = useState(false);
   const contentchange = () => {
     // setTimeout(() => {
     setcontentstate(iscontentstate + 1);
     // }, 2000); // 2000 milliseconds (2 seconds)
   };
-
-  useEffect(() => {
-    if (secondlaw.length >= 2 && secondlaw !== "ma") {
-      setsecondlaw("");
+  useEffect(()=>{
+    if(isScore>=2){
+      setwin(true);
+      console.log(setwin);
     }
-    if (secondlaw === "ma") {
-      console.log("ma");
-      setwin(true)
+  },[isScore]);
+  useEffect(()=>{
+    if(iscontentstate>=12){
+      setcontentstate(-1);
+      console.log(setwin);
     }
-  }, [secondlaw])
+  },[iscontentstate]);
   const CheckAnswer = (number) => {
     if (isanswer == questions[number].answer) {
       setcontentstate(iscontentstate + 1);
@@ -71,7 +69,7 @@ const Chapter1 = () => {
 
   const Move = () => {
     setBoyPosition(boyPosition + 20);
-    setTigerPosition(tigerPosition + 20);
+    setTigerPosition(cartoonPosition + 20);
   };
 
   const startMoving = () => {
@@ -92,86 +90,105 @@ const Chapter1 = () => {
   useEffect(() => {
     if (iscontentstate === 1) {
       const someone = new Howl({
-        src: [someone_audio]
-      })
+        src: [someone_audio],
+      });
 
       someone.play();
-
     }
     if (iscontentstate === 3) {
       const hola = new Howl({
-        src: [hola_audio]
-      })
+        src: [hola_audio],
+      });
       hola.play();
     }
     if (iscontentstate === 4) {
       const onlyway = new Howl({
-        src: [onlyway_audio]
-      })
+        src: [onlyway_audio],
+      });
       onlyway.play();
     }
     if (iscontentstate === 5) {
       const goo = new Howl({
-        src: [goo_audio]
-      })
+        src: [goo_audio],
+      });
       goo.play();
     }
     if (iscontentstate === 6) {
       const search = new Howl({
-        src: [search_audio]
-      })
+        src: [search_audio],
+      });
       search.play();
     }
     if (iscontentstate === 7) {
       const there_is_hint = new Howl({
-        src: [there_is_hint_audio]
-      })
+        src: [there_is_hint_audio],
+      });
       there_is_hint.play();
     }
     if (iscontentstate === 9) {
       const goo = new Howl({
-        src: [goo_audio]
-      })
+        src: [goo_audio],
+      });
       goo.play();
     }
     if (iscontentstate === 10) {
       const didyouhear = new Howl({
-        src: [didyouhear_audio]
-      })
+        src: [didyouhear_audio],
+      });
       didyouhear.play();
     }
     if (iscontentstate === 11) {
       const reached = new Howl({
-        src: [reached_audio]
-      })
+        src: [reached_audio],
+      });
       reached.play();
     }
   }, [iscontentstate]);
 
   return (
-      <div
-          className="min-h-screen w-screen bg-cover bg-center flex flex-col items-center justify-start"
-          style={{backgroundImage: iscontentstate <= 10 ? (`url(${jungle})`) : (`url(${jungleriver})`)}}
-      >
-        {iscontentstate == -1 ? (
-            <div>
-              <GameOverModal
-                  isOpen={isModalOpen}
+    <div
+      className="min-h-screen w-screen bg-cover bg-center flex flex-col items-center justify-start"
+      style={{
+        backgroundImage:
+          iscontentstate <= 10
+            ? `url(${currentstory.frames[0]})`
+            : `url(${currentstory.frames[1]})`,
+      }}
+    >
+      {iscontentstate == -1 ? (
+        <div>
+          <GameOverModal
+            isOpen={isModalOpen}
             onOpen={openModal}
             onClose={closeModal}
             modalTitle="Game Over !"
-            modalContent="This is the custom modal content. You can pass any JSX or string here."
-            score={iscontentstate}
+            score={isScore}
+            subject={subject}
+            storymode={storymode}
           />
         </div>
-      ) : (
+      ) : null}
+      {win ? (
+        <div>
+          <WinModal
+            isOpen={isModalOpen}
+            onOpen={openModal}
+            onClose={closeModal}
+            modalTitle="Booyah...You Won !"
+            score={isScore}
+            subject={subject}
+            storymode={storymode}
+          />
+        </div>
+      ) : null}
+      {!win && iscontentstate != -1 ? (
         <div>
           {iscontentstate == 0 ? (
             <div>
               <div className="h-[200px] w-screen flex flex-row justify-center items-center mt-[180px] mb-[50px]">
                 <div
-                    className="h-[300px] w-[300px] bg-cover bg-center  flex flex-col mr-[100px] justify-center text-center items-center pb-[100px]"
-                    style={{backgroundImage: `url(${cloudleft})`}}
+                  className="h-[300px] w-[300px] bg-cover bg-center  flex flex-col mr-[100px] justify-center text-center items-center pb-[100px]"
+                  style={{ backgroundImage: `url(${cloudleft})` }}
                 >
                   <AnimatedTyping
                     text={[
@@ -182,8 +199,10 @@ const Chapter1 = () => {
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-start items-center">
                 <div
-                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col ml-[200px]"
-                    style={{backgroundImage: `url(${boyshocking})`}}
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col ml-[200px]"
+                  style={{
+                    backgroundImage: `url(${currentstory.character.scary})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
@@ -193,7 +212,7 @@ const Chapter1 = () => {
             <div>
               <div className="h-[150px] w-screen flex flex-row justify-center items-center mt-[30px]">
                 <div
-                  className="h-[150px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] animate-pulse cursor-pointer"
+                  className="h-[150px] w-[300px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]  cursor-pointer"
                   style={{ backgroundImage: `url(${treeBoard})` }}
                   onClick={() => {
                     setcontentstate(iscontentstate + 1);
@@ -215,11 +234,117 @@ const Chapter1 = () => {
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
                   className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${boylooking})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.character.looking})`,
+                  }}
                 ></div>
                 <div
                   className="h-[200px] w-[150px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${tigerscary})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.scary})`,
+                  }}
+                ></div>
+                <div
+                  className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
+                  style={{
+                    backgroundImage: `url(${currentstory.antagonist.angry})`,
+                  }}
+                ></div>
+              </div>
+            </div>
+          ) : null}
+          {iscontentstate == 2 ? (
+            <div>
+              <div className="h-[350px] w-screen flex flex-row justify-center items-center mt-[30px]">
+                <div
+                  className="h-[350px] w-[500px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
+                  style={{ backgroundImage: `url(${questiontree})` }}
+                >
+                  <h1 className="text-left mt-[50px] text-[15px] w-[300px] text-white">
+                    {questions[0].question}
+                  </h1>
+                </div>
+                <div className="flex-col flex">
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[0] && isanswer != ""
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[0])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[0]}
+                    </h1>
+                  </div>
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[1] && isanswer != ""
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[1])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[1]}
+                    </h1>
+                  </div>
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[2] && isanswer != ""
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[2])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[2]}
+                    </h1>
+                  </div>
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
+                      isanswer != questions[0].options[3] && isanswer != ""
+                        ? "brightness-[25%]"
+                        : "brightness-[100%]"
+                    }`}
+                    onClick={() => setanswer(questions[0].options[3])}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      {questions[0].options[3]}
+                    </h1>
+                  </div>
+                </div>
+                {isanswer != "" ? (
+                  <div
+                    className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer 
+                }`}
+                    style={{ backgroundImage: `url(${treeBoard})` }}
+                    onClick={() => {
+                      CheckAnswer(0);
+                    }}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      Confirm
+                    </h1>
+                  </div>
+                ) : null}
+              </div>
+              <div className="h-[200px] w-screen flex flex-row justify-around items-center">
+                <div
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{
+                    backgroundImage: `url(${currentstory.character.looking})`,
+                  }}
+                ></div>
+                <div
+                  className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.scary})`,
+                  }}
                 ></div>
                 <div
                   className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
@@ -227,102 +352,6 @@ const Chapter1 = () => {
                 ></div>
               </div>
             </div>
-          ) : null}
-          {iscontentstate == 2 ? (
-              <div>
-                <div className="h-[350px] w-screen flex flex-row justify-center items-center mt-[30px]">
-                  <div
-                      className="h-[350px] w-[500px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px]"
-                      style={{backgroundImage: `url(${questiontree})`}}
-                  >
-                    <h1 className="text-left mt-[50px] text-[15px] w-[300px] text-white">
-                      {questions[0].question}
-                    </h1>
-                  </div>
-                  <div className="flex-col flex">
-                    <div
-                        className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                            isanswer != questions[0].options[0] && isanswer != ""
-                                ? "brightness-[25%]"
-                                : "brightness-[100%]"
-                        }`}
-                        onClick={() => setanswer(questions[0].options[0])}
-                        style={{backgroundImage: `url(${treeBoard})`}}
-                    >
-                      <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
-                        {questions[0].options[0]}
-                      </h1>
-                    </div>
-                    <div
-                        className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                            isanswer != questions[0].options[1] && isanswer != ""
-                                ? "brightness-[25%]"
-                                : "brightness-[100%]"
-                        }`}
-                        onClick={() => setanswer(questions[0].options[1])}
-                        style={{backgroundImage: `url(${treeBoard})`}}
-                    >
-                      <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
-                        {questions[0].options[1]}
-                      </h1>
-                    </div>
-                    <div
-                        className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                            isanswer != questions[0].options[2] && isanswer != ""
-                                ? "brightness-[25%]"
-                                : "brightness-[100%]"
-                        }`}
-                        onClick={() => setanswer(questions[0].options[2])}
-                        style={{backgroundImage: `url(${treeBoard})`}}
-                    >
-                      <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
-                        {questions[0].options[2]}
-                      </h1>
-                    </div>
-                    <div
-                        className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer ${
-                            isanswer != questions[0].options[3] && isanswer != ""
-                                ? "brightness-[25%]"
-                                : "brightness-[100%]"
-                        }`}
-                        onClick={() => setanswer(questions[0].options[3])}
-                        style={{backgroundImage: `url(${treeBoard})`}}
-                    >
-                      <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
-                        {questions[0].options[3]}
-                      </h1>
-                    </div>
-                  </div>
-                  {isanswer != "" ? (
-                      <div
-                          className={`h-[80px] w-[200px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[50px] cursor-pointer animate-pulse
-                }`}
-                          style={{backgroundImage: `url(${treeBoard})`}}
-                          onClick={() => {
-                            CheckAnswer(0);
-                          }}
-                      >
-                        <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
-                          Confirm
-                        </h1>
-                      </div>
-                  ) : null}
-                </div>
-                <div className="h-[200px] w-screen flex flex-row justify-around items-center">
-                  <div
-                      className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                      style={{backgroundImage: `url(${boylooking})`}}
-                  ></div>
-                  <div
-                      className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
-                      style={{backgroundImage: `url(${tigerscary})`}}
-                  ></div>
-                  <div
-                      className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
-                      style={{backgroundImage: `url(${snake})`}}
-                  ></div>
-                </div>
-              </div>
           ) : null}
 
           {iscontentstate == 3 ? (
@@ -341,12 +370,16 @@ const Chapter1 = () => {
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                    style={{backgroundImage: `url(${boylooking})`}}
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{
+                    backgroundImage: `url(${currentstory.character.looking})`,
+                  }}
                 ></div>
                 <div
-                    className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                    style={{backgroundImage: `url(${happytiger})`}}
+                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.happy})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
@@ -368,16 +401,19 @@ const Chapter1 = () => {
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                    style={{backgroundImage: `url(${boylooking})`}}
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{
+                    backgroundImage: `url(${currentstory.character.looking})`,
+                  }}
                 ></div>
                 <div
-                    className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                    style={{backgroundImage: `url(${happytiger})`}}
+                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.happy})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
-
             </div>
           ) : null}
           {iscontentstate == 5 ? (
@@ -388,25 +424,26 @@ const Chapter1 = () => {
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
                   <AnimatedTyping
-                      text={[
-                        "Let's Gooooooo...!",
-                      ]}
-                      onComplete={contentchange}
+                    text={["Let's Gooooooo...!"]}
+                    onComplete={contentchange}
                   />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                    style={{backgroundImage: `url(${boyrunning})`}}
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
+                  style={{
+                    backgroundImage: `url(${currentstory.character.running})`,
+                  }}
                 ></div>
                 <div
-                    className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
-                    style={{backgroundImage: `url(${tigerscary})`}}
+                  className="h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.scary})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
-
             </div>
           ) : null}
           {iscontentstate == 6 ? (
@@ -416,25 +453,24 @@ const Chapter1 = () => {
                   className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
-                  <AnimatedTyping
-                      text={[
-                        "Search for hints...!",
-                      ]}
-                  />
+                  <AnimatedTyping text={["Search for hints...!"]} />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                    className="h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                    style={{backgroundImage: `url(${boyrunning})`}}
+                  className="h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{
+                    backgroundImage: `url(${currentstory.character.running})`,
+                  }}
                 ></div>
                 <div
-                    className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
-                    style={{backgroundImage: `url(${walkingtiger})`}}
+                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.walking})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
-
             </div>
           ) : null}
           {iscontentstate == 7 ? (
@@ -450,7 +486,9 @@ const Chapter1 = () => {
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
                   className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${boylooking})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.character.looking})`,
+                  }}
                 ></div>
                 <div
                   className="h-[70px] w-[60px] bg-cover bg-center flex flex-col animate-spin mt-[250px] cursor-pointer"
@@ -459,7 +497,9 @@ const Chapter1 = () => {
                 ></div>
                 <div
                   className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-bounce"
-                  style={{ backgroundImage: `url(${happytiger})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.happy})`,
+                  }}
                 ></div>
               </div>
             </div>
@@ -479,10 +519,12 @@ const Chapter1 = () => {
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
                   className="h-[500px] w-[200px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${boylooking})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.character.looking})`,
+                  }}
                 ></div>
                 <div
-                  className="h-[50px] w-[140px] bg-cover bg-center flex flex-col mt-[250px] cursor-pointer bg-white rounded-2xl text-center justify-center animate-pulse"
+                  className="h-[50px] w-[140px] bg-cover bg-center flex flex-col mt-[250px] cursor-pointer bg-white rounded-2xl text-center justify-center "
                   style={{ backgroundImage: `url(${brick})` }}
                   onClick={startMoving}
                 >
@@ -490,7 +532,9 @@ const Chapter1 = () => {
                 </div>
                 <div
                   className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-none"
-                  style={{ backgroundImage: `url(${happytiger})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.happy})`,
+                  }}
                 ></div>
               </div>
             </div>
@@ -502,21 +546,23 @@ const Chapter1 = () => {
                   className="h-[480px] w-[480px] bg-cover bg-center flex flex-col mr-[130px] justify-center text-center items-center pb-[60px]"
                   style={{ backgroundImage: `url(${cloudright})` }}
                 >
-                  <AnimatedTyping
-                    text={["Let's Gooooooo...!"]}
-                  />
+                  <AnimatedTyping text={["Let's Gooooooo...!"]} />
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                    className={cn(
-                        `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce transform translate-x-5`
-                    )}
-                    style={{backgroundImage: `url(${boyrunning})`}}
+                  className={cn(
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-bounce transform translate-x-5`
+                  )}
+                  style={{
+                    backgroundImage: `url(${currentstory.character.running})`,
+                  }}
                 ></div>
                 <div
-                    className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${tigerPosition}px]`}
-                    style={{backgroundImage: `url(${walkingtiger})`}}
+                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${cartoonPosition}px]`}
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.walking})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
@@ -536,14 +582,18 @@ const Chapter1 = () => {
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-around items-center">
                 <div
-                    className={cn(
-                        `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transform translate-x-5`
-                    )}
-                    style={{backgroundImage: `url(${boyshocking})`}}
+                  className={cn(
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transform translate-x-5`
+                  )}
+                  style={{
+                    backgroundImage: `url(${currentstory.character.scary})`,
+                  }}
                 ></div>
                 <div
-                    className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${tigerPosition}px]`}
-                    style={{backgroundImage: `url(${tigerscary})`}}
+                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${cartoonPosition}px]`}
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.scary})`,
+                  }}
                 ></div>
               </div>
               <Button onClick={contentchange}>Click To Continue</Button>
@@ -553,42 +603,60 @@ const Chapter1 = () => {
             <div className="mt-[100px]">
               <div className="h-[250px] w-screen flex flex-row justify-center items-center mb-[50px]">
                 <div
-                    className="h-[280px] w-[280px] bg-cover bg-center flex flex-col justify-center text-center items-center pb-[60px]"
-                    style={{backgroundImage: `url(${cloudleft})`}}
-                >{!win && <AnimatedTyping
-                    text={["We have reached the river!!"]}
-                />}{win && <AnimatedTyping
-                    text={["We won!!"]}
-                />}
-
+                  className="h-[280px] w-[280px] bg-cover bg-center flex flex-col justify-center text-center items-center pb-[60px]"
+                  style={{ backgroundImage: `url(${cloudleft})` }}
+                >
+                  {!win && (
+                    <AnimatedTyping text={["We have reached the river!!"]} />
+                  )}
+                  {win && <AnimatedTyping text={["We won!!"]} />}
                 </div>
                 <div
-                    className="h-[80px] w-[180px] rounded-3xl bg-cover bg-center flex flex-row justify-center text-center items-center ml-[200px]"
-                    style={{backgroundImage: `url(${brick})`}}
+                  className="h-[300px] w-[400px] rounded-3xl bg-cover bg-center flex flex-col justify-center text-center items-center ml-[200px]"
+                  style={{ backgroundImage: `url(${brick})` }}
                 >
-                  <h1 className="font-bold text-white text-3xl">F=</h1>
-                  <input className="font-bold text-white text-2xl w-[70px] bg-inherit border-2 rounded-2xl"
-                         value={secondlaw} onChange={(e) => {
-                    setsecondlaw(e.target.value)
-                  }}/>
+                  <h1 className="font-bold text-white text-3xl">
+                    {questions[1].question}
+                  </h1>
+                  <input
+                    className="font-bold text-white text-2xl w-[270px] bg-inherit border-2 rounded-2xl"
+                    value={isanswer}
+                    onChange={(e) => {
+                      setanswer(e.target.value);
+                    }}
+                  />
+                  <div
+                    className={`h-[50px] w-[200px] bg-cover bg-center flex flex-col mt-[50px] justify-center text-center items-center pb-[50px] cursor-pointer bg-[white] rounded-2xl
+                }`}
+                    onClick={() => {CheckAnswer(1)}}
+                  >
+                    <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
+                      Confirm
+                    </h1>
+                  </div>
                 </div>
               </div>
               <div className="h-[200px] w-screen flex flex-row justify-start items-center">
                 <div
                   className={cn(
-                      `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transition-transform hover:translate-x-20 duration-800 ease-in-out mr-[150px]`, win ? "absolute right-1" : ""
+                    `h-[500px] w-[200px] bg-cover bg-center flex flex-col animate-none transition-transform hover:translate-x-20 duration-800 ease-in-out mr-[150px]`,
+                    win ? "absolute right-1" : ""
                   )}
-                  style={{ backgroundImage: `url(${boyshocking})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.character.scary})`,
+                  }}
                 ></div>
                 <div
                   className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none transition-transform hover:animate-bounce hover:translate-x-20 duration-800 ease-in-out`}
-                  style={{ backgroundImage: `url(${walkingtiger})` }}
+                  style={{
+                    backgroundImage: `url(${currentstory.cartoon.walking})`,
+                  }}
                 ></div>
               </div>
             </div>
           ) : null}
         </div>
-      )}
+      ) : null}
     </div>
   );
 };
