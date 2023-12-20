@@ -1,4 +1,10 @@
 import physicsanimate from "../images/physics-animate-main.jpg";
+import chemistryanimate from "../images/chemistryanimate.png"
+import biologyanimate from "../images/biology-animate-main.png";
+import cubeanimate from "../images/cube-animate-main.png";
+import coneanimate from "../images/cone-animate-main.png";
+import socialanimate from "../images/socialanimate.png";
+import englishanimate from "../images/englishanimate.jpg"
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import sub from "../json/subject.json";
@@ -23,11 +29,21 @@ const ThreeDModel = () => {
     <div className={"flex flex-col justify-between"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-center mb-20">
         <div className="h-inherit w-[80%] flex-row flex text-center justify-around">
-          <img src={physicsanimate} className="h-[70px] animate-spin" />
+        {subject=="physics"?(<img src={physicsanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="chemistry"?(<img src={chemistryanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="maths"?(<img src={cubeanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="biology"?(<img src={biologyanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="social"?(<img src={socialanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="english"?(<img src={englishanimate} className="h-[70px] animate-spin" />):null}
           <h1 className="font-poppins font-bold text-[45px]">
             3D Model - {sub[subject].chapters[chapter].chaptername}
           </h1>
-          <img src={physicsanimate} className="h-[70px] animate-spin" />
+          {subject=="physics"?(<img src={physicsanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="chemistry"?(<img src={chemistryanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="maths"?(<img src={cubeanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="biology"?(<img src={biologyanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="social"?(<img src={socialanimate} className="h-[70px] animate-spin" />):null}
+          {subject=="english"?(<img src={englishanimate} className="h-[70px] animate-spin" />):null}
         </div>
       </div>
       {sub[subject].chapters[chapter].threedmodeltopics.map(

@@ -11,7 +11,7 @@ const Report = () => {
     const [data, setData] = useState({
         streak: 28,
         peak: 48,
-        score: 9.0,
+        score: 250.5,
         rank: 8,
         subjects: {
             physics: {

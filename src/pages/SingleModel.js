@@ -35,7 +35,7 @@ const SingleModel = () => {
       ) : null}
       {model == "Heart" ? (
         <div className="flex flex-row justify-center w-[98%]">
-          <img src={heart} className="h-[500px] w-[600px] rounded-2xl" alt={"avatar"} />
+          <img src={heart} className="h-[500px] w-[600px] rounded-2xl animate-pulse" alt={"avatar"} />
         </div>
       ) : null}
       {model == "Brain" ? (
