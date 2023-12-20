@@ -14,7 +14,7 @@ import logo from "../images/logo-full.png";
 
 
 const formSchema = z.object({
-    enrolment: z.string().min(6, 'Enrolment Number is minimum of 8 characters'),
+    enrolment: z.string().min(6, 'Enrolment Number is minimum of 6 characters'),
     password: z.string().min(8, 'Password must be minimum of 8 characters')
 });
 

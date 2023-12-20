@@ -1,123 +1,176 @@
-import physicsanimate from "../images/physics-animate-main.jpg";
-import {useParams} from "react-router-dom";
-import {useState} from "react";
-import SelectContentModal from "../components/SelectContentModal.js";
+import {useNavigate, useParams} from "react-router-dom";
+import {useEffect, useRef, useState} from "react";
+import sub from "../json/subject.json"
+import video from "../images/video/inductor.mp4"
+import {Counter} from "../components/Counter";
+import {cn} from "../lib/utils";
+import {Button} from "../components/ui/button";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle
+} from "../components/ui/alert-dialog";
 
 const InteractiveQuiz = () => {
-    const {subject} = useParams();
+    const {subject, chapter} = useParams();
+    const videoRef = useRef(null);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const chapterObj = sub[subject].chapters[chapter];
 
-    const openModal = () => {
-        setIsModalOpen(true);
+    const [time, setTime] = useState();
+    const [timeRunning, setTimeRunning] = useState(true);
+    const [initialTime, setInitialTime] = useState(10);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [state, setState] = useState(0);
+    const [disp, setDisp] = useState(false);
+    const [score, setScore] = useState(0);
+    const [key, setKey] = useState(-1);
+    const [answered, setAnswered] = useState(false)
+    const [selectedAnswer, setSelectedAnswer] = useState("")
+    const [qstate, setQState] = useState(0)
+
+    const onComplete = () => {
+        if (state % 2 === 0) {
+            videoRef.current.pause();
+            setDisp(true);
+            setState(state + 1);
+            setKey(state);
+            setTimeRunning(true);
+
+        } else {
+            handleNext();
+            setDisp(false);
+            videoRef.current.play();
+        }
     };
+    const handleClick = (option) => {
+        setAnswered(true);
+        setSelectedAnswer(option);
+        setTimeRunning(false);
+        if (chapterObj.questions[qstate].answer === option) {
+            setScore(score + 1);
+        }
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    }
+    useEffect(() => {
+        const video = videoRef.current;
 
-  return (
-    <div className={"flex flex-col justify-between"}>
-      <div className="h-1/5 bg-inherit flex-row flex justify-center mb-20">
-        <div className="h-inherit w-[40%] flex-row flex text-center justify-around">
-            <img src={physicsanimate} className="h-[70px] animate-spin"/>
-            <h1 className="font-poppins font-bold text-[45px] capitalize">{subject}</h1>
-            <img src={physicsanimate} className="h-[70px] animate-spin"/>
-        </div>
-      </div>
-      <div className="h-[100px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
-        <div className="h-[100px] w-[36%] bg-black rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl text-white">Your Score</h1>
-            <div
-              className={
-                "w-1/4 h-4/5 pr-5 pl-5 flex flex-col rounded-2xl bg-white dark:bg-white text-center text-white dark:text-black justify-center"
-              }
-            >
-              <span className={"text-3xl font-bold text-black"}>700</span>
-            </div>
-          </div>
-        </div>
+        const handleTimeUpdate = () => {
+            // Update the current time whenever the playback time changes
+            setCurrentTime(video.currentTime);
+        };
 
-        <div className="h-[100px] w-[36%] bg-black rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl text-white">Your Completion</h1>
-            <div
-              className={
-                "w-1/4 h-4/5 pr-5 pl-5 flex flex-col rounded-2xl bg-white dark:bg-white text-center text-white dark:text-black justify-center"
-              }
-            >
-              <span className={"text-3xl font-bold text-black"}>75%</span>
-            </div>
-          </div>
-        </div>
-      </div>
+        // Add a timeupdate event listener
+        video.addEventListener('timeupdate', handleTimeUpdate);
 
-      <div className="h-[80px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
-        <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl">Electricity</h1>
-            <div className="h-[50px] bg-white w-[150px] rounded-2xl justify-center items-center flex cursor-pointer" onClick={openModal}>
-              <h1 className="text-center text-[#b47ede] font-semibold">Continue</h1>
+        // Clean up the event listener on component unmount
+        return () => {
+            video.removeEventListener('timeupdate', handleTimeUpdate);
+        };
+    }, []); // Empty dependency array to ensure the effect runs only once
+
+    // const handlePlay = () => {
+    //     // Play the video
+    //     videoRef.current.play();
+    //     setTimeRunning(true)
+    // };
+    //
+    // const handlePause = () => {
+    //     // Pause the video
+    //     videoRef.current.pause();
+    //     setTimeRunning(false)
+    // };
+    const [alertDialog, setAlertDialog] = useState(false);
+    const handleNext = () => {
+        if (qstate === chapterObj.questions.length - 1) {
+            setAlertDialog(true)
+            videoRef.current.pause();
+        } else {
+            setState(state + 1);
+
+            setQState(qstate + 1);
+            videoRef.current.play();
+            setAnswered(false);
+            setDisp(false);
+            setKey(state);
+            setTimeRunning(true);
+            videoRef.current.play();
+        }
+    }
+    useEffect(() => {
+        videoRef.current.play();
+    }, [])
+    useEffect(() => {
+        console.log(state, qstate);
+    })
+    const navigate = useNavigate();
+
+    return (
+        <div className={"flex flex-col justify-between"}>
+            <AlertDialog open={alertDialog}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Congratulations!!</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            You have scored: <strong>{score}</strong>.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogAction onClick={() => navigate("/dashboard")}>Continue</AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
+            <div className="h-1/5 bg-inherit flex-row flex justify-center mb-10">
+                <div className="h-inherit w-[40%] flex-row flex text-center justify-around">
+                    <h1 className=" font-bold text-[35px] capitalize">{subject} - {chapterObj.chaptername}</h1>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-[80px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
-        <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl">
-              Magnetic Effects of Electric Current
-            </h1>
-            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
-              <h1 className="text-center text-white font-semibold">Start</h1>
+            <div className={"flex flex-row"}>
+                <video width="820"
+                       height="500"
+                       ref={videoRef}
+                       controls
+                    // onPlay={handlePlay}
+                    // onPause={handlePause}
+                >
+                    <source src={video} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                <div className={"justify-evenly flex flex-col w-full"}>
+                    <Counter
+                        restart={key}
+                        isPlaying={timeRunning}
+                        onCompleteFunc={() => {
+                            onComplete()
+                        }}
+                        onUpdateFunc={(remainingTime) => setTime(remainingTime)}
+                        time={initialTime}
+                    />
+                    <div
+                        className={cn("rounded-2xl m-4 w-full flex flex-col shadow-2xl border-2 text-center", disp ? "" : "hidden")}>
+                        <span>{chapterObj.questions[qstate].question}</span>
+                        <div className={"m-3"}>
+                            {chapterObj.questions[qstate].options.map((option, index) => (
+                                <div key={index}
+                                     onClick={() => handleClick(option)}
+                                     className={cn("bg-blue-900 text-white m-3 rounded-2xl p-3 hover:bg-blue-950 cursor-pointer",
+                                         answered && selectedAnswer === option ? "bg-blue-950" : "")}>
+                                    {option}
+                                </div>
+                            ))}
+                        </div>
+                        <div className={"flex justify-end m-3"}>
+                            <Button variant={"secondary"} disabled={!answered} onClick={handleNext}>Next</Button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div className="h-[80px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
-        <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl">Sources of Energy</h1>
-            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
-              <h1 className="text-center text-white font-semibold">Start</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-[80px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
-        <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl">Our Environment</h1>
-            <div className="h-[50px] bg-[#b47ede] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
-              <h1 className="text-center text-white font-semibold">Start</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-[80px] w-6/7 rounded-3xl relative flex-row flex justify-around mb-10">
-        <div className="h-[80px] bg-[#d9d9d9] w-[100%] rounded-3xl ml-[10px] relative mb-7 flex-row flex">
-          <div className="absolute inset-0 bg-inherit shadow-inner rounded-3xl flex-row flex justify-between items-center pr-10 pl-10">
-            <h1 className="font-semibold text-3xl">
-              Management of Natural Resources
-            </h1>
-            <div className="h-[50px] bg-[#eee] w-[150px] rounded-2xl justify-center items-center flex cursor-pointer">
-              <h1 className="text-center text-black font-semibold">
-                Completed
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <SelectContentModal
-        isOpen={isModalOpen}
-        onOpen={openModal}
-        onClose={closeModal}
-        modalTitle="Choose your way!"
-        modalContent="This is the custom modal content. You can pass any JSX or string here."
-      />
-    </div>
-  );
+    );
 };
 
 export default InteractiveQuiz;
