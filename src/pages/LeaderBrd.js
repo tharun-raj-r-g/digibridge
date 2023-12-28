@@ -3,7 +3,6 @@ import trophy from "../images/trophy.jpg";
 const LeaderBrd = (props) => {
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
   const users = JSON.parse(localStorage.getItem("studentData"));
-  console.log(users)
   const scores = JSON.parse(localStorage.getItem("scores"));
   function createLeaderboard(scores) {
     // Create an object to store the total scores for each student
@@ -40,58 +39,10 @@ const LeaderBrd = (props) => {
   }
   const leaderlist  = createLeaderboard(scores);
   const findUser = (user)=>{
-    return (users.find(obj=>obj.id === user));
+    
+    return (users.find(obj=>{return obj.id === user}).name);
   }
-  // const leaderlist = [
-  //   {
-  //     name: "Vishal",
-  //     streak: 12,
-  //     score: 100,
-  //     rank: 1,
-  //   },
-  //   {
-  //     name: "Freddy",
-  //     streak: 22,
-  //     score: 90,
-  //     rank: 2,
-  //   },
-  //   {
-  //     name: "Raghul",
-  //     streak: 8,
-  //     score: 70,
-  //     rank: 3,
-  //   },
-  //   {
-  //     name: "Ravi",
-  //     streak: 10,
-  //     score: 60,
-  //     rank: 4,
-  //   },
-  //   {
-  //     name: "Sam",
-  //     streak: 12,
-  //     score: 55,
-  //     rank: 5,
-  //   },
-  //   {
-  //     name: "Jacob",
-  //     streak: 22,
-  //     score: 50,
-  //     rank: 6,
-  //   },
-  //   {
-  //     name: "Raj",
-  //     streak: 8,
-  //     score: 40,
-  //     rank: 7,
-  //   },
-  //   {
-  //     name: "Arvind",
-  //     streak: 10,
-  //     score: 30,
-  //     rank: 8,
-  //   },
-  // ];
+
   return (
     <div className={"h-screen flex flex-col items-center"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-between">

@@ -53,7 +53,9 @@ function createWindow() {
     mainWindow.once('ready-to-show', () => {
         mainWindow.show()
     });
-    mainWindow.setMenu(null);
+    if (!isDev()) {
+        mainWindow.setMenu(null);
+    }
     mainWindow.maximize();
     const size = mainWindow.getSize();
     mainWindow.setMinimumSize(size.at(0) - 20, size.at(1) - 20);
@@ -65,9 +67,9 @@ app.on('browser-window-created', (event, win) => {
         storages: ['session'],
         quotas: ['persistent', 'syncable'],
     }).then().catch((e) => console.error(e));
-    win.webContents.on('devtools-opened', () => {
-        win.webContents.closeDevTools();
-    });
+    // win.webContents.on('devtools-opened', () => {
+    //     win.webContents.closeDevTools();
+    // });
 });
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

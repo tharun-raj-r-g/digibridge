@@ -14,13 +14,11 @@ import {AlertCircle} from "lucide-react";
 import {
     AlertDialog,
     AlertDialogAction,
-    AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-    AlertDialogTrigger,
 } from "../components/ui/alert-dialog"
 
 import logo from "../images/logo-full.png";
@@ -29,11 +27,13 @@ import {useState} from "react";
 
 const formSchema = z.object({
     name: z.string().min(1, 'Name is required'),
-    password: z.string().min(8, 'Password is required'),
+    password: z.string().min(8, 'Password must have minimum 8 characters'),
     age: z.string().min(1, "Age is Required"),
     gender: z.string().min(1, "Gender Is required"),
     standard: z.string().min(1, "Grade is Required"),
-    phone: z.string().min(10, "Number must be 10 digits")
+    phone: z.string().refine(data => data.length === 10, {
+        message: "Number must be 10 digits",
+    }),
 });
 
 

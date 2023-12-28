@@ -13,8 +13,55 @@ import trophy from "../images/trophy.jpg";
 const Dashboard = (props) => {
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
   const scores = JSON.parse(localStorage.getItem("scores")).filter(obj=>obj.studentId === currentUser.id)
+  const totalScores = JSON.parse(localStorage.getItem("scores"))
   const totalScore = scores.reduce((sum, entry) => sum + entry.score, 0);
+  const users = JSON.parse(localStorage.getItem("studentData"));
+  function createLeaderboard(scores) {
+    // Create an object to store the total scores for each student
+    const totalScores = {};
 
+    // Calculate total scores for each student
+    scores.forEach(entry => {
+      const studentId = entry.studentId;
+      totalScores[studentId] = (totalScores[studentId] || 0) + entry.score;
+    });
+
+    // Convert the object into an array of { studentId, totalScore } objects
+    const leaderboardData = Object.entries(totalScores).map(([studentId, totalScore]) => ({
+      studentId,
+      totalScore
+    }));
+
+    // Sort the leaderboardData in descending order based on totalScore
+    leaderboardData.sort((a, b) => b.totalScore - a.totalScore);
+
+    // Add ranks to the leaderboardData
+    leaderboardData.forEach((entry, index) => {
+      entry.rank = index + 1;
+    });
+
+    // Map the leaderboardData to the required format
+    const leaderboard = leaderboardData.map(entry => ({
+      name: entry.studentId, // Assuming studentId is the name
+      score: entry.totalScore,
+      rank: entry.rank
+    }));
+
+    return leaderboard;
+  }
+  const leaderlist  = createLeaderboard(totalScores);
+  console.log(leaderlist)
+  function findIndexByName(leaderlist, name) {
+    if (leaderlist.find(entry => entry.name === name)){
+      return leaderlist.find(entry => entry.name === name).rank;
+    }
+    else{
+      return "N/A"
+    }
+  }
+  
+  // Example usage
+  const index = findIndexByName(leaderlist, currentUser.id);
   return (
     <div className={"h-screen flex flex-col"}>
       <div className="h-1/5 bg-inherit flex-row flex justify-between">
@@ -44,7 +91,7 @@ const Dashboard = (props) => {
         <Link
         to={{pathname:"/report"}}
           className={
-            "w-[10%] pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black"
+            "w-fit pr-5 pl-5 flex flex-col p-3 rounded-2xl bg-black dark:bg-white text-center text-white dark:text-black"
           }
         >
           <span className={"font-semibold"}>Consistency</span>
@@ -68,7 +115,7 @@ const Dashboard = (props) => {
           style={{ backgroundImage: `url(${trophy})` }}
         >
           <span className={"font-semibold"}>Rank</span>
-          <span className={"text-4xl font-bold"}>10</span>
+          <span className={"text-4xl font-bold"}>{index}</span>
         </Link>
       </div>
       <div className={"mt-20 w-full justify-center flex"}>

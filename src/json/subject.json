@@ -492,6 +492,58 @@
         "videos": {
           "english": "/video/chemistry.mp4"
         }
+      },{
+        "chaptername": "Chemical Equations",
+        "questions": [
+          {
+            "question": "Which subject provides insight into how we interact with the world around us, from the air we breathe to the food we eat.",
+            "options": ["Chemistry", "Physics", "Maths", "Social"],
+            "answer": "Social"
+          },
+          {
+            "question": "What are the transition elements' characteristics?",
+            "options": [
+              "Metallic",
+              "Non-metallic",
+              "Metalloid",
+              "Varies from element to element"
+            ],
+            "answer": "Metallic"
+          },
+          {
+            "question": "What is the first element in the periodic table's fourth transition series?",
+            "options": ["Scandium", "Yttrium", "Actinium", "Lanthanum"],
+            "answer": "Ferrite"
+          },
+          {
+            "question": "Mendeleev's periodic table's horizontal rows were called ",
+            "options": ["periods", "groups", "series", "rows"],
+            "answer": "series"
+          },
+          {
+            "question": "An element's physical and chemical properties are a periodic function of its mass",
+            "options": [
+              "Atomic Mass",
+              "Element behaviour",
+              "No of electrons",
+              "Atomic number"
+            ],
+            "answer": "Atomic number"
+          }
+        ],
+        "content": [
+          "THEY ARE METALS!!!"
+        ],
+        "threedmodeltopics": [
+          {
+            "modelname": "Molecules",
+            "content": "",
+            "model": ""
+          }
+        ],
+        "videos": {
+          "english": "/video/chemistry.mp4"
+        }
       }
     ]
   },
@@ -1047,7 +1099,6 @@
           { "modelname": "Globe", "content": "","model": "" }
         ],
         "videos": {
-          "english": "/video/social.mp4"
         }
       },
       {

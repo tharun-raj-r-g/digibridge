@@ -19,7 +19,15 @@ const Subject = () => {
   };
   const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
   const scores = JSON.parse(localStorage.getItem("scores")).filter(obj=>obj.studentId === currentUser.id)
-  const totalScore = scores.reduce((sum, entry) => sum + entry.score, 0);
+  const sumBySubject = scores.reduce((result, entry) => {
+    const subject = entry.subject;
+    result[subject] = (result[subject] || 0) + entry.score;
+    return result;
+  }, {});
+  let totalScore=0;
+  if (sumBySubject[subject]){
+    totalScore = sumBySubject[subject]
+  }
   return (
 
     <div className={"flex flex-col justify-between"}>

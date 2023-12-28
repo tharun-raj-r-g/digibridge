@@ -1,12 +1,10 @@
-import { Button } from "../components/ui/button.tsx";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Howl } from "howler";
-import jungle from "../images/forest1.png";
+import {Button} from "../components/ui/button.tsx";
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {Howl} from "howler";
 import cloudleft from "../images/cloudleft.png";
 import cloudright from "../images/cloudright.jpg";
 import AnimatedTyping from "../components/AnimatedTyping.js";
-import snake from "../images/snakeimage.jpg";
 import treeBoard from "../images/treeboard.png";
 import questiontree from "../images/questiontree.png";
 import GameOverModal from "../components/GameOverModal.js";
@@ -20,12 +18,11 @@ import search_audio from "../music/serch-for-hints.mp3";
 import there_is_hint_audio from "../music/there-is-an-hint.mp3";
 import openpaper from "../images/openpaper1.jpg";
 import brick from "../images/greenwall.jpg";
-import { cn } from "../lib/utils.ts";
-import jungleriver from "../images/jungleriver.jpg";
+import {cn} from "../lib/utils.ts";
 import didyouhear_audio from "../music/didyouhear.mp3";
 import reached_audio from "../music/reached.mp3";
 import story from "../json/story.json";
-import WinModal from "../components/WinModal.js";
+
 const Chapter1 = () => {
   const { subject, storymode } = useParams();
   const subjectdetails = sub[subject];
@@ -45,18 +42,11 @@ const Chapter1 = () => {
     setcontentstate(iscontentstate + 1);
     // }, 2000); // 2000 milliseconds (2 seconds)
   };
-  useEffect(()=>{
-    if(isScore>=2){
-      setwin(true);
-      console.log(setwin);
-    }
-  },[isScore]);
-  useEffect(()=>{
-    if(iscontentstate>=12){
+  useEffect(() => {
+    if (iscontentstate >= 12) {
       setcontentstate(-1);
-      console.log(setwin);
     }
-  },[iscontentstate]);
+  }, [iscontentstate]);
   const CheckAnswer = (number) => {
     if (isanswer == questions[number].answer) {
       setcontentstate(iscontentstate + 1);
@@ -65,6 +55,17 @@ const Chapter1 = () => {
       setcontentstate(-1);
       setIsModalOpen(true);
     }
+    const scores = JSON.parse(localStorage.getItem("scores"));
+    const currentUser = JSON.parse(sessionStorage.getItem("current-user"));
+
+    const newScore = {
+      subject: subject,
+      chapter: "Electricity",
+      studentId: currentUser.id,
+      score: isScore,
+    };
+    scores.push(newScore);
+    localStorage.setItem("scores", JSON.stringify(scores));
   };
 
   const Move = () => {
@@ -162,19 +163,6 @@ const Chapter1 = () => {
             onOpen={openModal}
             onClose={closeModal}
             modalTitle="Game Over !"
-            score={isScore}
-            subject={subject}
-            storymode={storymode}
-          />
-        </div>
-      ) : null}
-      {win ? (
-        <div>
-          <WinModal
-            isOpen={isModalOpen}
-            onOpen={openModal}
-            onClose={closeModal}
-            modalTitle="Booyah...You Won !"
             score={isScore}
             subject={subject}
             storymode={storymode}
@@ -347,8 +335,10 @@ const Chapter1 = () => {
                   }}
                 ></div>
                 <div
-                  className="h-[150px] w-[220px] bg-cover bg-center flex flex-col"
-                  style={{ backgroundImage: `url(${snake})` }}
+                  className="h-[150px] w-[250px] bg-contain bg-center flex flex-col"
+                  style={{
+                    backgroundImage: `url(${currentstory.antagonist.angry})`,
+                  }}
                 ></div>
               </div>
             </div>
@@ -376,7 +366,7 @@ const Chapter1 = () => {
                   }}
                 ></div>
                 <div
-                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  className="h-[170px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
                   style={{
                     backgroundImage: `url(${currentstory.cartoon.happy})`,
                   }}
@@ -464,7 +454,7 @@ const Chapter1 = () => {
                   }}
                 ></div>
                 <div
-                  className="h-[150px] w-[200px] bg-cover bg-center flex flex-col animate-bounce"
+                  className="h-[150px] w-[220px] bg-cover bg-center flex flex-col animate-bounce"
                   style={{
                     backgroundImage: `url(${currentstory.cartoon.walking})`,
                   }}
@@ -496,7 +486,7 @@ const Chapter1 = () => {
                   onClick={contentchange}
                 ></div>
                 <div
-                  className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-bounce"
+                  className="h-[170px] w-[250px] bg-cover bg-center flex flex-col animate-bounce"
                   style={{
                     backgroundImage: `url(${currentstory.cartoon.happy})`,
                   }}
@@ -531,7 +521,7 @@ const Chapter1 = () => {
                   <h1 className="text-white">Continue</h1>
                 </div>
                 <div
-                  className="h-[150px] w-[250px] bg-cover bg-center flex flex-col animate-none"
+                  className="h-[170px] w-[250px] bg-cover bg-center flex flex-col animate-none"
                   style={{
                     backgroundImage: `url(${currentstory.cartoon.happy})`,
                   }}
@@ -559,7 +549,7 @@ const Chapter1 = () => {
                   }}
                 ></div>
                 <div
-                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none ml-[${cartoonPosition}px]`}
+                  className={`h-[150px] w-[220px] bg-cover bg-center flex flex-col animate-none ml-[${cartoonPosition}px]`}
                   style={{
                     backgroundImage: `url(${currentstory.cartoon.walking})`,
                   }}
@@ -628,7 +618,9 @@ const Chapter1 = () => {
                   <div
                     className={`h-[50px] w-[200px] bg-cover bg-center flex flex-col mt-[50px] justify-center text-center items-center pb-[50px] cursor-pointer bg-[white] rounded-2xl
                 }`}
-                    onClick={() => {CheckAnswer(1)}}
+                    onClick={() => {
+                      CheckAnswer(0);
+                    }}
                   >
                     <h1 className="text-left mt-[50px] text-[15px] text-black font-bold">
                       Confirm
@@ -647,7 +639,7 @@ const Chapter1 = () => {
                   }}
                 ></div>
                 <div
-                  className={`h-[200px] w-[170px] bg-cover bg-center flex flex-col animate-none transition-transform hover:animate-bounce hover:translate-x-20 duration-800 ease-in-out`}
+                  className={`h-[150px] w-[220px] bg-cover bg-center flex flex-col animate-none transition-transform hover:animate-bounce hover:translate-x-20 duration-800 ease-in-out`}
                   style={{
                     backgroundImage: `url(${currentstory.cartoon.walking})`,
                   }}
